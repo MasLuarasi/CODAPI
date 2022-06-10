@@ -1,6 +1,9 @@
 package com.example.codapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -10,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.net.URI;
+import java.util.List;
 
 
 public class HelloController {
@@ -45,70 +49,56 @@ public class HelloController {
                 .build();
         response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         responseBody = response.body();
-        getLifetimeStats(responseBody);
+//        getLifetimeStats(responseBody);
+        getWeaponStats(responseBody);
     }
 
     protected void getLifetimeStats(String lifetimeString)
     {
-        LifetimeStats lifetimeStats = new LifetimeStats();
+        LifetimeStats lifetimeStats = new LifetimeStats();//Create lifetimeStats to represent the user
         lifetimeString = lifetimeString.substring(lifetimeString.indexOf("\"recordLongest"), lifetimeString.indexOf("mode")-4);
-        lifetimeString = lifetimeString.replaceAll("\"", "");
-        String[] k = lifetimeString.split(",");
+        lifetimeString = lifetimeString.replaceAll("\"", "");//Modify HTTP response to only include lifetime stats
+                                                                             //and get rid of quotation marks.
+        String[] k = lifetimeString.split(",");//Each lifetime stat and its value are split into String array
         long startTime = System.currentTimeMillis();
         for (String s : k)
         {
-            if (s.contains("kills"))
-            {
-                lifetimeStats.setKills(getVal(s));
-            }
-            else if (s.contains("deaths"))
-            {
-                lifetimeStats.setDeaths(getVal(s));
-            }
-            else if (s.contains("kdRatio"))
-            {
-                lifetimeStats.setKdRatio(getVal(s));
-            }
-            else if (s.contains("accuracy"))
-            {
-                lifetimeStats.setAccuracy(getVal(s));
-            }
-            else if (s.contains("gamesPlayed"))
-            {
-                lifetimeStats.setGamesPlayed(getVal(s));
-            }
-            else if (s.contains("winLossRatio"))
-            {
-                lifetimeStats.setWlRatio(getVal(s));
-            }
-            else if (s.contains("LongestWinStreak"))
-            {
-                lifetimeStats.setLongestWinStreak(getVal(s));
-            }
-            else if (s.contains("currentWinStreak"))
-            {
-                lifetimeStats.setCurrentWinStreak(getVal(s));
-            }
-            else if (s.contains("KillStreak"))
-            {
-                lifetimeStats.setLongestKillStreak(getVal(s));
-            }
-            else if (s.contains("bestKills"))
-            {
-                lifetimeStats.setMostKills(getVal(s));
-            }
-            else if (s.contains("bestKD"))
-            {
-                lifetimeStats.setBestKD(getVal(s));
-            }
-            else if (s.contains("timePlayed"))
-            {
-                lifetimeStats.setTimePlayed(getVal(s));
-            }
-        }
+            if (s.contains("kills")) {lifetimeStats.setKills(getVal(s));}
+            else if (s.contains("deaths")) {lifetimeStats.setDeaths(getVal(s));}
+            else if (s.contains("kdRatio")) {lifetimeStats.setKdRatio(getVal(s));}
+            else if (s.contains("accuracy")) {lifetimeStats.setAccuracy(getVal(s));}
+            else if (s.contains("gamesPlayed")) {lifetimeStats.setGamesPlayed(getVal(s));}
+            else if (s.contains("winLossRatio")) {lifetimeStats.setWlRatio(getVal(s));}
+            else if (s.contains("LongestWinStreak")) {lifetimeStats.setLongestWinStreak(getVal(s));}
+            else if (s.contains("currentWinStreak")) {lifetimeStats.setCurrentWinStreak(getVal(s));}
+            else if (s.contains("KillStreak")) {lifetimeStats.setLongestKillStreak(getVal(s));}
+            else if (s.contains("bestKills")) {lifetimeStats.setMostKills(getVal(s));}
+            else if (s.contains("bestKD")) {lifetimeStats.setBestKD(getVal(s));}
+            else if (s.contains("timePlayed")) {lifetimeStats.setTimePlayed(getVal(s));}
+        }//Pick out the fields we want and assign them to the variables in the class.
         System.out.println(lifetimeStats);
         long endTime = System.currentTimeMillis();
         System.out.println("That took " + (endTime - startTime) + " milliseconds");
+    }
+
+    public void getWeaponStats(String weaponString) throws JsonProcessingException {
+        weaponString = weaponString.substring(weaponString.indexOf("\"weapon"), weaponString.indexOf("scorestreakData"));
+        weaponString = weaponString.substring(0, weaponString.indexOf("\"tacticals")) +
+                       weaponString.substring(weaponString.indexOf("\"weapon_lmg"), weaponString.indexOf("\"supers")) +
+                       weaponString.substring(weaponString.indexOf("\"weapon_pistol"));//Modify the HTTP response string to only include the weapon classes
+//        weaponString = weaponString.substring(67,195);
+        weaponString = weaponString.replaceAll("\"", "");//Get rid of quotes
+        weaponString = weaponString.replaceAll("properties:\\{", "");//Get rid of the properties bracket
+        weaponString = weaponString.replaceAll("iw", "\n\tiw");//New line and indent each weapon. Temp formatting
+        weaponString = weaponString.replaceAll("weapon", "\nweapon");//New line each class. Temp formatting
+        weaponString = weaponString.replaceAll("\\}}", "\\}");//Remove excess  closing brackets
+        weaponString = weaponString.replaceAll("\\}}}", "\\}}");//Remove excess closing brackets
+        System.out.println(weaponString);
+//        ObjectMapper mapper = new ObjectMapper();
+//        List<Weapon> w = mapper.reader()
+//            .forType(new TypeReference<List<Weapon>>() {})
+//            .readValue(weaponString);
+//        System.out.println(w.toString());
 
     }
 
@@ -124,9 +114,3 @@ public class HelloController {
 //    List<LifetimeStats> ls = mapper.reader()
 //            .forType(new TypeReference<List<LifetimeStats>>() {})
 //            .readValue(a);
-//import com.fasterxml.jackson.core.type.TypeReference;
-//        import com.fasterxml.jackson.databind.ObjectMapper;
-//            System.out.println(s);
-//            String[] v = s.split(":");
-//            String key = v[0];
-//            int val = Integer.parseInt(v[1]);

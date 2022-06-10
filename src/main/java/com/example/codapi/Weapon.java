@@ -2,13 +2,14 @@ package com.example.codapi;
 
 public class Weapon
 {
-    protected int kills;
-    protected int deaths;
-    protected int kdRatio;
-    protected int hits;
-    protected int shots;
-    protected int accuracy;
-    protected int headshots;
+/*
+    public int kills;
+    public int deaths;
+    public int kdRatio;
+    public int hits;
+    public int shots;
+    public int accuracy;
+    public int headshots;
 
     public Weapon(int kills, int deaths, int kdRatio, int hits, int shots, int accuracy, int headshots)
     {
@@ -19,6 +20,26 @@ public class Weapon
         this.shots = shots;
         this.accuracy = accuracy;
         this.headshots = headshots;
+    }
+ */
+
+    public int hits;
+    public int kills;
+    public double kdRatio;
+    public int headshots;
+    public double accuracy;
+    public int shots;
+    public int deaths;
+
+    public Weapon(int hits, int kills, double kdRatio, int headshots, double accuracy, int shots, int deaths)
+    {
+        this.hits = hits;
+        this.kills = kills;
+        this.kdRatio = kdRatio;
+        this.headshots = headshots;
+        this.accuracy = accuracy;
+        this.shots = shots;
+        this.deaths = deaths;
     }
 
     public int getKills()
@@ -31,7 +52,7 @@ public class Weapon
         return this.deaths;
     }
 
-    public int getKdRatio()
+    public double getKdRatio()
     {
         return this.kdRatio;
     }
@@ -46,7 +67,7 @@ public class Weapon
         return this.shots;
     }
 
-    public int getAccuracy()
+    public double getAccuracy()
     {
         return this.accuracy;
     }
@@ -62,6 +83,7 @@ public class Weapon
     }
 
 }
+/*
 
 class assaultRifle extends Weapon
 {
@@ -170,3 +192,4 @@ class melee extends Weapon
         this.wName = name;
     }
 }
+ */

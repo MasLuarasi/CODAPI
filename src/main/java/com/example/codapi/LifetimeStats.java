@@ -2,18 +2,18 @@ package com.example.codapi;
 
 public class LifetimeStats
 {
-    private double kills;
-    private double deaths;
+    private int kills;
+    private int deaths;
     private double kdRatio;
     private double accuracy;
-    private double gamesPlayed;
+    private int gamesPlayed;
     private double wlRatio;
 
-    private double longestWinStreak;
-    private double currentWinStreak;
-    private double longestKillStreak;
+    private int longestWinStreak;
+    private int currentWinStreak;
+    private int longestKillStreak;
 
-    private double mostKills;
+    private int mostKills;
     private double bestKD;
 
     private double timePlayed;
@@ -22,11 +22,11 @@ public class LifetimeStats
     {}
 
     public void setKills(double kills) {
-        this.kills = kills;
+        this.kills = (int)kills;
     }
 
     public void setDeaths(double deaths) {
-        this.deaths = deaths;
+        this.deaths = (int)deaths;
     }
 
     public void setKdRatio(double kdRatio) {
@@ -38,7 +38,7 @@ public class LifetimeStats
     }
 
     public void setGamesPlayed(double gamesPlayed) {
-        this.gamesPlayed = gamesPlayed;
+        this.gamesPlayed = (int)gamesPlayed;
     }
 
     public void setWlRatio(double wlRatio) {
@@ -46,19 +46,19 @@ public class LifetimeStats
     }
 
     public void setLongestWinStreak(double longestWinStreak) {
-        this.longestWinStreak = longestWinStreak;
+        this.longestWinStreak = (int)longestWinStreak;
     }
 
     public void setCurrentWinStreak(double currentWinStreak) {
-        this.currentWinStreak = currentWinStreak;
+        this.currentWinStreak =(int) currentWinStreak;
     }
 
     public void setLongestKillStreak(double longestKillStreak) {
-        this.longestKillStreak = longestKillStreak;
+        this.longestKillStreak = (int)longestKillStreak;
     }
 
     public void setMostKills(double mostKills) {
-        this.mostKills = mostKills;
+        this.mostKills = (int)mostKills;
     }
 
     public void setBestKD(double bestKD) {
@@ -66,7 +66,7 @@ public class LifetimeStats
     }
 
     public void setTimePlayed(double timePlayed) {
-        this.timePlayed = timePlayed;
+        this.timePlayed = timePlayed/3600;
     }
 
     @Override
