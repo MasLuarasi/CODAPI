@@ -6,6 +6,7 @@ module com.example.codapi {
     requires org.kordamp.bootstrapfx.core;
     requires java.net.http;
     requires com.fasterxml.jackson.databind;
+    requires java.annotation;
 
     opens com.example.codapi to javafx.fxml;
     exports com.example.codapi;

@@ -40,8 +40,9 @@ class assaultRifle extends Weapon
     public assaultRifle(String name, int hits, int kills, double kdRatio, int headshots, double accuracy, int shots, int deaths)
     {
         super(hits, kills, kdRatio, headshots, accuracy, shots, deaths);
-        arCodes.put("iw8_ar_tango21", "RAM-7");
-        this.wName = arCodes.get(name);
+        this.wName = name;
+//        arCodes.put("iw8_ar_tango21", "RAM-7");
+//        this.wName = arCodes.get(name);
     }
 }
 

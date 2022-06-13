@@ -15,7 +15,6 @@ import javafx.scene.control.TextField;
 import java.net.URI;
 import java.util.List;
 
-
 public class HelloController {
 
     @FXML
@@ -82,23 +81,12 @@ public class HelloController {
     }
 
     public void getWeaponStats(String weaponString) throws JsonProcessingException {
-        weaponString = weaponString.substring(weaponString.indexOf("\"weapon"), weaponString.indexOf("scorestreakData"));
-        weaponString = weaponString.substring(0, weaponString.indexOf("\"tacticals")) +
-                       weaponString.substring(weaponString.indexOf("\"weapon_lmg"), weaponString.indexOf("\"supers")) +
-                       weaponString.substring(weaponString.indexOf("\"weapon_pistol"));//Modify the HTTP response string to only include the weapon classes
-//        weaponString = weaponString.substring(67,195);
-        weaponString = weaponString.replaceAll("\"", "");//Get rid of quotes
-        weaponString = weaponString.replaceAll("properties:\\{", "");//Get rid of the properties bracket
-        weaponString = weaponString.replaceAll("iw", "\n\tiw");//New line and indent each weapon. Temp formatting
-        weaponString = weaponString.replaceAll("weapon", "\nweapon");//New line each class. Temp formatting
-        weaponString = weaponString.replaceAll("\\}}", "\\}");//Remove excess  closing brackets
-        weaponString = weaponString.replaceAll("\\}}}", "\\}}");//Remove excess closing brackets
         System.out.println(weaponString);
-//        ObjectMapper mapper = new ObjectMapper();
-//        List<Weapon> w = mapper.reader()
-//            .forType(new TypeReference<List<Weapon>>() {})
-//            .readValue(weaponString);
-//        System.out.println(w.toString());
+        ObjectMapper mapper = new ObjectMapper();
+        List<Iw8ArAnovember94> w = mapper.reader()
+            .forType(new TypeReference<List<Iw8ArAnovember94>>() {})
+            .readValue(weaponString);
+        System.out.println(w.toString());
 
     }
 
@@ -114,3 +102,15 @@ public class HelloController {
 //    List<LifetimeStats> ls = mapper.reader()
 //            .forType(new TypeReference<List<LifetimeStats>>() {})
 //            .readValue(a);
+//        weaponString = weaponString.substring(weaponString.indexOf("\"weapon"), weaponString.indexOf("scorestreakData"));
+//        weaponString = weaponString.substring(0, weaponString.indexOf("\"tacticals")) +
+//                       weaponString.substring(weaponString.indexOf("\"weapon_lmg"), weaponString.indexOf("\"supers")) +
+//                       weaponString.substring(weaponString.indexOf("\"weapon_pistol"));//Modify the HTTP response string to only include the weapon classes
+//        weaponString = weaponString.substring(67,195);
+//        weaponString = weaponString.replaceAll("\"", "");//Get rid of quotes
+//        weaponString = weaponString.replaceAll("properties:\\{", "");//Get rid of the properties bracket
+//        weaponString = weaponString.replaceAll("iw", "\n\tiw");//New line and indent each weapon. Temp formatting
+//        weaponString = weaponString.replaceAll("weapon", "\nweapon");//New line each class. Temp formatting
+//        weaponString = weaponString.replaceAll("\\}}", "\\}");//Remove excess  closing brackets
+//        weaponString = weaponString.replaceAll("\\}}}", "\\}}");//Remove excess closing brackets
+
