@@ -24,22 +24,26 @@ public class Iw8ArAnovember94 {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("properties")
-    public Properties__32 getProperties() {
+    public Properties__32 getProperties()
+    {
         return properties;
     }
 
     @JsonProperty("properties")
-    public void setProperties(Properties__32 properties) {
+    public void setProperties(Properties__32 properties)
+    {
         this.properties = properties;
     }
 
     @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
+    public Map<String, Object> getAdditionalProperties()
+    {
         return this.additionalProperties;
     }
 
     @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
+    public void setAdditionalProperty(String name, Object value)
+    {
         this.additionalProperties.put(name, value);
     }
 
