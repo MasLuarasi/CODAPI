@@ -82,7 +82,8 @@ public class HelloController {
         object = new JSONObject(data);//Define the JSONObject global variable
         mapper = new ObjectMapper();//Define the ObjectMapper global variable we need to map the data to its class.
         Lifetime lifetime = getLifetimeProperties();
-        System.out.println(lifetime.getAll().printEssential());
+//        System.out.println(lifetime.getAll().printEssential());
+        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArTango21().getAccuracy());
     }
 
     /**
@@ -94,8 +95,10 @@ public class HelloController {
     {
         JSONObject object1 = object.getJSONObject("lifetime");
         All all = getAllProperties(object1);
+        ItemData itemData = getItemDataProperties(object1);
         Lifetime lTemp = new Lifetime();
         lTemp.setAll(all);
+        lTemp.setItemData(itemData);
         return lTemp;
     }
 
@@ -107,8 +110,38 @@ public class HelloController {
      */
     public All getAllProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object2 = root.getJSONObject("all");
-        return mapper.readValue(object2.toString(), All.class);
+        JSONObject object1 = root.getJSONObject("all");
+        return mapper.readValue(object1.toString(), All.class);
     }
+
+    public ItemData getItemDataProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("itemData");
+        ItemData idTemp = new ItemData();
+        WeaponAssaultRifle ar = getARProperties(object1);
+
+        idTemp.setWeaponAssaultRifle(ar);
+
+        return idTemp;
+    }
+
+    public WeaponAssaultRifle getARProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("weapon_assault_rifle");
+        WeaponAssaultRifle arTemp = new WeaponAssaultRifle();
+        Iw8ArTango21 ram = getRamProperties(object1);
+
+        arTemp.setIw8ArTango21(ram);
+
+        return arTemp;
+    }
+
+    public Iw8ArTango21 getRamProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("iw8_ar_tango21");
+        return mapper.readValue(object1.toString(), Iw8ArTango21.class);
+    }
+
+
 
 }
