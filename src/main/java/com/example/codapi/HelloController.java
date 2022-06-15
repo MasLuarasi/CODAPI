@@ -31,8 +31,6 @@ public class HelloController {
     @FXML
     private Button submit;
 
-    private String responseBody;
-
     private String username;
 
     private ObjectMapper mapper;
@@ -55,21 +53,20 @@ public class HelloController {
                 .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        responseBody = response.body();//Assign the HTTP response to a string.
-        responseBody = removeProperties(responseBody);//Remove the properties field and corresponding brackets from the response.
+        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
         evaluateData(responseBody);//Start working on it.
     }
 
     /**
-     * Removing all the Properties field from the response along with their corresponding '}'.
-     * With this, we do not have to deal with Properties1-130+.java files.
+     * Removing all the Properties' field from the response along with their corresponding '}'.
+     * With this, we do not have to deal with 130+ Properties files.
      * @param data The HTTP response body as a string.
      * @return The modified response that can be mapped with the files we have in the directory.
      */
     public String removeProperties(String data)
     {
         data = data.replaceAll("\"properties\":\\{", "");
-        data = data.replaceAll("\\}\\},", "\\},");
+        data = data.replaceAll("}},", "\\},");
         data += '}';//Have to add an extra bracket at the end to make it valid.
         return data;
     }
@@ -78,7 +75,7 @@ public class HelloController {
      * Taking in the modified response body, we can now map the data to its corresponding class.
      * Even though there are a lot of classes, we will not be using all of them, but a decent amount still.
      * @param data The modified HTTP response body
-     * @throws IOException
+     * @throws IOException JSON stuff
      */
     public void evaluateData(String data) throws IOException
     {
@@ -91,7 +88,7 @@ public class HelloController {
     /**
      * Assign the data that belongs to the Lifetime class.
      * @return Lifetime object that is linked to the All object/class
-     * @throws JsonProcessingException
+     * @throws JsonProcessingException JSON stuff
      */
     public Lifetime getLifetimeProperties() throws JsonProcessingException
     {
@@ -106,13 +103,12 @@ public class HelloController {
      * Map the data for the All object to its class and corresponding variables.
      * @param root JSONObject. All is located within the Lifetime field, so we need to start from there, and then extract "all"
      * @return All object with all of its data set.
-     * @throws JsonProcessingException
+     * @throws JsonProcessingException JSON stuff
      */
     public All getAllProperties(JSONObject root) throws JsonProcessingException
     {
         JSONObject object2 = root.getJSONObject("all");
-        All aTemp = mapper.readValue(object2.toString(), All.class);
-        return aTemp;
+        return mapper.readValue(object2.toString(), All.class);
     }
 
 }
