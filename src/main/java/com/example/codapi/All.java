@@ -1200,4 +1200,23 @@ public class All {
         return sb.toString();
     }
 
+    public String printEssential()
+    {
+        StringBuilder ret = new StringBuilder();
+        ret.append("Kills:\t" + this.kills + "\n");
+        ret.append("Deaths:\t" + this.deaths + "\n");
+        ret.append("K/D Ratio:\t" + this.kdRatio + "\n");
+        ret.append("Accuracy: \t" + this.accuracy + "\n");
+        ret.append("Games Played:\t" + this.gamesPlayed + "\n");
+        ret.append("Wins:\t" + this.wins + "\n");
+        ret.append("Losses:\t" + this.losses + "\n");
+        ret.append("W/L Ratio:\t" + this.winLossRatio + "\n");
+        ret.append("Most Kills in a Match:\t" + this.recordKillsInAMatch + "\n");
+        ret.append("Most Deaths in a Match:\t" + this.recordDeathsInAMatch + "\n");
+        ret.append("Longest Kill Streak in a Match:\t" + this.recordKillStreak + "\n");
+        ret.append("Best K/D in a Match:\t" + this.bestKD + "\n");
+        ret.append("Total Time Played:\t" + this.timePlayedTotal + "\n");
+        return ret.toString();
+    }
+
 }

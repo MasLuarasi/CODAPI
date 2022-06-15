@@ -1,24 +1,24 @@
 package com.example.codapi;
 
-import com.fasterxml.jackson.core.JsonGenerator;
+//import com.fasterxml.jackson.core.JsonGenerator;
+//import com.fasterxml.jackson.core.JsonProcessingException;
+//import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.*;
 
 import org.json.*;
 
-import java.io.DataInput;
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.net.URI;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import java.net.URI;
-import java.util.Map;
+//import java.util.Map;
 
 public class HelloController {
 
@@ -34,6 +34,10 @@ public class HelloController {
     private String responseBody;
 
     private String username;
+
+    private ObjectMapper mapper;
+
+    private JSONObject object;
 
     @FXML
     protected void onSubmitButtonClick() throws IOException, InterruptedException
@@ -51,75 +55,64 @@ public class HelloController {
                 .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        responseBody = response.body();
-        responseBody = removeProperties(responseBody);
-        evaluateData(responseBody);
+        responseBody = response.body();//Assign the HTTP response to a string.
+        responseBody = removeProperties(responseBody);//Remove the properties field and corresponding brackets from the response.
+        evaluateData(responseBody);//Start working on it.
     }
 
+    /**
+     * Removing all the Properties field from the response along with their corresponding '}'.
+     * With this, we do not have to deal with Properties1-130+.java files.
+     * @param data The HTTP response body as a string.
+     * @return The modified response that can be mapped with the files we have in the directory.
+     */
     public String removeProperties(String data)
     {
         data = data.replaceAll("\"properties\":\\{", "");
         data = data.replaceAll("\\}\\},", "\\},");
-        data += '}';
+        data += '}';//Have to add an extra bracket at the end to make it valid.
         return data;
     }
 
+    /**
+     * Taking in the modified response body, we can now map the data to its corresponding class.
+     * Even though there are a lot of classes, we will not be using all of them, but a decent amount still.
+     * @param data The modified HTTP response body
+     * @throws IOException
+     */
     public void evaluateData(String data) throws IOException
     {
-        JSONObject object = new JSONObject(data);
-        JSONObject object1 = object.getJSONObject("lifetime");
-        JSONObject object2 = object1.getJSONObject("all");
-        System.out.println(object2.toString());
+        object = new JSONObject(data);//Define the JSONObject global variable
+        mapper = new ObjectMapper();//Define the ObjectMapper global variable we need to map the data to its class.
+        Lifetime lifetime = getLifetimeProperties();
+        System.out.println(lifetime.getAll().printEssential());
+    }
 
-        ObjectMapper mapper = new ObjectMapper();
-        All a = mapper.readValue(object2.toString(), All.class);
-        System.out.println(a.getAccuracy());
+    /**
+     * Assign the data that belongs to the Lifetime class.
+     * @return Lifetime object that is linked to the All object/class
+     * @throws JsonProcessingException
+     */
+    public Lifetime getLifetimeProperties() throws JsonProcessingException
+    {
+        JSONObject object1 = object.getJSONObject("lifetime");
+        All all = getAllProperties(object1);
+        Lifetime lTemp = new Lifetime();
+        lTemp.setAll(all);
+        return lTemp;
+    }
+
+    /**
+     * Map the data for the All object to its class and corresponding variables.
+     * @param root JSONObject. All is located within the Lifetime field, so we need to start from there, and then extract "all"
+     * @return All object with all of its data set.
+     * @throws JsonProcessingException
+     */
+    public All getAllProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object2 = root.getJSONObject("all");
+        All aTemp = mapper.readValue(object2.toString(), All.class);
+        return aTemp;
     }
 
 }
-
-//                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/"+username+"/acti"))
-//                .method("GET", HttpRequest.BodyPublishers.noBody())
-
-//        weaponString = weaponString.replaceAll("properties:\\{", "");//Get rid of the properties bracket
-//        weaponString = weaponString.replaceAll("iw", "\n\tiw");//New line and indent each weapon. Temp formatting
-//        weaponString = weaponString.replaceAll("weapon", "\nweapon");//New line each class. Temp formatting
-//        weaponString = weaponString.replaceAll("\\}}", "\\}");//Remove excess  closing brackets
-//        weaponString = weaponString.replaceAll("\\}}}", "\\}}");//Remove excess closing brackets
-
-/*
-    protected void getLifetimeStats(String lifetimeString)
-    {
-        LifetimeStats lifetimeStats = new LifetimeStats();//Create lifetimeStats to represent the user
-        lifetimeString = lifetimeString.substring(lifetimeString.indexOf("\"recordLongest"), lifetimeString.indexOf("mode")-4);
-        lifetimeString = lifetimeString.replaceAll("\"", "");//Modify HTTP response to only include lifetime stats
-                                                                             //and get rid of quotation marks.
-        String[] k = lifetimeString.split(",");//Each lifetime stat and its value are split into String array
-        long startTime = System.currentTimeMillis();
-        for (String s : k)
-        {
-            if (s.contains("kills")) {lifetimeStats.setKills(getVal(s));}
-            else if (s.contains("deaths")) {lifetimeStats.setDeaths(getVal(s));}
-            else if (s.contains("kdRatio")) {lifetimeStats.setKdRatio(getVal(s));}
-            else if (s.contains("accuracy")) {lifetimeStats.setAccuracy(getVal(s));}
-            else if (s.contains("gamesPlayed")) {lifetimeStats.setGamesPlayed(getVal(s));}
-            else if (s.contains("winLossRatio")) {lifetimeStats.setWlRatio(getVal(s));}
-            else if (s.contains("LongestWinStreak")) {lifetimeStats.setLongestWinStreak(getVal(s));}
-            else if (s.contains("currentWinStreak")) {lifetimeStats.setCurrentWinStreak(getVal(s));}
-            else if (s.contains("KillStreak")) {lifetimeStats.setLongestKillStreak(getVal(s));}
-            else if (s.contains("bestKills")) {lifetimeStats.setMostKills(getVal(s));}
-            else if (s.contains("bestKD")) {lifetimeStats.setBestKD(getVal(s));}
-            else if (s.contains("timePlayed")) {lifetimeStats.setTimePlayed(getVal(s));}
-        }//Pick out the fields we want and assign them to the variables in the class.
-        System.out.println(lifetimeStats);
-        long endTime = System.currentTimeMillis();
-        System.out.println("That took " + (endTime - startTime) + " milliseconds");
-    }
-
- */
-
-//    List<LifetimeStats> o = mapper.reader()
-//            .forType(new TypeReference<List<LifetimeStats>>() {})
-//            .readValue(data);
-
-
