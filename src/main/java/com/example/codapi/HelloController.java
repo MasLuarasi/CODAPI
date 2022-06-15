@@ -3,22 +3,22 @@ package com.example.codapi;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.*;
 
+import org.json.*;
+
+import java.io.DataInput;
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import com.fasterxml.jackson.databind.SerializerProvider;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.net.URI;
-import java.util.List;
+import java.util.Map;
 
 public class HelloController {
 
@@ -31,14 +31,13 @@ public class HelloController {
     @FXML
     private Button submit;
 
-    private HttpResponse<String> response;
-
     private String responseBody;
 
     private String username;
 
     @FXML
-    protected void onSubmitButtonClick() throws IOException, InterruptedException {
+    protected void onSubmitButtonClick() throws IOException, InterruptedException
+    {
 //        username = inputName.getText().strip();
 //        welcomeText.setVisible(false);
 //        inputName.setVisible(false);
@@ -51,40 +50,37 @@ public class HelloController {
                 .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
                 .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
                 .build();
-        response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         responseBody = response.body();
+        responseBody = removeProperties(responseBody);
         evaluateData(responseBody);
     }
 
-
-    public void evaluateData(String data) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-//        String s = "{\"title\":\"mw\",\"platform\":\"uno\",\"username\":\"General Kenobi#7520759\",\"type\":\"mp\",\"level\":122,\"maxLevel\":1,\"levelXpRemainder\":13306,\"levelXpGained\":29594,\"prestige\":0,\"prestigeId\":0,\"maxPrestige\":0,\"totalXp\":2682515,\"paragonRank\":0,\"paragonId\":0,\"s\":1,\"p\":1}";
-        Iw8ArAnovember94 arAnovember94 = mapper.readValue(data, Iw8ArAnovember94.class);
-        Properties__32 p = mapper.readValue(data, Properties__32.class);
-        System.out.println(p.getAccuracy());
-//        System.out.println(arAnovember94.getProperties().getAccuracy());
-        System.out.println("Done");
-    }
-
-    public double getVal(String key)
+    public String removeProperties(String data)
     {
-        return Float.parseFloat(key.substring(key.indexOf(":")+1));
+        data = data.replaceAll("\"properties\":\\{", "");
+        data = data.replaceAll("\\}\\},", "\\},");
+        data += '}';
+        return data;
     }
+
+    public void evaluateData(String data) throws IOException
+    {
+        JSONObject object = new JSONObject(data);
+        JSONObject object1 = object.getJSONObject("lifetime");
+        JSONObject object2 = object1.getJSONObject("all");
+        System.out.println(object2.toString());
+
+        ObjectMapper mapper = new ObjectMapper();
+        All a = mapper.readValue(object2.toString(), All.class);
+        System.out.println(a.getAccuracy());
+    }
+
 }
 
 //                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/"+username+"/acti"))
 //                .method("GET", HttpRequest.BodyPublishers.noBody())
-//ObjectMapper mapper = new ObjectMapper();
-//    List<LifetimeStats> ls = mapper.reader()
-//            .forType(new TypeReference<List<LifetimeStats>>() {})
-//            .readValue(a);
-//        weaponString = weaponString.substring(weaponString.indexOf("\"weapon"), weaponString.indexOf("scorestreakData"));
-//        weaponString = weaponString.substring(0, weaponString.indexOf("\"tacticals")) +
-//                       weaponString.substring(weaponString.indexOf("\"weapon_lmg"), weaponString.indexOf("\"supers")) +
-//                       weaponString.substring(weaponString.indexOf("\"weapon_pistol"));//Modify the HTTP response string to only include the weapon classes
-//        weaponString = weaponString.substring(67,195);
-//        weaponString = weaponString.replaceAll("\"", "");//Get rid of quotes
+
 //        weaponString = weaponString.replaceAll("properties:\\{", "");//Get rid of the properties bracket
 //        weaponString = weaponString.replaceAll("iw", "\n\tiw");//New line and indent each weapon. Temp formatting
 //        weaponString = weaponString.replaceAll("weapon", "\nweapon");//New line each class. Temp formatting

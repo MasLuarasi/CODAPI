@@ -26,6 +26,24 @@ public class ScorestreakData {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public ScorestreakData() {
+    }
+
+    /**
+     * 
+     * @param lethalScorestreakData
+     * @param supportScorestreakData
+     */
+    public ScorestreakData(LethalScorestreakData lethalScorestreakData, SupportScorestreakData supportScorestreakData) {
+        super();
+        this.lethalScorestreakData = lethalScorestreakData;
+        this.supportScorestreakData = supportScorestreakData;
+    }
+
     @JsonProperty("lethalScorestreakData")
     public LethalScorestreakData getLethalScorestreakData() {
         return lethalScorestreakData;
@@ -54,6 +72,30 @@ public class ScorestreakData {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(ScorestreakData.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("lethalScorestreakData");
+        sb.append('=');
+        sb.append(((this.lethalScorestreakData == null)?"<null>":this.lethalScorestreakData));
+        sb.append(',');
+        sb.append("supportScorestreakData");
+        sb.append('=');
+        sb.append(((this.supportScorestreakData == null)?"<null>":this.supportScorestreakData));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

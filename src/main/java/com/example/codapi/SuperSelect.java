@@ -13,24 +13,85 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "properties"
+    "kills",
+    "misc1",
+    "misc2",
+    "uses"
 })
 @Generated("jsonschema2pojo")
 public class SuperSelect {
 
-    @JsonProperty("properties")
-    private Properties__85 properties;
+    @JsonProperty("kills")
+    private Integer kills;
+    @JsonProperty("misc1")
+    private Integer misc1;
+    @JsonProperty("misc2")
+    private Integer misc2;
+    @JsonProperty("uses")
+    private Integer uses;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("properties")
-    public Properties__85 getProperties() {
-        return properties;
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public SuperSelect() {
     }
 
-    @JsonProperty("properties")
-    public void setProperties(Properties__85 properties) {
-        this.properties = properties;
+    /**
+     * 
+     * @param kills
+     * @param misc1
+     * @param misc2
+     * @param uses
+     */
+    public SuperSelect(Integer kills, Integer misc1, Integer misc2, Integer uses) {
+        super();
+        this.kills = kills;
+        this.misc1 = misc1;
+        this.misc2 = misc2;
+        this.uses = uses;
+    }
+
+    @JsonProperty("kills")
+    public Integer getKills() {
+        return kills;
+    }
+
+    @JsonProperty("kills")
+    public void setKills(Integer kills) {
+        this.kills = kills;
+    }
+
+    @JsonProperty("misc1")
+    public Integer getMisc1() {
+        return misc1;
+    }
+
+    @JsonProperty("misc1")
+    public void setMisc1(Integer misc1) {
+        this.misc1 = misc1;
+    }
+
+    @JsonProperty("misc2")
+    public Integer getMisc2() {
+        return misc2;
+    }
+
+    @JsonProperty("misc2")
+    public void setMisc2(Integer misc2) {
+        this.misc2 = misc2;
+    }
+
+    @JsonProperty("uses")
+    public Integer getUses() {
+        return uses;
+    }
+
+    @JsonProperty("uses")
+    public void setUses(Integer uses) {
+        this.uses = uses;
     }
 
     @JsonAnyGetter
@@ -41,6 +102,38 @@ public class SuperSelect {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SuperSelect.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("kills");
+        sb.append('=');
+        sb.append(((this.kills == null)?"<null>":this.kills));
+        sb.append(',');
+        sb.append("misc1");
+        sb.append('=');
+        sb.append(((this.misc1 == null)?"<null>":this.misc1));
+        sb.append(',');
+        sb.append("misc2");
+        sb.append('=');
+        sb.append(((this.misc2 == null)?"<null>":this.misc2));
+        sb.append(',');
+        sb.append("uses");
+        sb.append('=');
+        sb.append(((this.uses == null)?"<null>":this.uses));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

@@ -59,6 +59,46 @@ public class Supers {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Supers() {
+    }
+
+    /**
+     * 
+     * @param superFulton
+     * @param superReconDrone
+     * @param superAmmoDrop
+     * @param superTrophy
+     * @param superSelect
+     * @param superWeaponDrop
+     * @param superSupplyDrop
+     * @param superEmpDrone
+     * @param superDeadsilence
+     * @param superArmorDrop
+     * @param superTacInsert
+     * @param superTacCover
+     * @param superSupportBox
+     */
+    public Supers(SuperEmpDrone superEmpDrone, SuperTrophy superTrophy, SuperAmmoDrop superAmmoDrop, SuperWeaponDrop superWeaponDrop, SuperFulton superFulton, SuperArmorDrop superArmorDrop, SuperSelect superSelect, SuperTacInsert superTacInsert, SuperReconDrone superReconDrone, SuperDeadsilence superDeadsilence, SuperSupplyDrop superSupplyDrop, SuperTacCover superTacCover, SuperSupportBox superSupportBox) {
+        super();
+        this.superEmpDrone = superEmpDrone;
+        this.superTrophy = superTrophy;
+        this.superAmmoDrop = superAmmoDrop;
+        this.superWeaponDrop = superWeaponDrop;
+        this.superFulton = superFulton;
+        this.superArmorDrop = superArmorDrop;
+        this.superSelect = superSelect;
+        this.superTacInsert = superTacInsert;
+        this.superReconDrone = superReconDrone;
+        this.superDeadsilence = superDeadsilence;
+        this.superSupplyDrop = superSupplyDrop;
+        this.superTacCover = superTacCover;
+        this.superSupportBox = superSupportBox;
+    }
+
     @JsonProperty("super_emp_drone")
     public SuperEmpDrone getSuperEmpDrone() {
         return superEmpDrone;
@@ -197,6 +237,74 @@ public class Supers {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Supers.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("superEmpDrone");
+        sb.append('=');
+        sb.append(((this.superEmpDrone == null)?"<null>":this.superEmpDrone));
+        sb.append(',');
+        sb.append("superTrophy");
+        sb.append('=');
+        sb.append(((this.superTrophy == null)?"<null>":this.superTrophy));
+        sb.append(',');
+        sb.append("superAmmoDrop");
+        sb.append('=');
+        sb.append(((this.superAmmoDrop == null)?"<null>":this.superAmmoDrop));
+        sb.append(',');
+        sb.append("superWeaponDrop");
+        sb.append('=');
+        sb.append(((this.superWeaponDrop == null)?"<null>":this.superWeaponDrop));
+        sb.append(',');
+        sb.append("superFulton");
+        sb.append('=');
+        sb.append(((this.superFulton == null)?"<null>":this.superFulton));
+        sb.append(',');
+        sb.append("superArmorDrop");
+        sb.append('=');
+        sb.append(((this.superArmorDrop == null)?"<null>":this.superArmorDrop));
+        sb.append(',');
+        sb.append("superSelect");
+        sb.append('=');
+        sb.append(((this.superSelect == null)?"<null>":this.superSelect));
+        sb.append(',');
+        sb.append("superTacInsert");
+        sb.append('=');
+        sb.append(((this.superTacInsert == null)?"<null>":this.superTacInsert));
+        sb.append(',');
+        sb.append("superReconDrone");
+        sb.append('=');
+        sb.append(((this.superReconDrone == null)?"<null>":this.superReconDrone));
+        sb.append(',');
+        sb.append("superDeadsilence");
+        sb.append('=');
+        sb.append(((this.superDeadsilence == null)?"<null>":this.superDeadsilence));
+        sb.append(',');
+        sb.append("superSupplyDrop");
+        sb.append('=');
+        sb.append(((this.superSupplyDrop == null)?"<null>":this.superSupplyDrop));
+        sb.append(',');
+        sb.append("superTacCover");
+        sb.append('=');
+        sb.append(((this.superTacCover == null)?"<null>":this.superTacCover));
+        sb.append(',');
+        sb.append("superSupportBox");
+        sb.append('=');
+        sb.append(((this.superSupportBox == null)?"<null>":this.superSupportBox));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

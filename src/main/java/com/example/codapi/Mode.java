@@ -4,7 +4,6 @@ package com.example.codapi;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
-
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -83,6 +82,62 @@ public class Mode {
     private Infect infect;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Mode() {
+    }
+
+    /**
+     * 
+     * @param hcDom
+     * @param gun
+     * @param dom
+     * @param brAll
+     * @param war
+     * @param hq
+     * @param koth
+     * @param conf
+     * @param hcWar
+     * @param arena
+     * @param br
+     * @param sd
+     * @param grnd
+     * @param cyber
+     * @param hcConf
+     * @param hcHq
+     * @param brDmz
+     * @param hcSd
+     * @param arm
+     * @param hcCyber
+     * @param infect
+     */
+    public Mode(Gun gun, Dom dom, War war, Hq hq, HcDom hcDom, HcConf hcConf, Koth koth, Conf conf, HcHq hcHq, Arena arena, BrDmz brDmz, Br br, Sd sd, Grnd grnd, Cyber cyber, HcWar hcWar, BrAll brAll, HcSd hcSd, Arm arm, HcCyber hcCyber, Infect infect) {
+        super();
+        this.gun = gun;
+        this.dom = dom;
+        this.war = war;
+        this.hq = hq;
+        this.hcDom = hcDom;
+        this.hcConf = hcConf;
+        this.koth = koth;
+        this.conf = conf;
+        this.hcHq = hcHq;
+        this.arena = arena;
+        this.brDmz = brDmz;
+        this.br = br;
+        this.sd = sd;
+        this.grnd = grnd;
+        this.cyber = cyber;
+        this.hcWar = hcWar;
+        this.brAll = brAll;
+        this.hcSd = hcSd;
+        this.arm = arm;
+        this.hcCyber = hcCyber;
+        this.infect = infect;
+    }
 
     @JsonProperty("gun")
     public Gun getGun() {
@@ -302,6 +357,106 @@ public class Mode {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Mode.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("gun");
+        sb.append('=');
+        sb.append(((this.gun == null)?"<null>":this.gun));
+        sb.append(',');
+        sb.append("dom");
+        sb.append('=');
+        sb.append(((this.dom == null)?"<null>":this.dom));
+        sb.append(',');
+        sb.append("war");
+        sb.append('=');
+        sb.append(((this.war == null)?"<null>":this.war));
+        sb.append(',');
+        sb.append("hq");
+        sb.append('=');
+        sb.append(((this.hq == null)?"<null>":this.hq));
+        sb.append(',');
+        sb.append("hcDom");
+        sb.append('=');
+        sb.append(((this.hcDom == null)?"<null>":this.hcDom));
+        sb.append(',');
+        sb.append("hcConf");
+        sb.append('=');
+        sb.append(((this.hcConf == null)?"<null>":this.hcConf));
+        sb.append(',');
+        sb.append("koth");
+        sb.append('=');
+        sb.append(((this.koth == null)?"<null>":this.koth));
+        sb.append(',');
+        sb.append("conf");
+        sb.append('=');
+        sb.append(((this.conf == null)?"<null>":this.conf));
+        sb.append(',');
+        sb.append("hcHq");
+        sb.append('=');
+        sb.append(((this.hcHq == null)?"<null>":this.hcHq));
+        sb.append(',');
+        sb.append("arena");
+        sb.append('=');
+        sb.append(((this.arena == null)?"<null>":this.arena));
+        sb.append(',');
+        sb.append("brDmz");
+        sb.append('=');
+        sb.append(((this.brDmz == null)?"<null>":this.brDmz));
+        sb.append(',');
+        sb.append("br");
+        sb.append('=');
+        sb.append(((this.br == null)?"<null>":this.br));
+        sb.append(',');
+        sb.append("sd");
+        sb.append('=');
+        sb.append(((this.sd == null)?"<null>":this.sd));
+        sb.append(',');
+        sb.append("grnd");
+        sb.append('=');
+        sb.append(((this.grnd == null)?"<null>":this.grnd));
+        sb.append(',');
+        sb.append("cyber");
+        sb.append('=');
+        sb.append(((this.cyber == null)?"<null>":this.cyber));
+        sb.append(',');
+        sb.append("hcWar");
+        sb.append('=');
+        sb.append(((this.hcWar == null)?"<null>":this.hcWar));
+        sb.append(',');
+        sb.append("brAll");
+        sb.append('=');
+        sb.append(((this.brAll == null)?"<null>":this.brAll));
+        sb.append(',');
+        sb.append("hcSd");
+        sb.append('=');
+        sb.append(((this.hcSd == null)?"<null>":this.hcSd));
+        sb.append(',');
+        sb.append("arm");
+        sb.append('=');
+        sb.append(((this.arm == null)?"<null>":this.arm));
+        sb.append(',');
+        sb.append("hcCyber");
+        sb.append('=');
+        sb.append(((this.hcCyber == null)?"<null>":this.hcCyber));
+        sb.append(',');
+        sb.append("infect");
+        sb.append('=');
+        sb.append(((this.infect == null)?"<null>":this.infect));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

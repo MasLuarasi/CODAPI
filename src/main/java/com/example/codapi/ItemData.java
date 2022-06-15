@@ -59,6 +59,46 @@ public class ItemData {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public ItemData() {
+    }
+
+    /**
+     * 
+     * @param weaponSmg
+     * @param weaponAssaultRifle
+     * @param weaponOther
+     * @param weaponShotgun
+     * @param weaponSniper
+     * @param weaponMarksman
+     * @param tacticals
+     * @param lethals
+     * @param weaponPistol
+     * @param weaponMelee
+     * @param weaponLmg
+     * @param supers
+     * @param weaponLauncher
+     */
+    public ItemData(WeaponAssaultRifle weaponAssaultRifle, WeaponShotgun weaponShotgun, WeaponMarksman weaponMarksman, WeaponSniper weaponSniper, Tacticals tacticals, Lethals lethals, WeaponLmg weaponLmg, WeaponLauncher weaponLauncher, Supers supers, WeaponPistol weaponPistol, WeaponOther weaponOther, WeaponSmg weaponSmg, WeaponMelee weaponMelee) {
+        super();
+        this.weaponAssaultRifle = weaponAssaultRifle;
+        this.weaponShotgun = weaponShotgun;
+        this.weaponMarksman = weaponMarksman;
+        this.weaponSniper = weaponSniper;
+        this.tacticals = tacticals;
+        this.lethals = lethals;
+        this.weaponLmg = weaponLmg;
+        this.weaponLauncher = weaponLauncher;
+        this.supers = supers;
+        this.weaponPistol = weaponPistol;
+        this.weaponOther = weaponOther;
+        this.weaponSmg = weaponSmg;
+        this.weaponMelee = weaponMelee;
+    }
+
     @JsonProperty("weapon_assault_rifle")
     public WeaponAssaultRifle getWeaponAssaultRifle() {
         return weaponAssaultRifle;
@@ -197,6 +237,74 @@ public class ItemData {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(ItemData.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("weaponAssaultRifle");
+        sb.append('=');
+        sb.append(((this.weaponAssaultRifle == null)?"<null>":this.weaponAssaultRifle));
+        sb.append(',');
+        sb.append("weaponShotgun");
+        sb.append('=');
+        sb.append(((this.weaponShotgun == null)?"<null>":this.weaponShotgun));
+        sb.append(',');
+        sb.append("weaponMarksman");
+        sb.append('=');
+        sb.append(((this.weaponMarksman == null)?"<null>":this.weaponMarksman));
+        sb.append(',');
+        sb.append("weaponSniper");
+        sb.append('=');
+        sb.append(((this.weaponSniper == null)?"<null>":this.weaponSniper));
+        sb.append(',');
+        sb.append("tacticals");
+        sb.append('=');
+        sb.append(((this.tacticals == null)?"<null>":this.tacticals));
+        sb.append(',');
+        sb.append("lethals");
+        sb.append('=');
+        sb.append(((this.lethals == null)?"<null>":this.lethals));
+        sb.append(',');
+        sb.append("weaponLmg");
+        sb.append('=');
+        sb.append(((this.weaponLmg == null)?"<null>":this.weaponLmg));
+        sb.append(',');
+        sb.append("weaponLauncher");
+        sb.append('=');
+        sb.append(((this.weaponLauncher == null)?"<null>":this.weaponLauncher));
+        sb.append(',');
+        sb.append("supers");
+        sb.append('=');
+        sb.append(((this.supers == null)?"<null>":this.supers));
+        sb.append(',');
+        sb.append("weaponPistol");
+        sb.append('=');
+        sb.append(((this.weaponPistol == null)?"<null>":this.weaponPistol));
+        sb.append(',');
+        sb.append("weaponOther");
+        sb.append('=');
+        sb.append(((this.weaponOther == null)?"<null>":this.weaponOther));
+        sb.append(',');
+        sb.append("weaponSmg");
+        sb.append('=');
+        sb.append(((this.weaponSmg == null)?"<null>":this.weaponSmg));
+        sb.append(',');
+        sb.append("weaponMelee");
+        sb.append('=');
+        sb.append(((this.weaponMelee == null)?"<null>":this.weaponMelee));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

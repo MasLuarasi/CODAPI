@@ -38,6 +38,32 @@ public class WeaponMarksman {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public WeaponMarksman() {
+    }
+
+    /**
+     * 
+     * @param iw8SnSbeta
+     * @param iw8SnRomeo700
+     * @param iw8SnCrossbow
+     * @param iw8SnMike14
+     * @param iw8SnKilo98
+     * @param iw8SnSksierra
+     */
+    public WeaponMarksman(Iw8SnSbeta iw8SnSbeta, Iw8SnCrossbow iw8SnCrossbow, Iw8SnRomeo700 iw8SnRomeo700, Iw8SnKilo98 iw8SnKilo98, Iw8SnMike14 iw8SnMike14, Iw8SnSksierra iw8SnSksierra) {
+        super();
+        this.iw8SnSbeta = iw8SnSbeta;
+        this.iw8SnCrossbow = iw8SnCrossbow;
+        this.iw8SnRomeo700 = iw8SnRomeo700;
+        this.iw8SnKilo98 = iw8SnKilo98;
+        this.iw8SnMike14 = iw8SnMike14;
+        this.iw8SnSksierra = iw8SnSksierra;
+    }
+
     @JsonProperty("iw8_sn_sbeta")
     public Iw8SnSbeta getIw8SnSbeta() {
         return iw8SnSbeta;
@@ -106,6 +132,46 @@ public class WeaponMarksman {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(WeaponMarksman.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("iw8SnSbeta");
+        sb.append('=');
+        sb.append(((this.iw8SnSbeta == null)?"<null>":this.iw8SnSbeta));
+        sb.append(',');
+        sb.append("iw8SnCrossbow");
+        sb.append('=');
+        sb.append(((this.iw8SnCrossbow == null)?"<null>":this.iw8SnCrossbow));
+        sb.append(',');
+        sb.append("iw8SnRomeo700");
+        sb.append('=');
+        sb.append(((this.iw8SnRomeo700 == null)?"<null>":this.iw8SnRomeo700));
+        sb.append(',');
+        sb.append("iw8SnKilo98");
+        sb.append('=');
+        sb.append(((this.iw8SnKilo98 == null)?"<null>":this.iw8SnKilo98));
+        sb.append(',');
+        sb.append("iw8SnMike14");
+        sb.append('=');
+        sb.append(((this.iw8SnMike14 == null)?"<null>":this.iw8SnMike14));
+        sb.append(',');
+        sb.append("iw8SnSksierra");
+        sb.append('=');
+        sb.append(((this.iw8SnSksierra == null)?"<null>":this.iw8SnSksierra));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

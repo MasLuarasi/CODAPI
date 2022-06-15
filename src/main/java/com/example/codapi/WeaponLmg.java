@@ -41,6 +41,34 @@ public class WeaponLmg {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public WeaponLmg() {
+    }
+
+    /**
+     * 
+     * @param iw8LmPkilo
+     * @param iw8LmMkilo3
+     * @param iw8LmKilo121
+     * @param iw8LmMgolf36
+     * @param iw8LmMgolf34
+     * @param iw8LmLima86
+     * @param iw8LmSierrax
+     */
+    public WeaponLmg(Iw8LmKilo121 iw8LmKilo121, Iw8LmMkilo3 iw8LmMkilo3, Iw8LmMgolf34 iw8LmMgolf34, Iw8LmLima86 iw8LmLima86, Iw8LmPkilo iw8LmPkilo, Iw8LmSierrax iw8LmSierrax, Iw8LmMgolf36 iw8LmMgolf36) {
+        super();
+        this.iw8LmKilo121 = iw8LmKilo121;
+        this.iw8LmMkilo3 = iw8LmMkilo3;
+        this.iw8LmMgolf34 = iw8LmMgolf34;
+        this.iw8LmLima86 = iw8LmLima86;
+        this.iw8LmPkilo = iw8LmPkilo;
+        this.iw8LmSierrax = iw8LmSierrax;
+        this.iw8LmMgolf36 = iw8LmMgolf36;
+    }
+
     @JsonProperty("iw8_lm_kilo121")
     public Iw8LmKilo121 getIw8LmKilo121() {
         return iw8LmKilo121;
@@ -119,6 +147,50 @@ public class WeaponLmg {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(WeaponLmg.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("iw8LmKilo121");
+        sb.append('=');
+        sb.append(((this.iw8LmKilo121 == null)?"<null>":this.iw8LmKilo121));
+        sb.append(',');
+        sb.append("iw8LmMkilo3");
+        sb.append('=');
+        sb.append(((this.iw8LmMkilo3 == null)?"<null>":this.iw8LmMkilo3));
+        sb.append(',');
+        sb.append("iw8LmMgolf34");
+        sb.append('=');
+        sb.append(((this.iw8LmMgolf34 == null)?"<null>":this.iw8LmMgolf34));
+        sb.append(',');
+        sb.append("iw8LmLima86");
+        sb.append('=');
+        sb.append(((this.iw8LmLima86 == null)?"<null>":this.iw8LmLima86));
+        sb.append(',');
+        sb.append("iw8LmPkilo");
+        sb.append('=');
+        sb.append(((this.iw8LmPkilo == null)?"<null>":this.iw8LmPkilo));
+        sb.append(',');
+        sb.append("iw8LmSierrax");
+        sb.append('=');
+        sb.append(((this.iw8LmSierrax == null)?"<null>":this.iw8LmSierrax));
+        sb.append(',');
+        sb.append("iw8LmMgolf36");
+        sb.append('=');
+        sb.append(((this.iw8LmMgolf36 == null)?"<null>":this.iw8LmMgolf36));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

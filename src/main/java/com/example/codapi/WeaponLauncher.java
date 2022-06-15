@@ -35,6 +35,30 @@ public class WeaponLauncher {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public WeaponLauncher() {
+    }
+
+    /**
+     * 
+     * @param iw8LaGromeo
+     * @param iw8LaRpapa7
+     * @param iw8LaMike32
+     * @param iw8LaJuliet
+     * @param iw8LaKgolf
+     */
+    public WeaponLauncher(Iw8LaGromeo iw8LaGromeo, Iw8LaRpapa7 iw8LaRpapa7, Iw8LaJuliet iw8LaJuliet, Iw8LaKgolf iw8LaKgolf, Iw8LaMike32 iw8LaMike32) {
+        super();
+        this.iw8LaGromeo = iw8LaGromeo;
+        this.iw8LaRpapa7 = iw8LaRpapa7;
+        this.iw8LaJuliet = iw8LaJuliet;
+        this.iw8LaKgolf = iw8LaKgolf;
+        this.iw8LaMike32 = iw8LaMike32;
+    }
+
     @JsonProperty("iw8_la_gromeo")
     public Iw8LaGromeo getIw8LaGromeo() {
         return iw8LaGromeo;
@@ -93,6 +117,42 @@ public class WeaponLauncher {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(WeaponLauncher.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("iw8LaGromeo");
+        sb.append('=');
+        sb.append(((this.iw8LaGromeo == null)?"<null>":this.iw8LaGromeo));
+        sb.append(',');
+        sb.append("iw8LaRpapa7");
+        sb.append('=');
+        sb.append(((this.iw8LaRpapa7 == null)?"<null>":this.iw8LaRpapa7));
+        sb.append(',');
+        sb.append("iw8LaJuliet");
+        sb.append('=');
+        sb.append(((this.iw8LaJuliet == null)?"<null>":this.iw8LaJuliet));
+        sb.append(',');
+        sb.append("iw8LaKgolf");
+        sb.append('=');
+        sb.append(((this.iw8LaKgolf == null)?"<null>":this.iw8LaKgolf));
+        sb.append(',');
+        sb.append("iw8LaMike32");
+        sb.append('=');
+        sb.append(((this.iw8LaMike32 == null)?"<null>":this.iw8LaMike32));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

@@ -13,24 +13,55 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "properties"
+    "extraStat1",
+    "uses"
 })
 @Generated("jsonschema2pojo")
 public class EquipSnapshotGrenade {
 
-    @JsonProperty("properties")
-    private Properties__52 properties;
+    @JsonProperty("extraStat1")
+    private Integer extraStat1;
+    @JsonProperty("uses")
+    private Integer uses;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("properties")
-    public Properties__52 getProperties() {
-        return properties;
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public EquipSnapshotGrenade() {
     }
 
-    @JsonProperty("properties")
-    public void setProperties(Properties__52 properties) {
-        this.properties = properties;
+    /**
+     * 
+     * @param extraStat1
+     * @param uses
+     */
+    public EquipSnapshotGrenade(Integer extraStat1, Integer uses) {
+        super();
+        this.extraStat1 = extraStat1;
+        this.uses = uses;
+    }
+
+    @JsonProperty("extraStat1")
+    public Integer getExtraStat1() {
+        return extraStat1;
+    }
+
+    @JsonProperty("extraStat1")
+    public void setExtraStat1(Integer extraStat1) {
+        this.extraStat1 = extraStat1;
+    }
+
+    @JsonProperty("uses")
+    public Integer getUses() {
+        return uses;
+    }
+
+    @JsonProperty("uses")
+    public void setUses(Integer uses) {
+        this.uses = uses;
     }
 
     @JsonAnyGetter
@@ -41,6 +72,30 @@ public class EquipSnapshotGrenade {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(EquipSnapshotGrenade.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("extraStat1");
+        sb.append('=');
+        sb.append(((this.extraStat1 == null)?"<null>":this.extraStat1));
+        sb.append(',');
+        sb.append("uses");
+        sb.append('=');
+        sb.append(((this.uses == null)?"<null>":this.uses));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

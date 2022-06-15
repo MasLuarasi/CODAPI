@@ -13,20 +13,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "precision_airstrike",
-        "cruise_predator",
-        "manual_turret",
-        "white_phosphorus",
-        "hover_jet",
-        "chopper_gunner",
-        "gunship",
-        "sentry_gun",
-        "toma_strike",
-        "nuke",
-        "juggernaut",
-        "pac_sentry",
-        "chopper_support",
-        "bradley"
+    "precision_airstrike",
+    "cruise_predator",
+    "manual_turret",
+    "white_phosphorus",
+    "hover_jet",
+    "chopper_gunner",
+    "gunship",
+    "sentry_gun",
+    "toma_strike",
+    "nuke",
+    "juggernaut",
+    "pac_sentry",
+    "chopper_support",
+    "bradley"
 })
 @Generated("jsonschema2pojo")
 public class LethalScorestreakData {
@@ -61,6 +61,48 @@ public class LethalScorestreakData {
     private Bradley bradley;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public LethalScorestreakData() {
+    }
+
+    /**
+     * 
+     * @param precisionAirstrike
+     * @param pacSentry
+     * @param manualTurret
+     * @param chopperGunner
+     * @param cruisePredator
+     * @param tomaStrike
+     * @param hoverJet
+     * @param gunship
+     * @param nuke
+     * @param sentryGun
+     * @param whitePhosphorus
+     * @param juggernaut
+     * @param bradley
+     * @param chopperSupport
+     */
+    public LethalScorestreakData(PrecisionAirstrike precisionAirstrike, CruisePredator cruisePredator, ManualTurret manualTurret, WhitePhosphorus whitePhosphorus, HoverJet hoverJet, ChopperGunner chopperGunner, Gunship gunship, SentryGun sentryGun, TomaStrike tomaStrike, Nuke nuke, Juggernaut juggernaut, PacSentry pacSentry, ChopperSupport chopperSupport, Bradley bradley) {
+        super();
+        this.precisionAirstrike = precisionAirstrike;
+        this.cruisePredator = cruisePredator;
+        this.manualTurret = manualTurret;
+        this.whitePhosphorus = whitePhosphorus;
+        this.hoverJet = hoverJet;
+        this.chopperGunner = chopperGunner;
+        this.gunship = gunship;
+        this.sentryGun = sentryGun;
+        this.tomaStrike = tomaStrike;
+        this.nuke = nuke;
+        this.juggernaut = juggernaut;
+        this.pacSentry = pacSentry;
+        this.chopperSupport = chopperSupport;
+        this.bradley = bradley;
+    }
 
     @JsonProperty("precision_airstrike")
     public PrecisionAirstrike getPrecisionAirstrike() {
@@ -210,6 +252,78 @@ public class LethalScorestreakData {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(LethalScorestreakData.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("precisionAirstrike");
+        sb.append('=');
+        sb.append(((this.precisionAirstrike == null)?"<null>":this.precisionAirstrike));
+        sb.append(',');
+        sb.append("cruisePredator");
+        sb.append('=');
+        sb.append(((this.cruisePredator == null)?"<null>":this.cruisePredator));
+        sb.append(',');
+        sb.append("manualTurret");
+        sb.append('=');
+        sb.append(((this.manualTurret == null)?"<null>":this.manualTurret));
+        sb.append(',');
+        sb.append("whitePhosphorus");
+        sb.append('=');
+        sb.append(((this.whitePhosphorus == null)?"<null>":this.whitePhosphorus));
+        sb.append(',');
+        sb.append("hoverJet");
+        sb.append('=');
+        sb.append(((this.hoverJet == null)?"<null>":this.hoverJet));
+        sb.append(',');
+        sb.append("chopperGunner");
+        sb.append('=');
+        sb.append(((this.chopperGunner == null)?"<null>":this.chopperGunner));
+        sb.append(',');
+        sb.append("gunship");
+        sb.append('=');
+        sb.append(((this.gunship == null)?"<null>":this.gunship));
+        sb.append(',');
+        sb.append("sentryGun");
+        sb.append('=');
+        sb.append(((this.sentryGun == null)?"<null>":this.sentryGun));
+        sb.append(',');
+        sb.append("tomaStrike");
+        sb.append('=');
+        sb.append(((this.tomaStrike == null)?"<null>":this.tomaStrike));
+        sb.append(',');
+        sb.append("nuke");
+        sb.append('=');
+        sb.append(((this.nuke == null)?"<null>":this.nuke));
+        sb.append(',');
+        sb.append("juggernaut");
+        sb.append('=');
+        sb.append(((this.juggernaut == null)?"<null>":this.juggernaut));
+        sb.append(',');
+        sb.append("pacSentry");
+        sb.append('=');
+        sb.append(((this.pacSentry == null)?"<null>":this.pacSentry));
+        sb.append(',');
+        sb.append("chopperSupport");
+        sb.append('=');
+        sb.append(((this.chopperSupport == null)?"<null>":this.chopperSupport));
+        sb.append(',');
+        sb.append("bradley");
+        sb.append('=');
+        sb.append(((this.bradley == null)?"<null>":this.bradley));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

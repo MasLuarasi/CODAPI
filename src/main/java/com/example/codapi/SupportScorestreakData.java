@@ -38,6 +38,32 @@ public class SupportScorestreakData {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public SupportScorestreakData() {
+    }
+
+    /**
+     * 
+     * @param airdropMultiple
+     * @param airdrop
+     * @param scramblerDroneGuard
+     * @param uav
+     * @param radarDroneOverwatch
+     * @param directionalUav
+     */
+    public SupportScorestreakData(Airdrop airdrop, RadarDroneOverwatch radarDroneOverwatch, ScramblerDroneGuard scramblerDroneGuard, Uav uav, AirdropMultiple airdropMultiple, DirectionalUav directionalUav) {
+        super();
+        this.airdrop = airdrop;
+        this.radarDroneOverwatch = radarDroneOverwatch;
+        this.scramblerDroneGuard = scramblerDroneGuard;
+        this.uav = uav;
+        this.airdropMultiple = airdropMultiple;
+        this.directionalUav = directionalUav;
+    }
+
     @JsonProperty("airdrop")
     public Airdrop getAirdrop() {
         return airdrop;
@@ -106,6 +132,46 @@ public class SupportScorestreakData {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(SupportScorestreakData.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("airdrop");
+        sb.append('=');
+        sb.append(((this.airdrop == null)?"<null>":this.airdrop));
+        sb.append(',');
+        sb.append("radarDroneOverwatch");
+        sb.append('=');
+        sb.append(((this.radarDroneOverwatch == null)?"<null>":this.radarDroneOverwatch));
+        sb.append(',');
+        sb.append("scramblerDroneGuard");
+        sb.append('=');
+        sb.append(((this.scramblerDroneGuard == null)?"<null>":this.scramblerDroneGuard));
+        sb.append(',');
+        sb.append("uav");
+        sb.append('=');
+        sb.append(((this.uav == null)?"<null>":this.uav));
+        sb.append(',');
+        sb.append("airdropMultiple");
+        sb.append('=');
+        sb.append(((this.airdropMultiple == null)?"<null>":this.airdropMultiple));
+        sb.append(',');
+        sb.append("directionalUav");
+        sb.append('=');
+        sb.append(((this.directionalUav == null)?"<null>":this.directionalUav));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "all",
     "mode",
-    "map"
+    "map",
+    "engagement"
 })
 @Generated("jsonschema2pojo")
 public class Weekly {
@@ -26,8 +27,32 @@ public class Weekly {
     private Mode__1 mode;
     @JsonProperty("map")
     private Map__1 map;
+    @JsonProperty("engagement")
+    private Object engagement;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Weekly() {
+    }
+
+    /**
+     * 
+     * @param all
+     * @param mode
+     * @param engagement
+     * @param map
+     */
+    public Weekly(All__1 all, Mode__1 mode, Map__1 map, Object engagement) {
+        super();
+        this.all = all;
+        this.mode = mode;
+        this.map = map;
+        this.engagement = engagement;
+    }
 
     @JsonProperty("all")
     public All__1 getAll() {
@@ -59,6 +84,16 @@ public class Weekly {
         this.map = map;
     }
 
+    @JsonProperty("engagement")
+    public Object getEngagement() {
+        return engagement;
+    }
+
+    @JsonProperty("engagement")
+    public void setEngagement(Object engagement) {
+        this.engagement = engagement;
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
@@ -67,6 +102,38 @@ public class Weekly {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Weekly.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("all");
+        sb.append('=');
+        sb.append(((this.all == null)?"<null>":this.all));
+        sb.append(',');
+        sb.append("mode");
+        sb.append('=');
+        sb.append(((this.mode == null)?"<null>":this.mode));
+        sb.append(',');
+        sb.append("map");
+        sb.append('=');
+        sb.append(((this.map == null)?"<null>":this.map));
+        sb.append(',');
+        sb.append("engagement");
+        sb.append('=');
+        sb.append(((this.engagement == null)?"<null>":this.engagement));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

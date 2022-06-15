@@ -52,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "damageTaken"
 })
 @Generated("jsonschema2pojo")
-public class Properties__133 {
+public class Gun__1 {
 
     @JsonProperty("kills")
     private Integer kills;
@@ -65,7 +65,7 @@ public class Properties__133 {
     @JsonProperty("scoreXp")
     private Integer scoreXp;
     @JsonProperty("accuracy")
-    private Double accuracy;
+    private Integer accuracy;
     @JsonProperty("wallBangs")
     private Integer wallBangs;
     @JsonProperty("losses")
@@ -99,7 +99,7 @@ public class Properties__133 {
     @JsonProperty("shotsMissed")
     private Integer shotsMissed;
     @JsonProperty("scorePerGame")
-    private Double scorePerGame;
+    private Integer scorePerGame;
     @JsonProperty("timePlayed")
     private Integer timePlayed;
     @JsonProperty("headshotPercentage")
@@ -113,7 +113,7 @@ public class Properties__133 {
     @JsonProperty("seasonRank")
     private Integer seasonRank;
     @JsonProperty("wlRatio")
-    private Double wlRatio;
+    private Integer wlRatio;
     @JsonProperty("nearmisses")
     private Integer nearmisses;
     @JsonProperty("percentTimeMoving")
@@ -130,6 +130,94 @@ public class Properties__133 {
     private Integer damageTaken;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Gun__1() {
+    }
+
+    /**
+     * 
+     * @param kills
+     * @param medalXp
+     * @param matchXp
+     * @param averageSpeedDuringMatch
+     * @param scoreXp
+     * @param accuracy
+     * @param wallBangs
+     * @param losses
+     * @param avgLifeTime
+     * @param shotsLanded
+     * @param score
+     * @param totalXp
+     * @param headshots
+     * @param assists
+     * @param rank
+     * @param draws
+     * @param scorePerMinute
+     * @param distanceTraveled
+     * @param deaths
+     * @param wins
+     * @param kdRatio
+     * @param shotsMissed
+     * @param scorePerGame
+     * @param timePlayed
+     * @param headshotPercentage
+     * @param matchesPlayed
+     * @param executions
+     * @param suicides
+     * @param seasonRank
+     * @param wlRatio
+     * @param nearmisses
+     * @param percentTimeMoving
+     * @param miscXp
+     * @param longestStreak
+     * @param damageDone
+     * @param shotsFired
+     * @param damageTaken
+     */
+    public Gun__1(Integer kills, Integer medalXp, Integer matchXp, Double averageSpeedDuringMatch, Integer scoreXp, Integer accuracy, Integer wallBangs, Integer losses, Double avgLifeTime, Integer shotsLanded, Integer score, Integer totalXp, Integer headshots, Integer assists, Integer rank, Integer draws, Double scorePerMinute, Double distanceTraveled, Integer deaths, Integer wins, Double kdRatio, Integer shotsMissed, Integer scorePerGame, Integer timePlayed, Double headshotPercentage, Integer matchesPlayed, Integer executions, Integer suicides, Integer seasonRank, Integer wlRatio, Integer nearmisses, Double percentTimeMoving, Integer miscXp, Integer longestStreak, Integer damageDone, Integer shotsFired, Integer damageTaken) {
+        super();
+        this.kills = kills;
+        this.medalXp = medalXp;
+        this.matchXp = matchXp;
+        this.averageSpeedDuringMatch = averageSpeedDuringMatch;
+        this.scoreXp = scoreXp;
+        this.accuracy = accuracy;
+        this.wallBangs = wallBangs;
+        this.losses = losses;
+        this.avgLifeTime = avgLifeTime;
+        this.shotsLanded = shotsLanded;
+        this.score = score;
+        this.totalXp = totalXp;
+        this.headshots = headshots;
+        this.assists = assists;
+        this.rank = rank;
+        this.draws = draws;
+        this.scorePerMinute = scorePerMinute;
+        this.distanceTraveled = distanceTraveled;
+        this.deaths = deaths;
+        this.wins = wins;
+        this.kdRatio = kdRatio;
+        this.shotsMissed = shotsMissed;
+        this.scorePerGame = scorePerGame;
+        this.timePlayed = timePlayed;
+        this.headshotPercentage = headshotPercentage;
+        this.matchesPlayed = matchesPlayed;
+        this.executions = executions;
+        this.suicides = suicides;
+        this.seasonRank = seasonRank;
+        this.wlRatio = wlRatio;
+        this.nearmisses = nearmisses;
+        this.percentTimeMoving = percentTimeMoving;
+        this.miscXp = miscXp;
+        this.longestStreak = longestStreak;
+        this.damageDone = damageDone;
+        this.shotsFired = shotsFired;
+        this.damageTaken = damageTaken;
+    }
 
     @JsonProperty("kills")
     public Integer getKills() {
@@ -182,12 +270,12 @@ public class Properties__133 {
     }
 
     @JsonProperty("accuracy")
-    public Double getAccuracy() {
+    public Integer getAccuracy() {
         return accuracy;
     }
 
     @JsonProperty("accuracy")
-    public void setAccuracy(Double accuracy) {
+    public void setAccuracy(Integer accuracy) {
         this.accuracy = accuracy;
     }
 
@@ -352,12 +440,12 @@ public class Properties__133 {
     }
 
     @JsonProperty("scorePerGame")
-    public Double getScorePerGame() {
+    public Integer getScorePerGame() {
         return scorePerGame;
     }
 
     @JsonProperty("scorePerGame")
-    public void setScorePerGame(Double scorePerGame) {
+    public void setScorePerGame(Integer scorePerGame) {
         this.scorePerGame = scorePerGame;
     }
 
@@ -422,12 +510,12 @@ public class Properties__133 {
     }
 
     @JsonProperty("wlRatio")
-    public Double getWlRatio() {
+    public Integer getWlRatio() {
         return wlRatio;
     }
 
     @JsonProperty("wlRatio")
-    public void setWlRatio(Double wlRatio) {
+    public void setWlRatio(Integer wlRatio) {
         this.wlRatio = wlRatio;
     }
 
@@ -509,6 +597,170 @@ public class Properties__133 {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Gun__1 .class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("kills");
+        sb.append('=');
+        sb.append(((this.kills == null)?"<null>":this.kills));
+        sb.append(',');
+        sb.append("medalXp");
+        sb.append('=');
+        sb.append(((this.medalXp == null)?"<null>":this.medalXp));
+        sb.append(',');
+        sb.append("matchXp");
+        sb.append('=');
+        sb.append(((this.matchXp == null)?"<null>":this.matchXp));
+        sb.append(',');
+        sb.append("averageSpeedDuringMatch");
+        sb.append('=');
+        sb.append(((this.averageSpeedDuringMatch == null)?"<null>":this.averageSpeedDuringMatch));
+        sb.append(',');
+        sb.append("scoreXp");
+        sb.append('=');
+        sb.append(((this.scoreXp == null)?"<null>":this.scoreXp));
+        sb.append(',');
+        sb.append("accuracy");
+        sb.append('=');
+        sb.append(((this.accuracy == null)?"<null>":this.accuracy));
+        sb.append(',');
+        sb.append("wallBangs");
+        sb.append('=');
+        sb.append(((this.wallBangs == null)?"<null>":this.wallBangs));
+        sb.append(',');
+        sb.append("losses");
+        sb.append('=');
+        sb.append(((this.losses == null)?"<null>":this.losses));
+        sb.append(',');
+        sb.append("avgLifeTime");
+        sb.append('=');
+        sb.append(((this.avgLifeTime == null)?"<null>":this.avgLifeTime));
+        sb.append(',');
+        sb.append("shotsLanded");
+        sb.append('=');
+        sb.append(((this.shotsLanded == null)?"<null>":this.shotsLanded));
+        sb.append(',');
+        sb.append("score");
+        sb.append('=');
+        sb.append(((this.score == null)?"<null>":this.score));
+        sb.append(',');
+        sb.append("totalXp");
+        sb.append('=');
+        sb.append(((this.totalXp == null)?"<null>":this.totalXp));
+        sb.append(',');
+        sb.append("headshots");
+        sb.append('=');
+        sb.append(((this.headshots == null)?"<null>":this.headshots));
+        sb.append(',');
+        sb.append("assists");
+        sb.append('=');
+        sb.append(((this.assists == null)?"<null>":this.assists));
+        sb.append(',');
+        sb.append("rank");
+        sb.append('=');
+        sb.append(((this.rank == null)?"<null>":this.rank));
+        sb.append(',');
+        sb.append("draws");
+        sb.append('=');
+        sb.append(((this.draws == null)?"<null>":this.draws));
+        sb.append(',');
+        sb.append("scorePerMinute");
+        sb.append('=');
+        sb.append(((this.scorePerMinute == null)?"<null>":this.scorePerMinute));
+        sb.append(',');
+        sb.append("distanceTraveled");
+        sb.append('=');
+        sb.append(((this.distanceTraveled == null)?"<null>":this.distanceTraveled));
+        sb.append(',');
+        sb.append("deaths");
+        sb.append('=');
+        sb.append(((this.deaths == null)?"<null>":this.deaths));
+        sb.append(',');
+        sb.append("wins");
+        sb.append('=');
+        sb.append(((this.wins == null)?"<null>":this.wins));
+        sb.append(',');
+        sb.append("kdRatio");
+        sb.append('=');
+        sb.append(((this.kdRatio == null)?"<null>":this.kdRatio));
+        sb.append(',');
+        sb.append("shotsMissed");
+        sb.append('=');
+        sb.append(((this.shotsMissed == null)?"<null>":this.shotsMissed));
+        sb.append(',');
+        sb.append("scorePerGame");
+        sb.append('=');
+        sb.append(((this.scorePerGame == null)?"<null>":this.scorePerGame));
+        sb.append(',');
+        sb.append("timePlayed");
+        sb.append('=');
+        sb.append(((this.timePlayed == null)?"<null>":this.timePlayed));
+        sb.append(',');
+        sb.append("headshotPercentage");
+        sb.append('=');
+        sb.append(((this.headshotPercentage == null)?"<null>":this.headshotPercentage));
+        sb.append(',');
+        sb.append("matchesPlayed");
+        sb.append('=');
+        sb.append(((this.matchesPlayed == null)?"<null>":this.matchesPlayed));
+        sb.append(',');
+        sb.append("executions");
+        sb.append('=');
+        sb.append(((this.executions == null)?"<null>":this.executions));
+        sb.append(',');
+        sb.append("suicides");
+        sb.append('=');
+        sb.append(((this.suicides == null)?"<null>":this.suicides));
+        sb.append(',');
+        sb.append("seasonRank");
+        sb.append('=');
+        sb.append(((this.seasonRank == null)?"<null>":this.seasonRank));
+        sb.append(',');
+        sb.append("wlRatio");
+        sb.append('=');
+        sb.append(((this.wlRatio == null)?"<null>":this.wlRatio));
+        sb.append(',');
+        sb.append("nearmisses");
+        sb.append('=');
+        sb.append(((this.nearmisses == null)?"<null>":this.nearmisses));
+        sb.append(',');
+        sb.append("percentTimeMoving");
+        sb.append('=');
+        sb.append(((this.percentTimeMoving == null)?"<null>":this.percentTimeMoving));
+        sb.append(',');
+        sb.append("miscXp");
+        sb.append('=');
+        sb.append(((this.miscXp == null)?"<null>":this.miscXp));
+        sb.append(',');
+        sb.append("longestStreak");
+        sb.append('=');
+        sb.append(((this.longestStreak == null)?"<null>":this.longestStreak));
+        sb.append(',');
+        sb.append("damageDone");
+        sb.append('=');
+        sb.append(((this.damageDone == null)?"<null>":this.damageDone));
+        sb.append(',');
+        sb.append("shotsFired");
+        sb.append('=');
+        sb.append(((this.shotsFired == null)?"<null>":this.shotsFired));
+        sb.append(',');
+        sb.append("damageTaken");
+        sb.append('=');
+        sb.append(((this.damageTaken == null)?"<null>":this.damageTaken));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

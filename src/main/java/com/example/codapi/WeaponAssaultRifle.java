@@ -59,6 +59,46 @@ public class WeaponAssaultRifle {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public WeaponAssaultRifle() {
+    }
+
+    /**
+     * 
+     * @param iw8ArAkilo47
+     * @param iw8ArAnovember94
+     * @param iw8ArValpha
+     * @param iw8ArFalpha
+     * @param iw8ArGalima
+     * @param iw8ArKilo433
+     * @param iw8ArAsierra12
+     * @param iw8ArSierra552
+     * @param iw8ArScharlie
+     * @param iw8ArTango21
+     * @param iw8ArMike4
+     * @param iw8ArMcharlie
+     * @param iw8ArFalima
+     */
+    public WeaponAssaultRifle(Iw8ArTango21 iw8ArTango21, Iw8ArMike4 iw8ArMike4, Iw8ArValpha iw8ArValpha, Iw8ArFalpha iw8ArFalpha, Iw8ArMcharlie iw8ArMcharlie, Iw8ArAkilo47 iw8ArAkilo47, Iw8ArAsierra12 iw8ArAsierra12, Iw8ArGalima iw8ArGalima, Iw8ArSierra552 iw8ArSierra552, Iw8ArFalima iw8ArFalima, Iw8ArAnovember94 iw8ArAnovember94, Iw8ArKilo433 iw8ArKilo433, Iw8ArScharlie iw8ArScharlie) {
+        super();
+        this.iw8ArTango21 = iw8ArTango21;
+        this.iw8ArMike4 = iw8ArMike4;
+        this.iw8ArValpha = iw8ArValpha;
+        this.iw8ArFalpha = iw8ArFalpha;
+        this.iw8ArMcharlie = iw8ArMcharlie;
+        this.iw8ArAkilo47 = iw8ArAkilo47;
+        this.iw8ArAsierra12 = iw8ArAsierra12;
+        this.iw8ArGalima = iw8ArGalima;
+        this.iw8ArSierra552 = iw8ArSierra552;
+        this.iw8ArFalima = iw8ArFalima;
+        this.iw8ArAnovember94 = iw8ArAnovember94;
+        this.iw8ArKilo433 = iw8ArKilo433;
+        this.iw8ArScharlie = iw8ArScharlie;
+    }
+
     @JsonProperty("iw8_ar_tango21")
     public Iw8ArTango21 getIw8ArTango21() {
         return iw8ArTango21;
@@ -197,6 +237,74 @@ public class WeaponAssaultRifle {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(WeaponAssaultRifle.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("iw8ArTango21");
+        sb.append('=');
+        sb.append(((this.iw8ArTango21 == null)?"<null>":this.iw8ArTango21));
+        sb.append(',');
+        sb.append("iw8ArMike4");
+        sb.append('=');
+        sb.append(((this.iw8ArMike4 == null)?"<null>":this.iw8ArMike4));
+        sb.append(',');
+        sb.append("iw8ArValpha");
+        sb.append('=');
+        sb.append(((this.iw8ArValpha == null)?"<null>":this.iw8ArValpha));
+        sb.append(',');
+        sb.append("iw8ArFalpha");
+        sb.append('=');
+        sb.append(((this.iw8ArFalpha == null)?"<null>":this.iw8ArFalpha));
+        sb.append(',');
+        sb.append("iw8ArMcharlie");
+        sb.append('=');
+        sb.append(((this.iw8ArMcharlie == null)?"<null>":this.iw8ArMcharlie));
+        sb.append(',');
+        sb.append("iw8ArAkilo47");
+        sb.append('=');
+        sb.append(((this.iw8ArAkilo47 == null)?"<null>":this.iw8ArAkilo47));
+        sb.append(',');
+        sb.append("iw8ArAsierra12");
+        sb.append('=');
+        sb.append(((this.iw8ArAsierra12 == null)?"<null>":this.iw8ArAsierra12));
+        sb.append(',');
+        sb.append("iw8ArGalima");
+        sb.append('=');
+        sb.append(((this.iw8ArGalima == null)?"<null>":this.iw8ArGalima));
+        sb.append(',');
+        sb.append("iw8ArSierra552");
+        sb.append('=');
+        sb.append(((this.iw8ArSierra552 == null)?"<null>":this.iw8ArSierra552));
+        sb.append(',');
+        sb.append("iw8ArFalima");
+        sb.append('=');
+        sb.append(((this.iw8ArFalima == null)?"<null>":this.iw8ArFalima));
+        sb.append(',');
+        sb.append("iw8ArAnovember94");
+        sb.append('=');
+        sb.append(((this.iw8ArAnovember94 == null)?"<null>":this.iw8ArAnovember94));
+        sb.append(',');
+        sb.append("iw8ArKilo433");
+        sb.append('=');
+        sb.append(((this.iw8ArKilo433 == null)?"<null>":this.iw8ArKilo433));
+        sb.append(',');
+        sb.append("iw8ArScharlie");
+        sb.append('=');
+        sb.append(((this.iw8ArScharlie == null)?"<null>":this.iw8ArScharlie));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

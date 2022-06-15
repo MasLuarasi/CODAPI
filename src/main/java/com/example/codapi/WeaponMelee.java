@@ -29,6 +29,26 @@ public class WeaponMelee {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public WeaponMelee() {
+    }
+
+    /**
+     * 
+     * @param iw8MeAkimboblunt
+     * @param iw8MeAkimboblades
+     * @param iw8Knife
+     */
+    public WeaponMelee(Iw8MeAkimboblunt iw8MeAkimboblunt, Iw8MeAkimboblades iw8MeAkimboblades, Iw8Knife iw8Knife) {
+        super();
+        this.iw8MeAkimboblunt = iw8MeAkimboblunt;
+        this.iw8MeAkimboblades = iw8MeAkimboblades;
+        this.iw8Knife = iw8Knife;
+    }
+
     @JsonProperty("iw8_me_akimboblunt")
     public Iw8MeAkimboblunt getIw8MeAkimboblunt() {
         return iw8MeAkimboblunt;
@@ -67,6 +87,34 @@ public class WeaponMelee {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(WeaponMelee.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("iw8MeAkimboblunt");
+        sb.append('=');
+        sb.append(((this.iw8MeAkimboblunt == null)?"<null>":this.iw8MeAkimboblunt));
+        sb.append(',');
+        sb.append("iw8MeAkimboblades");
+        sb.append('=');
+        sb.append(((this.iw8MeAkimboblades == null)?"<null>":this.iw8MeAkimboblades));
+        sb.append(',');
+        sb.append("iw8Knife");
+        sb.append('=');
+        sb.append(((this.iw8Knife == null)?"<null>":this.iw8Knife));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

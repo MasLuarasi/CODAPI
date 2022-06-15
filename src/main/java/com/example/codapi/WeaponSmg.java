@@ -47,6 +47,38 @@ public class WeaponSmg {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public WeaponSmg() {
+    }
+
+    /**
+     * 
+     * @param iw8SmVictor
+     * @param iw8SmMpapa7
+     * @param iw8SmAugolf
+     * @param iw8SmMpapa5
+     * @param iw8SmSmgolf45
+     * @param iw8SmBeta
+     * @param iw8SmUzulu
+     * @param iw8SmCharlie9
+     * @param iw8SmPapa90
+     */
+    public WeaponSmg(Iw8SmMpapa7 iw8SmMpapa7, Iw8SmAugolf iw8SmAugolf, Iw8SmPapa90 iw8SmPapa90, Iw8SmCharlie9 iw8SmCharlie9, Iw8SmMpapa5 iw8SmMpapa5, Iw8SmSmgolf45 iw8SmSmgolf45, Iw8SmBeta iw8SmBeta, Iw8SmVictor iw8SmVictor, Iw8SmUzulu iw8SmUzulu) {
+        super();
+        this.iw8SmMpapa7 = iw8SmMpapa7;
+        this.iw8SmAugolf = iw8SmAugolf;
+        this.iw8SmPapa90 = iw8SmPapa90;
+        this.iw8SmCharlie9 = iw8SmCharlie9;
+        this.iw8SmMpapa5 = iw8SmMpapa5;
+        this.iw8SmSmgolf45 = iw8SmSmgolf45;
+        this.iw8SmBeta = iw8SmBeta;
+        this.iw8SmVictor = iw8SmVictor;
+        this.iw8SmUzulu = iw8SmUzulu;
+    }
+
     @JsonProperty("iw8_sm_mpapa7")
     public Iw8SmMpapa7 getIw8SmMpapa7() {
         return iw8SmMpapa7;
@@ -145,6 +177,58 @@ public class WeaponSmg {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(WeaponSmg.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("iw8SmMpapa7");
+        sb.append('=');
+        sb.append(((this.iw8SmMpapa7 == null)?"<null>":this.iw8SmMpapa7));
+        sb.append(',');
+        sb.append("iw8SmAugolf");
+        sb.append('=');
+        sb.append(((this.iw8SmAugolf == null)?"<null>":this.iw8SmAugolf));
+        sb.append(',');
+        sb.append("iw8SmPapa90");
+        sb.append('=');
+        sb.append(((this.iw8SmPapa90 == null)?"<null>":this.iw8SmPapa90));
+        sb.append(',');
+        sb.append("iw8SmCharlie9");
+        sb.append('=');
+        sb.append(((this.iw8SmCharlie9 == null)?"<null>":this.iw8SmCharlie9));
+        sb.append(',');
+        sb.append("iw8SmMpapa5");
+        sb.append('=');
+        sb.append(((this.iw8SmMpapa5 == null)?"<null>":this.iw8SmMpapa5));
+        sb.append(',');
+        sb.append("iw8SmSmgolf45");
+        sb.append('=');
+        sb.append(((this.iw8SmSmgolf45 == null)?"<null>":this.iw8SmSmgolf45));
+        sb.append(',');
+        sb.append("iw8SmBeta");
+        sb.append('=');
+        sb.append(((this.iw8SmBeta == null)?"<null>":this.iw8SmBeta));
+        sb.append(',');
+        sb.append("iw8SmVictor");
+        sb.append('=');
+        sb.append(((this.iw8SmVictor == null)?"<null>":this.iw8SmVictor));
+        sb.append(',');
+        sb.append("iw8SmUzulu");
+        sb.append('=');
+        sb.append(((this.iw8SmUzulu == null)?"<null>":this.iw8SmUzulu));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

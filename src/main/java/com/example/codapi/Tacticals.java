@@ -44,6 +44,36 @@ public class Tacticals {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Tacticals() {
+    }
+
+    /**
+     * 
+     * @param equipConcussion
+     * @param equipFlash
+     * @param equipAdrenaline
+     * @param equipSmoke
+     * @param equipGasGrenade
+     * @param equipSnapshotGrenade
+     * @param equipHbSensor
+     * @param equipDecoy
+     */
+    public Tacticals(EquipGasGrenade equipGasGrenade, EquipSnapshotGrenade equipSnapshotGrenade, EquipDecoy equipDecoy, EquipSmoke equipSmoke, EquipConcussion equipConcussion, EquipHbSensor equipHbSensor, EquipFlash equipFlash, EquipAdrenaline equipAdrenaline) {
+        super();
+        this.equipGasGrenade = equipGasGrenade;
+        this.equipSnapshotGrenade = equipSnapshotGrenade;
+        this.equipDecoy = equipDecoy;
+        this.equipSmoke = equipSmoke;
+        this.equipConcussion = equipConcussion;
+        this.equipHbSensor = equipHbSensor;
+        this.equipFlash = equipFlash;
+        this.equipAdrenaline = equipAdrenaline;
+    }
+
     @JsonProperty("equip_gas_grenade")
     public EquipGasGrenade getEquipGasGrenade() {
         return equipGasGrenade;
@@ -132,6 +162,54 @@ public class Tacticals {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Tacticals.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("equipGasGrenade");
+        sb.append('=');
+        sb.append(((this.equipGasGrenade == null)?"<null>":this.equipGasGrenade));
+        sb.append(',');
+        sb.append("equipSnapshotGrenade");
+        sb.append('=');
+        sb.append(((this.equipSnapshotGrenade == null)?"<null>":this.equipSnapshotGrenade));
+        sb.append(',');
+        sb.append("equipDecoy");
+        sb.append('=');
+        sb.append(((this.equipDecoy == null)?"<null>":this.equipDecoy));
+        sb.append(',');
+        sb.append("equipSmoke");
+        sb.append('=');
+        sb.append(((this.equipSmoke == null)?"<null>":this.equipSmoke));
+        sb.append(',');
+        sb.append("equipConcussion");
+        sb.append('=');
+        sb.append(((this.equipConcussion == null)?"<null>":this.equipConcussion));
+        sb.append(',');
+        sb.append("equipHbSensor");
+        sb.append('=');
+        sb.append(((this.equipHbSensor == null)?"<null>":this.equipHbSensor));
+        sb.append(',');
+        sb.append("equipFlash");
+        sb.append('=');
+        sb.append(((this.equipFlash == null)?"<null>":this.equipFlash));
+        sb.append(',');
+        sb.append("equipAdrenaline");
+        sb.append('=');
+        sb.append(((this.equipAdrenaline == null)?"<null>":this.equipAdrenaline));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

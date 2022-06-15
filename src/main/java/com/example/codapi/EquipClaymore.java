@@ -4,7 +4,6 @@ package com.example.codapi;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
-
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,24 +13,55 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "properties"
+    "kills",
+    "uses"
 })
 @Generated("jsonschema2pojo")
 public class EquipClaymore {
 
-    @JsonProperty("properties")
-    private Properties__62 properties;
+    @JsonProperty("kills")
+    private Integer kills;
+    @JsonProperty("uses")
+    private Integer uses;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("properties")
-    public Properties__62 getProperties() {
-        return properties;
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public EquipClaymore() {
     }
 
-    @JsonProperty("properties")
-    public void setProperties(Properties__62 properties) {
-        this.properties = properties;
+    /**
+     * 
+     * @param kills
+     * @param uses
+     */
+    public EquipClaymore(Integer kills, Integer uses) {
+        super();
+        this.kills = kills;
+        this.uses = uses;
+    }
+
+    @JsonProperty("kills")
+    public Integer getKills() {
+        return kills;
+    }
+
+    @JsonProperty("kills")
+    public void setKills(Integer kills) {
+        this.kills = kills;
+    }
+
+    @JsonProperty("uses")
+    public Integer getUses() {
+        return uses;
+    }
+
+    @JsonProperty("uses")
+    public void setUses(Integer uses) {
+        this.uses = uses;
     }
 
     @JsonAnyGetter
@@ -42,6 +72,30 @@ public class EquipClaymore {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(EquipClaymore.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("kills");
+        sb.append('=');
+        sb.append(((this.kills == null)?"<null>":this.kills));
+        sb.append(',');
+        sb.append("uses");
+        sb.append('=');
+        sb.append(((this.uses == null)?"<null>":this.uses));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }

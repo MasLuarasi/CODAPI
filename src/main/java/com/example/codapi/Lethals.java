@@ -4,7 +4,6 @@ package com.example.codapi;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
-
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -44,6 +43,36 @@ public class Lethals {
     private EquipMolotov equipMolotov;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Lethals() {
+    }
+
+    /**
+     * 
+     * @param equipThermite
+     * @param equipFrag
+     * @param equipClaymore
+     * @param equipAtMine
+     * @param equipMolotov
+     * @param equipSemtex
+     * @param equipC4
+     * @param equipThrowingKnife
+     */
+    public Lethals(EquipFrag equipFrag, EquipThermite equipThermite, EquipSemtex equipSemtex, EquipClaymore equipClaymore, EquipC4 equipC4, EquipAtMine equipAtMine, EquipThrowingKnife equipThrowingKnife, EquipMolotov equipMolotov) {
+        super();
+        this.equipFrag = equipFrag;
+        this.equipThermite = equipThermite;
+        this.equipSemtex = equipSemtex;
+        this.equipClaymore = equipClaymore;
+        this.equipC4 = equipC4;
+        this.equipAtMine = equipAtMine;
+        this.equipThrowingKnife = equipThrowingKnife;
+        this.equipMolotov = equipMolotov;
+    }
 
     @JsonProperty("equip_frag")
     public EquipFrag getEquipFrag() {
@@ -133,6 +162,54 @@ public class Lethals {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Lethals.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("equipFrag");
+        sb.append('=');
+        sb.append(((this.equipFrag == null)?"<null>":this.equipFrag));
+        sb.append(',');
+        sb.append("equipThermite");
+        sb.append('=');
+        sb.append(((this.equipThermite == null)?"<null>":this.equipThermite));
+        sb.append(',');
+        sb.append("equipSemtex");
+        sb.append('=');
+        sb.append(((this.equipSemtex == null)?"<null>":this.equipSemtex));
+        sb.append(',');
+        sb.append("equipClaymore");
+        sb.append('=');
+        sb.append(((this.equipClaymore == null)?"<null>":this.equipClaymore));
+        sb.append(',');
+        sb.append("equipC4");
+        sb.append('=');
+        sb.append(((this.equipC4 == null)?"<null>":this.equipC4));
+        sb.append(',');
+        sb.append("equipAtMine");
+        sb.append('=');
+        sb.append(((this.equipAtMine == null)?"<null>":this.equipAtMine));
+        sb.append(',');
+        sb.append("equipThrowingKnife");
+        sb.append('=');
+        sb.append(((this.equipThrowingKnife == null)?"<null>":this.equipThrowingKnife));
+        sb.append(',');
+        sb.append("equipMolotov");
+        sb.append('=');
+        sb.append(((this.equipMolotov == null)?"<null>":this.equipMolotov));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 
 }
