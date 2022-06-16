@@ -81,67 +81,15 @@ public class HelloController {
     {
         object = new JSONObject(data);//Define the JSONObject global variable
         mapper = new ObjectMapper();//Define the ObjectMapper global variable we need to map the data to its class.
-        Lifetime lifetime = getLifetimeProperties();
+        Lifetime lifetime = retLifetime();
 //        System.out.println(lifetime.getAll().printEssential());
-        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArTango21().getAccuracy());
+        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArMike4().toString());
     }
 
-    /**
-     * Assign the data that belongs to the Lifetime class.
-     * @return Lifetime object that is linked to the All object/class
-     * @throws JsonProcessingException JSON stuff
-     */
-    public Lifetime getLifetimeProperties() throws JsonProcessingException
+    public Lifetime retLifetime() throws JsonProcessingException
     {
-        JSONObject object1 = object.getJSONObject("lifetime");
-        All all = getAllProperties(object1);
-        ItemData itemData = getItemDataProperties(object1);
-        Lifetime lTemp = new Lifetime();
-        lTemp.setAll(all);
-        lTemp.setItemData(itemData);
-        return lTemp;
+        RetrieveLifetime rl = new RetrieveLifetime(object);
+        return rl.getLifetimeProperties();
     }
-
-    /**
-     * Map the data for the All object to its class and corresponding variables.
-     * @param root JSONObject. All is located within the Lifetime field, so we need to start from there, and then extract "all"
-     * @return All object with all of its data set.
-     * @throws JsonProcessingException JSON stuff
-     */
-    public All getAllProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("all");
-        return mapper.readValue(object1.toString(), All.class);
-    }
-
-    public ItemData getItemDataProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("itemData");
-        ItemData idTemp = new ItemData();
-        WeaponAssaultRifle ar = getARProperties(object1);
-
-        idTemp.setWeaponAssaultRifle(ar);
-
-        return idTemp;
-    }
-
-    public WeaponAssaultRifle getARProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("weapon_assault_rifle");
-        WeaponAssaultRifle arTemp = new WeaponAssaultRifle();
-        Iw8ArTango21 ram = getRamProperties(object1);
-
-        arTemp.setIw8ArTango21(ram);
-
-        return arTemp;
-    }
-
-    public Iw8ArTango21 getRamProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("iw8_ar_tango21");
-        return mapper.readValue(object1.toString(), Iw8ArTango21.class);
-    }
-
-
 
 }
