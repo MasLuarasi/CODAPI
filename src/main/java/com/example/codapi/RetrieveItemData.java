@@ -12,11 +12,14 @@ public class RetrieveItemData
         ItemData idTemp = new ItemData();
 
         RetrieveAR rar = new RetrieveAR();
+        RetrieveSMG rsmg = new RetrieveSMG();
 
         WeaponAssaultRifle ar = rar.getARProperties(object1);
+        WeaponSmg smg = rsmg.getSMGProperties(object1);
         //similar format for other weapon classes
 
         idTemp.setWeaponAssaultRifle(ar);
+        idTemp.setWeaponSmg(smg);
         //similar format for other weapon classes
 
         return idTemp;

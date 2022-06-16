@@ -4,9 +4,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class RetrieveAR
 {
     private ObjectMapper mapper;
+    private ArrayList<Object> arList;
 
     public WeaponAssaultRifle getARProperties(JSONObject root) throws JsonProcessingException
     {
@@ -16,54 +19,67 @@ public class RetrieveAR
 
         Iw8ArTango21 ram = getRamProperties(object1);
         ram.setName("RAM-7");
+        arList.add(ram);
         arTemp.setIw8ArTango21(ram);
 
         Iw8ArMike4 m4 = getM4Properties(object1);
         m4.setName("M4");
+        arList.add(m4);
         arTemp.setIw8ArMike4(m4);
 
         Iw8ArValpha val = getValProperties(object1);
         val.setName("Val");
+        arList.add(val);
         arTemp.setIw8ArValpha(val);
 
         Iw8ArFalpha fr = getFR556Properties(object1);
         fr.setName("FFR 5.56");
+        arList.add(fr);
         arTemp.setIw8ArFalpha(fr);
 
         Iw8ArMcharlie m13 = getM13Properties(object1);
         m13.setName("M13");
+        arList.add(m13);
         arTemp.setIw8ArMcharlie(m13);
 
         Iw8ArAkilo47 ak47 = getAK47Properties(object1);
         ak47.setName("AK-47");
+        arList.add(ak47);
         arTemp.setIw8ArAkilo47(ak47);
 
         Iw8ArAsierra12 oden = getOdenProperties(object1);
         oden.setName("Oden");
+        arList.add(oden);
         arTemp.setIw8ArAsierra12(oden);
 
         Iw8ArGalima amax = getAmaxProperties(object1);
         amax.setName("Amax");
+        arList.add(amax);
         arTemp.setIw8ArGalima(amax);
 
         Iw8ArSierra552 grau = getGrauProperties(object1);
         grau.setName("Grau");
+        arList.add(grau);
         arTemp.setIw8ArSierra552(grau);
 
         Iw8ArFalima fal = getFALProperties(object1);
         fal.setName("Fal");
+        arList.add(fal);
         arTemp.setIw8ArFalima(fal);
 
         Iw8ArAnovember94 an94 = getAN94Properties(object1);
         an94.setName("AN-94");
+        arList.add(an94);
         arTemp.setIw8ArAnovember94(an94);
 
         Iw8ArKilo433 kilo = getKiloProperties(object1);
         kilo.setName("Kilo");
+        arList.add(kilo);
         arTemp.setIw8ArKilo433(kilo);
 
         Iw8ArScharlie scar = getScarProperties(object1);
         scar.setName("Scar");
+        arList.add(scar);
         arTemp.setIw8ArScharlie(scar);
 
         return arTemp;

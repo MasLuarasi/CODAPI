@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="870cfdff-0001-48d2-a28b-44222077eb6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveAR.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveItemData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveLifetime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveSMG.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAkilo47.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAkilo47.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAnovember94.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAnovember94.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAsierra12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAsierra12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalpha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArGalima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArGalima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArKilo433.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArKilo433.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMcharlie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMcharlie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMike4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMike4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArScharlie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArScharlie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArSierra552.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArSierra552.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArTango21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArTango21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArValpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArValpha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveAR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveAR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveItemData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveItemData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
