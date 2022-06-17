@@ -39,25 +39,10 @@ public class Iw8SmAugolf {
     @JsonProperty("deaths")
     private Integer deaths;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private String name;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Iw8SmAugolf() {
-    }
+    public Iw8SmAugolf() {}
 
-    /**
-     * 
-     * @param hits
-     * @param kills
-     * @param kdRatio
-     * @param headshots
-     * @param accuracy
-     * @param shots
-     * @param deaths
-     */
     public Iw8SmAugolf(Integer hits, Integer kills, Double kdRatio, Integer headshots, Double accuracy, Integer shots, Integer deaths) {
         super();
         this.hits = hits;
@@ -140,57 +125,26 @@ public class Iw8SmAugolf {
     }
 
     @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
+    public String getName() {
+        return this.name;
     }
 
     @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+    public void setName(String name) { this.name = name;}
 
     @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(Iw8SmAugolf.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("hits");
-        sb.append('=');
-        sb.append(((this.hits == null)?"<null>":this.hits));
-        sb.append(',');
-        sb.append("kills");
-        sb.append('=');
-        sb.append(((this.kills == null)?"<null>":this.kills));
-        sb.append(',');
-        sb.append("kdRatio");
-        sb.append('=');
-        sb.append(((this.kdRatio == null)?"<null>":this.kdRatio));
-        sb.append(',');
-        sb.append("headshots");
-        sb.append('=');
-        sb.append(((this.headshots == null)?"<null>":this.headshots));
-        sb.append(',');
-        sb.append("accuracy");
-        sb.append('=');
-        sb.append(((this.accuracy == null)?"<null>":this.accuracy));
-        sb.append(',');
-        sb.append("shots");
-        sb.append('=');
-        sb.append(((this.shots == null)?"<null>":this.shots));
-        sb.append(',');
-        sb.append("deaths");
-        sb.append('=');
-        sb.append(((this.deaths == null)?"<null>":this.deaths));
-        sb.append(',');
-        sb.append("additionalProperties");
-        sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
-        }
-        return sb.toString();
+    public String toString()
+    {
+        StringBuilder ret = new StringBuilder();
+        ret.append("Name:\t" + this.name + "\n");
+        ret.append("Kills:\t" + this.kills + "\n");
+        ret.append("Deaths:\t" + this.deaths + "\n");
+        ret.append("K/D Ratio:\t" + this.kdRatio + "\n");
+        ret.append("Shots:\t" + this.shots + "\n");
+        ret.append("Hits:\t" + this.hits + "\n");
+        ret.append("Accuracy: \t" + this.accuracy + "\n");
+        ret.append("Headshots:\t" + this.headshots + "\n");
+        return ret.toString();
     }
 
 }
