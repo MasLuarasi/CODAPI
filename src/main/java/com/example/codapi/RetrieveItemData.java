@@ -14,14 +14,17 @@ public class RetrieveItemData
         RetrieveAR rar = new RetrieveAR();
         RetrieveSMG rsmg = new RetrieveSMG();
         RetrieveShotgun rsh = new RetrieveShotgun();
+        RetrieveMarksman rmr = new RetrieveMarksman();
 
         WeaponAssaultRifle ar = rar.getARProperties(object1);
         WeaponSmg smg = rsmg.getSMGProperties(object1);
         WeaponShotgun shotgun = rsh.getShotgunProperties(object1);
+        WeaponMarksman marksman = rmr.getMarksmanProperties(object1);
 
         idTemp.setWeaponAssaultRifle(ar);
         idTemp.setWeaponSmg(smg);
         idTemp.setWeaponShotgun(shotgun);
+        idTemp.setWeaponMarksman(marksman);
 
         return idTemp;
     }
