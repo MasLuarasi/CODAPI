@@ -83,7 +83,7 @@ public class HelloController {
         mapper = new ObjectMapper();//Define the ObjectMapper global variable we need to map the data to its class.
         Lifetime lifetime = retLifetime();
 //        System.out.println(lifetime.getAll().printEssential());
-        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArMike4().toString());
+//        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArMike4().toString());
     }
 
     public Lifetime retLifetime() throws JsonProcessingException

@@ -14,6 +14,7 @@ public class RetrieveShotgun
     public WeaponShotgun getShotgunProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
+        shotgunList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_shotgun");
         WeaponShotgun shotgunTemp = new WeaponShotgun();
 

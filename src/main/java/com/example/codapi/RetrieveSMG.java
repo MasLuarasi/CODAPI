@@ -14,6 +14,7 @@ public class RetrieveSMG
     public WeaponSmg getSMGProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
+        smgList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_smg");
         WeaponSmg smgTemp = new WeaponSmg();
 
@@ -67,55 +68,55 @@ public class RetrieveSMG
 
     public Iw8SmMpapa7 getMP7Properties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_mpapa7");
+        JSONObject object1 = root.getJSONObject("iw8_sm_mpapa7");
         return mapper.readValue(object1.toString(), Iw8SmMpapa7.class);
     }
 
     public Iw8SmAugolf getAUGProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_augolf");
+        JSONObject object1 = root.getJSONObject("iw8_sm_augolf");
         return mapper.readValue(object1.toString(), Iw8SmAugolf.class);
     }
 
     public Iw8SmPapa90 getP90Properties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_papa90");
+        JSONObject object1 = root.getJSONObject("iw8_sm_papa90");
         return mapper.readValue(object1.toString(), Iw8SmPapa90.class);
     }
 
     public Iw8SmCharlie9 getIsoProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_charlie9");
+        JSONObject object1 = root.getJSONObject("iw8_sm_charlie9");
         return mapper.readValue(object1.toString(), Iw8SmCharlie9.class);
     }
 
     public Iw8SmMpapa5 getMP5Properties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_mpapa5");
+        JSONObject object1 = root.getJSONObject("iw8_sm_mpapa5");
         return mapper.readValue(object1.toString(), Iw8SmMpapa5.class);
     }
 
     public Iw8SmSmgolf45 getStrikerProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_smgolf45");
+        JSONObject object1 = root.getJSONObject("iw8_sm_smgolf45");
         return mapper.readValue(object1.toString(), Iw8SmSmgolf45.class);
     }
 
     public Iw8SmBeta getBizonProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_beta");
+        JSONObject object1 = root.getJSONObject("iw8_sm_beta");
         return mapper.readValue(object1.toString(), Iw8SmBeta.class);
     }
 
     public Iw8SmVictor getFennecProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_victor");
+        JSONObject object1 = root.getJSONObject("iw8_sm_victor");
         return mapper.readValue(object1.toString(), Iw8SmVictor.class);
     }
 
     public Iw8SmUzulu getUziProperties(JSONObject root) throws JsonProcessingException
     {
-        JSONObject object1 = root.getJSONObject("iw8_smg_uzulu");
+        JSONObject object1 = root.getJSONObject("iw8_sm_uzulu");
         return mapper.readValue(object1.toString(), Iw8SmUzulu.class);
     }
 

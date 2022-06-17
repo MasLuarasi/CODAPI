@@ -14,6 +14,7 @@ public class RetrieveMarksman
     public WeaponMarksman getMarksmanProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
+        marksmanList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_marksman");
         WeaponMarksman marksmanTemp = new WeaponMarksman();
 

@@ -14,6 +14,7 @@ public class RetrieveAR
     public WeaponAssaultRifle getARProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
+        arList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_assault_rifle");
         WeaponAssaultRifle arTemp = new WeaponAssaultRifle();
 
