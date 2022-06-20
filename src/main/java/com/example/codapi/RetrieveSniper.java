@@ -9,12 +9,11 @@ import java.util.ArrayList;
 public class RetrieveSniper
 {
     private ObjectMapper mapper;
-    private ArrayList<Object> sniperList;
 
     public WeaponSniper getSniperProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
-        sniperList = new ArrayList<>();
+        ArrayList<Object> sniperList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_sniper");
         WeaponSniper sniperTemp = new WeaponSniper();
 
@@ -38,6 +37,7 @@ public class RetrieveSniper
         sniperList.add(rytec);
         sniperTemp.setIw8SnXmike109(rytec);
 
+        sniperTemp.setSniperList(sniperList);
         return sniperTemp;
     }
 

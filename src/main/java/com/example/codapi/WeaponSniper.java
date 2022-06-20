@@ -1,7 +1,7 @@
 
 package com.example.codapi;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -30,28 +30,19 @@ public class WeaponSniper {
     @JsonProperty("iw8_sn_xmike109")
     private Iw8SnXmike109 iw8SnXmike109;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private ArrayList<Object> snList;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public WeaponSniper() {
-    }
+    public WeaponSniper() {}
 
-    /**
-     * 
-     * @param iw8SnHdromeo
-     * @param iw8SnDelta
-     * @param iw8SnXmike109
-     * @param iw8SnAlpha50
-     */
-    public WeaponSniper(Iw8SnAlpha50 iw8SnAlpha50, Iw8SnHdromeo iw8SnHdromeo, Iw8SnDelta iw8SnDelta, Iw8SnXmike109 iw8SnXmike109) {
+    public WeaponSniper(Iw8SnAlpha50 iw8SnAlpha50, Iw8SnHdromeo iw8SnHdromeo,
+                        Iw8SnDelta iw8SnDelta, Iw8SnXmike109 iw8SnXmike109)
+    {
         super();
         this.iw8SnAlpha50 = iw8SnAlpha50;
         this.iw8SnHdromeo = iw8SnHdromeo;
         this.iw8SnDelta = iw8SnDelta;
         this.iw8SnXmike109 = iw8SnXmike109;
+        this.snList = new ArrayList<>();
     }
 
     @JsonProperty("iw8_sn_alpha50")
@@ -95,43 +86,19 @@ public class WeaponSniper {
     }
 
     @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+    public ArrayList<Object> getSniperList(){return this.snList;}
 
     @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+    public void setSniperList(ArrayList<Object> list){this.snList = list;}
+
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         StringBuilder sb = new StringBuilder();
-        sb.append(WeaponSniper.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("iw8SnAlpha50");
-        sb.append('=');
-        sb.append(((this.iw8SnAlpha50 == null)?"<null>":this.iw8SnAlpha50));
-        sb.append(',');
-        sb.append("iw8SnHdromeo");
-        sb.append('=');
-        sb.append(((this.iw8SnHdromeo == null)?"<null>":this.iw8SnHdromeo));
-        sb.append(',');
-        sb.append("iw8SnDelta");
-        sb.append('=');
-        sb.append(((this.iw8SnDelta == null)?"<null>":this.iw8SnDelta));
-        sb.append(',');
-        sb.append("iw8SnXmike109");
-        sb.append('=');
-        sb.append(((this.iw8SnXmike109 == null)?"<null>":this.iw8SnXmike109));
-        sb.append(',');
-        sb.append("additionalProperties");
-        sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
+        for (Object o: snList)
+        {
+            sb.append(o.toString() + "---------------------------");
         }
         return sb.toString();
     }

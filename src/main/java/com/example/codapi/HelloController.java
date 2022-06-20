@@ -33,8 +33,6 @@ public class HelloController {
 
     private String username;
 
-    private ObjectMapper mapper;
-
     private JSONObject object;
 
     @FXML
@@ -79,9 +77,13 @@ public class HelloController {
      */
     public void evaluateData(String data) throws IOException
     {
+        long startTime = System.currentTimeMillis();
+
         object = new JSONObject(data);//Define the JSONObject global variable
-        mapper = new ObjectMapper();//Define the ObjectMapper global variable we need to map the data to its class.
         Lifetime lifetime = retLifetime();
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("That took " + (endTime - startTime) + " milliseconds");
 //        System.out.println(lifetime.getAll().printEssential());
 //        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArMike4().toString());
     }

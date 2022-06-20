@@ -9,12 +9,11 @@ import java.util.ArrayList;
 public class RetrieveShotgun
 {
     private ObjectMapper mapper;
-    private ArrayList<Object> shotgunList;
 
     public WeaponShotgun getShotgunProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
-        shotgunList = new ArrayList<>();
+        ArrayList<Object> shotgunList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_shotgun");
         WeaponShotgun shotgunTemp = new WeaponShotgun();
 
@@ -48,6 +47,7 @@ public class RetrieveShotgun
         shotgunList.add(r9);
         shotgunTemp.setIw8ShDpapa12(r9);
 
+        shotgunTemp.setShotgunList(shotgunList);
         return shotgunTemp;
     }
 

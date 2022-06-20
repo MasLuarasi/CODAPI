@@ -18,6 +18,7 @@ public class RetrieveItemData
         RetrieveSniper rsn = new RetrieveSniper();
         RetrieveLMG rlmg = new RetrieveLMG();
         RetrieveLauncher rla = new RetrieveLauncher();
+        RetrievePistol rp = new RetrievePistol();
 
         WeaponAssaultRifle ar = rar.getARProperties(object1);
         WeaponSmg smg = rsmg.getSMGProperties(object1);
@@ -26,6 +27,7 @@ public class RetrieveItemData
         WeaponSniper sniper = rsn.getSniperProperties(object1);
         WeaponLmg lmg = rlmg.getLMGProperties(object1);
         WeaponLauncher launcher = rla.getLauncherProperties(object1);
+        WeaponPistol pistol = rp.getPistolProperties(object1);
 
         idTemp.setWeaponAssaultRifle(ar);
         idTemp.setWeaponSmg(smg);
@@ -34,6 +36,7 @@ public class RetrieveItemData
         idTemp.setWeaponSniper(sniper);
         idTemp.setWeaponLmg(lmg);
         idTemp.setWeaponLauncher(launcher);
+        idTemp.setWeaponPistol(pistol);
 
         return idTemp;
     }

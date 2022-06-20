@@ -9,14 +9,12 @@ import java.util.ArrayList;
 public class RetrieveLauncher
 {
     private ObjectMapper mapper;
-    private ArrayList<Object> launcherList;
-
 
     public WeaponLauncher getLauncherProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
-        launcherList = new ArrayList<>();
-        JSONObject object1 = root.getJSONObject("weapon_smg");
+        ArrayList<Object> launcherList = new ArrayList<>();
+        JSONObject object1 = root.getJSONObject("weapon_launcher");
         WeaponLauncher launcherTemp = new WeaponLauncher();
 
         Iw8LaGromeo pila  = getPILAProperties(object1);
@@ -44,6 +42,7 @@ public class RetrieveLauncher
         launcherList.add(gl);
         launcherTemp.setIw8LaMike32(gl);
 
+        launcherTemp.setLauncherList(launcherList);
         return launcherTemp;
     }
 

@@ -23,18 +23,10 @@ public class WeaponOther {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public WeaponOther() {
-    }
+    public WeaponOther() {}
 
-    /**
-     * 
-     * @param iw8MeRiotshield
-     */
-    public WeaponOther(Iw8MeRiotshield iw8MeRiotshield) {
+    public WeaponOther(Iw8MeRiotshield iw8MeRiotshield)
+    {
         super();
         this.iw8MeRiotshield = iw8MeRiotshield;
     }

@@ -9,13 +9,12 @@ import java.util.ArrayList;
 public class RetrieveLMG
 {
     private ObjectMapper mapper;
-    private ArrayList<Object> lmgList;
 
     public WeaponLmg getLMGProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
-        lmgList = new ArrayList<>();
-        JSONObject object1 = root.getJSONObject("weapon_smg");
+        ArrayList<Object> lmgList = new ArrayList<>();
+        JSONObject object1 = root.getJSONObject("weapon_lmg");
         WeaponLmg lmgTemp = new WeaponLmg();
 
         Iw8LmKilo121 m91  = getM91Properties(object1);
@@ -53,6 +52,7 @@ public class RetrieveLMG
         lmgList.add(holger);
         lmgTemp.setIw8LmMgolf36(holger);
 
+        lmgTemp.setLMGList(lmgList);
         return lmgTemp;
     }
 

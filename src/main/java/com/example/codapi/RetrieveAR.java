@@ -9,12 +9,11 @@ import java.util.ArrayList;
 public class RetrieveAR
 {
     private ObjectMapper mapper;
-    private ArrayList<Object> arList;
 
     public WeaponAssaultRifle getARProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
-        arList = new ArrayList<>();
+        ArrayList<Object> arList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_assault_rifle");
         WeaponAssaultRifle arTemp = new WeaponAssaultRifle();
 
@@ -83,6 +82,7 @@ public class RetrieveAR
         arList.add(scar);
         arTemp.setIw8ArScharlie(scar);
 
+        arTemp.setArList(arList);
         return arTemp;
     }
 

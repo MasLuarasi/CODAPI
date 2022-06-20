@@ -9,12 +9,11 @@ import java.util.ArrayList;
 public class RetrieveMarksman
 {
     private ObjectMapper mapper;
-    private ArrayList<Object> marksmanList;
 
     public WeaponMarksman getMarksmanProperties(JSONObject root) throws JsonProcessingException
     {
         mapper = new ObjectMapper();
-        marksmanList = new ArrayList<>();
+        ArrayList<Object> marksmanList = new ArrayList<>();
         JSONObject object1 = root.getJSONObject("weapon_marksman");
         WeaponMarksman marksmanTemp = new WeaponMarksman();
 
@@ -48,6 +47,7 @@ public class RetrieveMarksman
         marksmanList.add(sks);
         marksmanTemp.setIw8SnSksierra(sks);
 
+        marksmanTemp.setMarksmanList(marksmanList);
         return marksmanTemp;
     }
 

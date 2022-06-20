@@ -29,19 +29,8 @@ public class WeaponMelee {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public WeaponMelee() {
-    }
+    public WeaponMelee() {}
 
-    /**
-     * 
-     * @param iw8MeAkimboblunt
-     * @param iw8MeAkimboblades
-     * @param iw8Knife
-     */
     public WeaponMelee(Iw8MeAkimboblunt iw8MeAkimboblunt, Iw8MeAkimboblades iw8MeAkimboblades, Iw8Knife iw8Knife) {
         super();
         this.iw8MeAkimboblunt = iw8MeAkimboblunt;

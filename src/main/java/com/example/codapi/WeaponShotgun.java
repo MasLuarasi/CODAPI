@@ -1,6 +1,7 @@
 
 package com.example.codapi;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
@@ -36,25 +37,13 @@ public class WeaponShotgun {
     @JsonProperty("iw8_sh_dpapa12")
     private Iw8ShDpapa12 iw8ShDpapa12;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private ArrayList<Object> shList;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public WeaponShotgun() {
-    }
+    public WeaponShotgun() {}
 
-    /**
-     * 
-     * @param iw8ShDpapa12
-     * @param iw8ShOscar12
-     * @param iw8ShCharlie725
-     * @param iw8ShMike26
-     * @param iw8ShAalpha12
-     * @param iw8ShRomeo870
-     */
-    public WeaponShotgun(Iw8ShMike26 iw8ShMike26, Iw8ShCharlie725 iw8ShCharlie725, Iw8ShOscar12 iw8ShOscar12, Iw8ShAalpha12 iw8ShAalpha12, Iw8ShRomeo870 iw8ShRomeo870, Iw8ShDpapa12 iw8ShDpapa12) {
+    public WeaponShotgun(Iw8ShMike26 iw8ShMike26, Iw8ShCharlie725 iw8ShCharlie725, Iw8ShOscar12 iw8ShOscar12,
+                         Iw8ShAalpha12 iw8ShAalpha12, Iw8ShRomeo870 iw8ShRomeo870, Iw8ShDpapa12 iw8ShDpapa12)
+    {
         super();
         this.iw8ShMike26 = iw8ShMike26;
         this.iw8ShCharlie725 = iw8ShCharlie725;
@@ -62,6 +51,7 @@ public class WeaponShotgun {
         this.iw8ShAalpha12 = iw8ShAalpha12;
         this.iw8ShRomeo870 = iw8ShRomeo870;
         this.iw8ShDpapa12 = iw8ShDpapa12;
+        this.shList = new ArrayList<>();
     }
 
     @JsonProperty("iw8_sh_mike26")
@@ -125,51 +115,19 @@ public class WeaponShotgun {
     }
 
     @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+    public ArrayList<Object> getShotgunList(){return this.shList;}
 
     @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+    public void setShotgunList(ArrayList<Object> list){this.shList = list;}
+
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         StringBuilder sb = new StringBuilder();
-        sb.append(WeaponShotgun.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("iw8ShMike26");
-        sb.append('=');
-        sb.append(((this.iw8ShMike26 == null)?"<null>":this.iw8ShMike26));
-        sb.append(',');
-        sb.append("iw8ShCharlie725");
-        sb.append('=');
-        sb.append(((this.iw8ShCharlie725 == null)?"<null>":this.iw8ShCharlie725));
-        sb.append(',');
-        sb.append("iw8ShOscar12");
-        sb.append('=');
-        sb.append(((this.iw8ShOscar12 == null)?"<null>":this.iw8ShOscar12));
-        sb.append(',');
-        sb.append("iw8ShAalpha12");
-        sb.append('=');
-        sb.append(((this.iw8ShAalpha12 == null)?"<null>":this.iw8ShAalpha12));
-        sb.append(',');
-        sb.append("iw8ShRomeo870");
-        sb.append('=');
-        sb.append(((this.iw8ShRomeo870 == null)?"<null>":this.iw8ShRomeo870));
-        sb.append(',');
-        sb.append("iw8ShDpapa12");
-        sb.append('=');
-        sb.append(((this.iw8ShDpapa12 == null)?"<null>":this.iw8ShDpapa12));
-        sb.append(',');
-        sb.append("additionalProperties");
-        sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
-        sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
-        } else {
-            sb.append(']');
+        for (Object o: shList)
+        {
+            sb.append(o.toString() + "---------------------------");
         }
         return sb.toString();
     }
