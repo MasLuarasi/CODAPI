@@ -7,6 +7,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
 
 import javafx.scene.control.TableRow;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import org.json.*;
 
 import java.io.IOException;
@@ -31,6 +33,9 @@ public class HelloController {
     @FXML
     private Button submit;
 
+    @FXML
+    private BorderPane mainPane;
+
     private String username;
 
     private JSONObject object;
@@ -38,21 +43,26 @@ public class HelloController {
     @FXML
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
+        System.out.println("Click");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("test");
+        mainPane.setCenter(view);
+
 //        username = inputName.getText().strip();
 //        welcomeText.setVisible(false);
 //        inputName.setVisible(false);
 //        submit.setVisible(false);
 //        username = username.replace(" ", "%20");
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .header("accept", "application/json")
-                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
-                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
-                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-        evaluateData(responseBody);//Start working on it.
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .GET()
+//                .header("accept", "application/json")
+//                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
+//                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
+//                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
+//                .build();
+//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+//        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
+//        evaluateData(responseBody);//Start working on it.
     }
 
     /**
