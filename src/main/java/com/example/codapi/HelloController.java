@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -40,6 +41,9 @@ public class HelloController {
     private TableView tableView;
 
     @FXML
+    private Label headerText;
+
+    @FXML
     private TableColumn<Object, String> weaponName;
 
     @FXML
@@ -65,15 +69,9 @@ public class HelloController {
 
     private JSONObject object;
 
-    @FXML
-    protected void onSubmitButtonClick() throws IOException, InterruptedException
-    {
-        System.out.println("Click");
-//        String username = inputName.getText().strip();
-//        welcomeText.setVisible(false);
-//        inputName.setVisible(false);
-//        submit.setVisible(false);
-//        username = username.replace(" ", "%20");
+    private Lifetime lifetime;
+
+    public HelloController() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .header("accept", "application/json")
@@ -85,6 +83,29 @@ public class HelloController {
         String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
         evaluateData(responseBody);//Start working on it.
     }
+
+    /*
+    @FXML
+    protected void onSubmitButtonClick() throws IOException, InterruptedException
+    {
+        System.out.println("Click");
+        String username = inputName.getText().strip();
+        welcomeText.setVisible(false);
+        inputName.setVisible(false);
+        submit.setVisible(false);
+        username = username.replace(" ", "%20");
+        HttpRequest request = HttpRequest.newBuilder()
+                .GET()
+                .header("accept", "application/json")
+                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
+                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
+                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
+        evaluateData(responseBody);//Start working on it.
+    }
+     */
 
     /**
      * Removing all the Properties' field from the response along with their corresponding '}'.
@@ -109,8 +130,8 @@ public class HelloController {
     public void evaluateData(String data) throws IOException
     {
         object = new JSONObject(data);//Define the JSONObject global variable
-        Lifetime lifetime = retLifetime();
-        assignARData(lifetime);
+//        lifetime = new Lifetime();
+        lifetime = retLifetime();
     }
 
     /**
@@ -124,11 +145,66 @@ public class HelloController {
         return rl.getLifetimeProperties();
     }
 
-    public void assignARData(Lifetime lifetime)
+    public void showARData(ActionEvent actionEvent)
     {
-        ArrayList<Object> arList = lifetime.getItemData().getWeaponAssaultRifle().getArList();
+        headerText.setText("Assault Rifle Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponAssaultRifle().getArList();
+        assignData(list);
+    }
+
+    public void showSMGData(ActionEvent actionEvent)
+    {
+        headerText.setText("SMG Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponSmg().getSmgList();
+        assignData(list);
+    }
+
+    public void showLMGData(ActionEvent actionEvent)
+    {
+        headerText.setText("LMG Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponLmg().getLMGList();
+        assignData(list);
+    }
+
+    public void showShotgunData(ActionEvent actionEvent)
+    {
+        headerText.setText("Shotgun Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponShotgun().getShotgunList();
+        assignData(list);
+    }
+
+    public void showMarksmanData(ActionEvent actionEvent)
+    {
+        headerText.setText("Marksman Rifle Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
+        assignData(list);
+    }
+
+    public void showSniperData(ActionEvent actionEvent)
+    {
+        headerText.setText("Sniper Rifle Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponSniper().getSniperList();
+        assignData(list);
+    }
+
+    public void showPistolData(ActionEvent actionEvent)
+    {
+        headerText.setText("Pistol Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponPistol().getPistolList();
+        assignData(list);
+    }
+
+    public void showLauncherData(ActionEvent actionEvent)
+    {
+        headerText.setText("Launcher Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();
+        assignData(list);
+    }
+
+    public void assignData(ArrayList<Object> list)
+    {
         final ObservableList<Object> data = FXCollections.observableArrayList();
-        data.addAll(arList);
+        data.addAll(list);
         weaponName.setCellValueFactory(new PropertyValueFactory<>("name"));
         kills.setCellValueFactory(new PropertyValueFactory<>("kills"));
         deaths.setCellValueFactory(new PropertyValueFactory<>("deaths"));
@@ -138,7 +214,6 @@ public class HelloController {
         accuracy.setCellValueFactory(new PropertyValueFactory<>("accuracy"));
         headshots.setCellValueFactory(new PropertyValueFactory<>("headshots"));
         tableView.setItems(data);
-        System.out.println("Done");
     }
 
 }
