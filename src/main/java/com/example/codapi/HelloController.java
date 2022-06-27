@@ -6,7 +6,10 @@ package com.example.codapi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
 
-import javafx.scene.control.TableRow;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import org.json.*;
@@ -16,11 +19,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
-
+import java.util.ArrayList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 public class HelloController {
 
@@ -36,7 +36,32 @@ public class HelloController {
     @FXML
     private BorderPane mainPane;
 
-    private String username;
+    @FXML
+    private TableView tableView;
+
+    @FXML
+    private TableColumn<Object, String> weaponName;
+
+    @FXML
+    private TableColumn<Object, Integer> kills;
+
+    @FXML
+    private TableColumn<Object, Integer> deaths;
+
+    @FXML
+    private TableColumn<Object, Double> kdRatio;
+
+    @FXML
+    private TableColumn<Object, Integer> shots;
+
+    @FXML
+    private TableColumn<Object, Integer> hits;
+
+    @FXML
+    private TableColumn<Object, Double> accuracy;
+
+    @FXML
+    private TableColumn<Object, Integer> headshots;
 
     private JSONObject object;
 
@@ -44,25 +69,21 @@ public class HelloController {
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
         System.out.println("Click");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("test");
-        mainPane.setCenter(view);
-
-//        username = inputName.getText().strip();
+//        String username = inputName.getText().strip();
 //        welcomeText.setVisible(false);
 //        inputName.setVisible(false);
 //        submit.setVisible(false);
 //        username = username.replace(" ", "%20");
-//        HttpRequest request = HttpRequest.newBuilder()
-//                .GET()
-//                .header("accept", "application/json")
-//                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
-//                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
-//                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
-//                .build();
-//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-//        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-//        evaluateData(responseBody);//Start working on it.
+        HttpRequest request = HttpRequest.newBuilder()
+                .GET()
+                .header("accept", "application/json")
+                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
+                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
+                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
+        evaluateData(responseBody);//Start working on it.
     }
 
     /**
@@ -87,21 +108,46 @@ public class HelloController {
      */
     public void evaluateData(String data) throws IOException
     {
-        long startTime = System.currentTimeMillis();
-
         object = new JSONObject(data);//Define the JSONObject global variable
         Lifetime lifetime = retLifetime();
-
-        long endTime = System.currentTimeMillis();
-        System.out.println("That took " + (endTime - startTime) + " milliseconds");
-//        System.out.println(lifetime.getAll().printEssential());
-//        System.out.println(lifetime.getItemData().getWeaponAssaultRifle().getIw8ArMike4().toString());
+        assignARData(lifetime);
     }
 
+    /**
+     * Creating a lifetime object which would have all the data needed for presenting on the application interface
+     * @return Lifetime object
+     * @throws JsonProcessingException JSON stuff
+     */
     public Lifetime retLifetime() throws JsonProcessingException
     {
         RetrieveLifetime rl = new RetrieveLifetime(object);
         return rl.getLifetimeProperties();
     }
 
+    public void assignARData(Lifetime lifetime)
+    {
+        ArrayList<Object> arList = lifetime.getItemData().getWeaponAssaultRifle().getArList();
+        final ObservableList<Object> data = FXCollections.observableArrayList();
+        data.addAll(arList);
+        weaponName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        kills.setCellValueFactory(new PropertyValueFactory<>("kills"));
+        deaths.setCellValueFactory(new PropertyValueFactory<>("deaths"));
+        kdRatio.setCellValueFactory(new PropertyValueFactory<>("kdRatio"));
+        shots.setCellValueFactory(new PropertyValueFactory<>("shots"));
+        hits.setCellValueFactory(new PropertyValueFactory<>("hits"));
+        accuracy.setCellValueFactory(new PropertyValueFactory<>("accuracy"));
+        headshots.setCellValueFactory(new PropertyValueFactory<>("headshots"));
+        tableView.setItems(data);
+        System.out.println("Done");
+    }
+
 }
+//long startTime = System.currentTimeMillis();
+//long endTime = System.currentTimeMillis();
+//System.out.println("That took " + (endTime - startTime) + " milliseconds");
+
+
+//        System.out.println("Click");
+//                FxmlLoader object = new FxmlLoader();
+//                Pane view = object.getPage("test");
+//                mainPane.setCenter(view);
