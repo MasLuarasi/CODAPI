@@ -19,7 +19,7 @@ public class RetrievePistol
         WeaponPistol pistolTemp = new WeaponPistol();
 
         Iw8PiCpapa rev  = get357Properties(object1);
-        rev.setName(".357 (Revolver)");
+        rev.setName(".357");
         pistolList.add(rev);
         pistolTemp.setIw8PiCpapa(rev);
 

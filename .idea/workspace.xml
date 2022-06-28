@@ -6,63 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="870cfdff-0001-48d2-a28b-44222077eb6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAkilo47.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAkilo47.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAnovember94.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAnovember94.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAsierra12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArAsierra12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArFalpha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArGalima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArGalima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArKilo433.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArKilo433.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMcharlie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMcharlie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMike4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArMike4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArScharlie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArScharlie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArSierra552.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArSierra552.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArTango21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArTango21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArValpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ArValpha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaGromeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaGromeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaJuliet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaJuliet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaKgolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaKgolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaMike32.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaMike32.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaRpapa7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LaRpapa7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmKilo121.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmKilo121.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmLima86.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmLima86.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmMgolf34.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmMgolf34.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmMgolf36.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmMgolf36.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmMkilo3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmMkilo3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmPkilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmPkilo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmSierrax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8LmSierrax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiCpapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiCpapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiDecho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiDecho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiGolf21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiGolf21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiMike1911.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiMike1911.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiMike9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiMike9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiPapa320.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8PiPapa320.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShAalpha12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShAalpha12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShCharlie725.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShCharlie725.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShDpapa12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShDpapa12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShMike26.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShMike26.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShOscar12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShOscar12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShRomeo870.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8ShRomeo870.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmAugolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmAugolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmBeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmBeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmCharlie9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmCharlie9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmMpapa5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmMpapa5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmMpapa7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmMpapa7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmPapa90.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmPapa90.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmSmgolf45.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmSmgolf45.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmUzulu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmUzulu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmVictor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmVictor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnAlpha50.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnAlpha50.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnCrossbow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnCrossbow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnDelta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnDelta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnHdromeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnHdromeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnKilo98.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnKilo98.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnMike14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnMike14.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnRomeo700.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnRomeo700.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnSbeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnSbeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnSksierra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnSksierra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnXmike109.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SnXmike109.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrievePistol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrievePistol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,13 +32,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AAuSG93F4smE7Js1QdlBBf1GYM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/Tomas Luarasi/Documents/GitHub/CODAPI/src/main/resources/com/example/codapi/hello-view.fxml",
@@ -150,6 +100,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

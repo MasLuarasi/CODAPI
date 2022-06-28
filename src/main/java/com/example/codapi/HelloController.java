@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -21,6 +20,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
 import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 
 public class HelloController {
@@ -47,31 +47,20 @@ public class HelloController {
     private TableColumn<Object, String> weaponName;
 
     @FXML
-    private TableColumn<Object, Integer> kills;
+    private TableColumn<Object, Integer> kills, deaths, shots, hits, headshots;
 
     @FXML
-    private TableColumn<Object, Integer> deaths;
+    private TableColumn<Object, Double> kdRatio, accuracy;
 
     @FXML
-    private TableColumn<Object, Double> kdRatio;
-
-    @FXML
-    private TableColumn<Object, Integer> shots;
-
-    @FXML
-    private TableColumn<Object, Integer> hits;
-
-    @FXML
-    private TableColumn<Object, Double> accuracy;
-
-    @FXML
-    private TableColumn<Object, Integer> headshots;
+    private Button arButton, smgButton, lmgButton, shotgunButton, marksmanButton, sniperButton, launcherButton, pistolButton;
 
     private JSONObject object;
 
     private Lifetime lifetime;
 
-    public HelloController() throws IOException, InterruptedException {
+    public HelloController() throws IOException, InterruptedException
+    {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .header("accept", "application/json")
@@ -130,7 +119,6 @@ public class HelloController {
     public void evaluateData(String data) throws IOException
     {
         object = new JSONObject(data);//Define the JSONObject global variable
-//        lifetime = new Lifetime();
         lifetime = retLifetime();
     }
 
@@ -150,6 +138,7 @@ public class HelloController {
         headerText.setText("Assault Rifle Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponAssaultRifle().getArList();
         assignData(list);
+        arButton.setOpacity(.6);
     }
 
     public void showSMGData()
@@ -157,6 +146,7 @@ public class HelloController {
         headerText.setText("SMG Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponSmg().getSmgList();
         assignData(list);
+        smgButton.setOpacity(.6);
     }
 
     public void showLMGData()
@@ -164,6 +154,7 @@ public class HelloController {
         headerText.setText("LMG Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponLmg().getLMGList();
         assignData(list);
+        lmgButton.setOpacity(.6);
     }
 
     public void showShotgunData()
@@ -171,6 +162,7 @@ public class HelloController {
         headerText.setText("Shotgun Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponShotgun().getShotgunList();
         assignData(list);
+        shotgunButton.setOpacity(.6);
     }
 
     public void showMarksmanData()
@@ -178,6 +170,7 @@ public class HelloController {
         headerText.setText("Marksman Rifle Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
         assignData(list);
+        marksmanButton.setOpacity(.6);
     }
 
     public void showSniperData()
@@ -185,6 +178,7 @@ public class HelloController {
         headerText.setText("Sniper Rifle Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponSniper().getSniperList();
         assignData(list);
+        sniperButton.setOpacity(.6);
     }
 
     public void showPistolData()
@@ -192,6 +186,7 @@ public class HelloController {
         headerText.setText("Pistol Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponPistol().getPistolList();
         assignData(list);
+        pistolButton.setOpacity(.6);
     }
 
     public void showLauncherData()
@@ -199,13 +194,19 @@ public class HelloController {
         headerText.setText("Launcher Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();
         assignData(list);
+        launcherButton.setOpacity(.6);
     }
 
+    /**
+     * Function to display the appropriate data on the tableView part of the application
+     * @param list Weapon class list
+     */
     public void assignData(ArrayList<Object> list)
     {
         final ObservableList<Object> data = FXCollections.observableArrayList();
-        data.addAll(list);
+        data.addAll(list);//Add the weapon class list containing the object for each weapon to the observable list. Set each column to the variable in the list.
         weaponName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        weaponName.setStyle("-fx-font-weight:bold");
         kills.setCellValueFactory(new PropertyValueFactory<>("kills"));
         deaths.setCellValueFactory(new PropertyValueFactory<>("deaths"));
         kdRatio.setCellValueFactory(new PropertyValueFactory<>("kdRatio"));
@@ -214,6 +215,23 @@ public class HelloController {
         accuracy.setCellValueFactory(new PropertyValueFactory<>("accuracy"));
         headshots.setCellValueFactory(new PropertyValueFactory<>("headshots"));
         tableView.setItems(data);
+        tableView.setStyle("-fx-font-size:17;");
+        makeSolidButtons();
+    }
+
+    /**
+     * Change the opacity of all the weapon class button back to one.
+     */
+    public void makeSolidButtons()
+    {
+        arButton.setOpacity(1);
+        smgButton.setOpacity(1);
+        lmgButton.setOpacity(1);
+        shotgunButton.setOpacity(1);
+        marksmanButton.setOpacity(1);
+        sniperButton.setOpacity(1);
+        launcherButton.setOpacity(1);
+        pistolButton.setOpacity(1);
     }
 
 }

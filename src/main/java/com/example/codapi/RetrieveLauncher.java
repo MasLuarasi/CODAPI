@@ -38,7 +38,7 @@ public class RetrieveLauncher
         launcherTemp.setIw8LaKgolf(strela);
 
         Iw8LaMike32 gl  = getGLProperties(object1);
-        gl.setName("MGL-32 Incendiary Grenade");
+        gl.setName("MGL-32");
         launcherList.add(gl);
         launcherTemp.setIw8LaMike32(gl);
 
