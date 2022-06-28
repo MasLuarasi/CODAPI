@@ -38,7 +38,7 @@ public class HelloController {
     private BorderPane mainPane;
 
     @FXML
-    private TableView tableView;
+    private TableView<Object> tableView;
 
     @FXML
     private Label headerText;
@@ -145,56 +145,56 @@ public class HelloController {
         return rl.getLifetimeProperties();
     }
 
-    public void showARData(ActionEvent actionEvent)
+    public void showARData()
     {
         headerText.setText("Assault Rifle Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponAssaultRifle().getArList();
         assignData(list);
     }
 
-    public void showSMGData(ActionEvent actionEvent)
+    public void showSMGData()
     {
         headerText.setText("SMG Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponSmg().getSmgList();
         assignData(list);
     }
 
-    public void showLMGData(ActionEvent actionEvent)
+    public void showLMGData()
     {
         headerText.setText("LMG Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponLmg().getLMGList();
         assignData(list);
     }
 
-    public void showShotgunData(ActionEvent actionEvent)
+    public void showShotgunData()
     {
         headerText.setText("Shotgun Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponShotgun().getShotgunList();
         assignData(list);
     }
 
-    public void showMarksmanData(ActionEvent actionEvent)
+    public void showMarksmanData()
     {
         headerText.setText("Marksman Rifle Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
         assignData(list);
     }
 
-    public void showSniperData(ActionEvent actionEvent)
+    public void showSniperData()
     {
         headerText.setText("Sniper Rifle Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponSniper().getSniperList();
         assignData(list);
     }
 
-    public void showPistolData(ActionEvent actionEvent)
+    public void showPistolData()
     {
         headerText.setText("Pistol Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponPistol().getPistolList();
         assignData(list);
     }
 
-    public void showLauncherData(ActionEvent actionEvent)
+    public void showLauncherData()
     {
         headerText.setText("Launcher Data");
         ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();

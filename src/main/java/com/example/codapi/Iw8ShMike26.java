@@ -1,8 +1,7 @@
 
 package com.example.codapi;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.text.DecimalFormat;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,13 +12,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "hits",
-    "kills",
-    "kdRatio",
-    "headshots",
-    "accuracy",
-    "shots",
-    "deaths"
+        "hits",
+        "kills",
+        "kdRatio",
+        "headshots",
+        "accuracy",
+        "shots",
+        "deaths"
 })
 @Generated("jsonschema2pojo")
 public class Iw8ShMike26 {
@@ -29,7 +28,7 @@ public class Iw8ShMike26 {
     @JsonProperty("kills")
     private Integer kills;
     @JsonProperty("kdRatio")
-    private Integer kdRatio;
+    private Double kdRatio;
     @JsonProperty("headshots")
     private Integer headshots;
     @JsonProperty("accuracy")
@@ -40,10 +39,12 @@ public class Iw8ShMike26 {
     private Integer deaths;
     @JsonIgnore
     private String name;
+    @JsonIgnore
+    private DecimalFormat numberFormat;
 
     public Iw8ShMike26() {}
 
-    public Iw8ShMike26(Integer hits, Integer kills, Integer kdRatio, Integer headshots, Double accuracy, Integer shots, Integer deaths)
+    public Iw8ShMike26(Integer hits, Integer kills, Double kdRatio, Integer headshots, Double accuracy, Integer shots, Integer deaths)
     {
         super();
         this.hits = hits;
@@ -76,13 +77,15 @@ public class Iw8ShMike26 {
     }
 
     @JsonProperty("kdRatio")
-    public Integer getKdRatio() {
+    public Double getKdRatio() {
         return kdRatio;
     }
 
     @JsonProperty("kdRatio")
-    public void setKdRatio(Integer kdRatio) {
-        this.kdRatio = kdRatio;
+    public void setKdRatio(Double kdRatio)
+    {
+        numberFormat = new DecimalFormat("#.00");
+        this.kdRatio = Double.valueOf(numberFormat.format(kdRatio));
     }
 
     @JsonProperty("headshots")
@@ -101,9 +104,7 @@ public class Iw8ShMike26 {
     }
 
     @JsonProperty("accuracy")
-    public void setAccuracy(Double accuracy) {
-        this.accuracy = accuracy;
-    }
+    public void setAccuracy(Double accuracy) {this.accuracy = Double.valueOf(numberFormat.format(accuracy*100));}
 
     @JsonProperty("shots")
     public Integer getShots() {
@@ -126,12 +127,10 @@ public class Iw8ShMike26 {
     }
 
     @JsonAnyGetter
-    public String getName() {
-        return this.name;
-    }
+    public String getName() {return this.name;}
 
     @JsonAnySetter
-    public void setName(String name) { this.name = name;}
+    public void setName(String name) {this.name = name;}
 
     @Override
     public String toString()

@@ -1,8 +1,7 @@
 
 package com.example.codapi;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.text.DecimalFormat;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -40,6 +39,8 @@ public class Iw8ArAkilo47 {
     private Integer deaths;
     @JsonIgnore
     private String name;
+    @JsonIgnore
+    private DecimalFormat numberFormat;
 
     public Iw8ArAkilo47() {}
 
@@ -81,8 +82,10 @@ public class Iw8ArAkilo47 {
     }
 
     @JsonProperty("kdRatio")
-    public void setKdRatio(Double kdRatio) {
-        this.kdRatio = kdRatio;
+    public void setKdRatio(Double kdRatio)
+    {
+        numberFormat = new DecimalFormat("#.00");
+        this.kdRatio = Double.valueOf(numberFormat.format(kdRatio));
     }
 
     @JsonProperty("headshots")
@@ -101,9 +104,7 @@ public class Iw8ArAkilo47 {
     }
 
     @JsonProperty("accuracy")
-    public void setAccuracy(Double accuracy) {
-        this.accuracy = accuracy;
-    }
+    public void setAccuracy(Double accuracy) {this.accuracy = Double.valueOf(numberFormat.format(accuracy*100));}
 
     @JsonProperty("shots")
     public Integer getShots() {
