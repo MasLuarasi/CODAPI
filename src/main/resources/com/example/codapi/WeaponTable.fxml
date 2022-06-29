@@ -44,7 +44,7 @@
                       <Font size="25.0" />
                   </font>
               </Label>
-              <TextField fx:id="inputName" layoutX="213.0" layoutY="14.0" onInputMethodTextChanged="#enableSubmitButton" prefHeight="31.0" prefWidth="264.0" promptText="Your Name#123" text="General Kenobi#7520759" />
+              <TextField fx:id="inputName" layoutX="213.0" layoutY="14.0" prefHeight="31.0" prefWidth="264.0" promptText="Your Name#123" text="General Kenobi#7520759" />
               <Label fx:id="prompt" layoutX="23.0" layoutY="14.0" text="Activision Username:">
                   <font>
                       <Font size="18.0" />
