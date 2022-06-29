@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrievePistol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrievePistol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

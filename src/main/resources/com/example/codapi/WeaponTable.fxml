@@ -5,27 +5,38 @@
 <?import javafx.scene.layout.*?>
 
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-           minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8"
+           minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8"
            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codapi.HelloController">
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0"
-                prefWidth="130.0">
-        <Button fx:id="arButton" layoutY="112.0" mnemonicParsing="false" onAction="#showARData" prefHeight="60.0" prefWidth="125.0" text="Assault Rifle"/>
-        <Button fx:id="smgButton" layoutY="172.0" mnemonicParsing="false" onAction="#showSMGData" prefHeight="60.0" prefWidth="125.0" text="SMG"/>
-        <Button fx:id="lmgButton" layoutY="232.0" mnemonicParsing="false" onAction="#showLMGData" prefHeight="60.0" prefWidth="125.0" text="LMG"/>
-        <Button fx:id="shotgunButton" layoutY="292.0" mnemonicParsing="false" onAction="#showShotgunData" prefHeight="60.0" prefWidth="125.0" text="Shotgun"/>
-        <Button fx:id="marksmanButton" layoutY="352.0" mnemonicParsing="false" onAction="#showMarksmanData" prefHeight="60.0" prefWidth="125.0" text="Marksman "/>
-        <Button fx:id="sniperButton" layoutY="412.0" mnemonicParsing="false" onAction="#showSniperData" prefHeight="60.0" prefWidth="125.0" text="Sniper"/>
-        <Button fx:id="launcherButton" layoutY="532.0" mnemonicParsing="false" onAction="#showLauncherData" prefHeight="60.0" prefWidth="125.0" text="Launcher"/>
-        <Button fx:id="pistolButton" layoutY="472.0" mnemonicParsing="false" onAction="#showPistolData" prefHeight="60.0" prefWidth="125.0" text="Pistol"/>
-        <Label alignment="CENTER" layoutX="2.0" prefHeight="107.0" prefWidth="125.0" text="Weapon Class" textAlignment="CENTER" wrapText="true">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                prefHeight="651.0" prefWidth="130.0">
+        <Button fx:id="allWeaponButton" layoutY="111.0" mnemonicParsing="false" onAction="#showAllData"
+                prefHeight="60.0" prefWidth="125.0" text="All Weapons"/>
+        <Button fx:id="arButton" layoutY="171.0" mnemonicParsing="false" onAction="#showARData" prefHeight="60.0"
+                prefWidth="125.0" text="Assault Rifle"/>
+        <Button fx:id="smgButton" layoutY="231.0" mnemonicParsing="false" onAction="#showSMGData" prefHeight="60.0"
+                prefWidth="125.0" text="SMG"/>
+        <Button fx:id="lmgButton" layoutY="291.0" mnemonicParsing="false" onAction="#showLMGData" prefHeight="60.0"
+                prefWidth="125.0" text="LMG"/>
+        <Button fx:id="shotgunButton" layoutY="351.0" mnemonicParsing="false" onAction="#showShotgunData"
+                prefHeight="60.0" prefWidth="125.0" text="Shotgun"/>
+        <Button fx:id="marksmanButton" layoutY="411.0" mnemonicParsing="false" onAction="#showMarksmanData"
+                prefHeight="60.0" prefWidth="125.0" text="Marksman "/>
+        <Button fx:id="sniperButton" layoutY="471.0" mnemonicParsing="false" onAction="#showSniperData"
+                prefHeight="60.0" prefWidth="125.0" text="Sniper"/>
+        <Button fx:id="launcherButton" layoutY="591.0" mnemonicParsing="false" onAction="#showLauncherData"
+                prefHeight="60.0" prefWidth="125.0" text="Launcher"/>
+        <Button fx:id="pistolButton" layoutY="531.0" mnemonicParsing="false" onAction="#showPistolData"
+                prefHeight="60.0" prefWidth="125.0" text="Pistol"/>
+        <Label alignment="CENTER" layoutX="2.0" prefHeight="111.0" prefWidth="125.0" text="Weapon Class"
+               textAlignment="CENTER" wrapText="true">
             <font>
                 <Font size="25.0"/>
             </font>
         </Label>
     </AnchorPane>
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0"
-                prefWidth="900.0">
-        <TableView fx:id="tableView" layoutX="4.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity"
+    <AnchorPane layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                prefHeight="638.0" prefWidth="900.0">
+        <TableView fx:id="tableView" layoutX="4.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity"
                    minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="875.0">
             <columns>
                 <TableColumn fx:id="weaponName" prefWidth="130.0" text="Weapon"/>
@@ -38,10 +49,19 @@
                 <TableColumn fx:id="headshots" prefWidth="128.0" text="Headshots"/>
             </columns>
         </TableView>
-        <Label fx:id="headerText" alignment="CENTER" layoutX="290.0" layoutY="14.0" text="Assault Rifle Data">
+        <Label fx:id="headerText" alignment="CENTER" layoutX="290.0" layoutY="50.0" text="Assault Rifle Data">
             <font>
                 <Font size="25.0"/>
             </font>
         </Label>
+        <TextField fx:id="inputName" layoutX="213.0" layoutY="14.0" prefHeight="31.0" prefWidth="264.0"
+                   promptText="Your Name#123"/>
+        <Label fx:id="prompt" layoutX="23.0" layoutY="14.0" text="Activision Username:">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Button fx:id="submitButton" layoutX="492.0" layoutY="14.0" mnemonicParsing="false"
+                onAction="#onSubmitButtonClick" text="Submit"/>
     </AnchorPane>
 </SplitPane>

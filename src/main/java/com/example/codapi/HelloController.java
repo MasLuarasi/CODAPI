@@ -26,13 +26,13 @@ import javafx.fxml.FXML;
 public class HelloController {
 
     @FXML
-    private Label welcomeText;
+    private Label prompt;
 
     @FXML
     private TextField inputName;
 
     @FXML
-    private Button submit;
+    private Button submitButton;
 
     @FXML
     private BorderPane mainPane;
@@ -53,48 +53,45 @@ public class HelloController {
     private TableColumn<Object, Double> kdRatio, accuracy;
 
     @FXML
-    private Button arButton, smgButton, lmgButton, shotgunButton, marksmanButton, sniperButton, launcherButton, pistolButton;
+    private Button arButton, smgButton, lmgButton, shotgunButton, marksmanButton, sniperButton, launcherButton, pistolButton, allWeaponButton;
 
     private JSONObject object;
 
     private Lifetime lifetime;
 
-    public HelloController() throws IOException, InterruptedException
-    {
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .header("accept", "application/json")
-                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
-                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
-                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-        evaluateData(responseBody);//Start working on it.
-    }
+//    public HelloController() throws IOException, InterruptedException
+//    {
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .GET()
+//                .header("accept", "application/json")
+//                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
+//                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
+//                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
+//                .build();
+//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+//        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
+//        evaluateData(responseBody);//Start working on it.
+//    }
 
-    /*
+
     @FXML
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
-        System.out.println("Click");
-        String username = inputName.getText().strip();
-        welcomeText.setVisible(false);
-        inputName.setVisible(false);
-        submit.setVisible(false);
-        username = username.replace(" ", "%20");
+        String username = inputName.getText().strip();//Get username input
+        username = username.replace("#", "%23");//Replace the # with %23 because HTTP Request says so
+        username = username.replace(" ", "%20");//Request replaces spaces with %20
+        //General Kenobi#7520759
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .header("accept", "application/json")
                 .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
                 .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
-                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
+                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/"+username+"/acti"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
         evaluateData(responseBody);//Start working on it.
     }
-     */
 
     /**
      * Removing all the Properties' field from the response along with their corresponding '}'.
@@ -195,6 +192,14 @@ public class HelloController {
         ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();
         assignData(list);
         launcherButton.setOpacity(.6);
+    }
+
+    public void showAllData()
+    {
+        headerText.setText("All Weapon Data");
+        ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();
+        assignData(list);
+        allWeaponButton.setOpacity(.6);
     }
 
     /**
