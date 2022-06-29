@@ -1,27 +1,24 @@
 package com.example.codapi;
 
-//import com.fasterxml.jackson.core.JsonGenerator;
-//import com.fasterxml.jackson.core.JsonProcessingException;
-//import com.fasterxml.jackson.core.type.TypeReference;
+import org.json.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.*;
-
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.URI;
+import java.io.IOException;
+import javafx.fxml.FXML;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import org.json.*;
 
-import java.io.IOException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.URI;
+import javax.net.ssl.SSLContext;
 import java.util.ArrayList;
+import java.util.Collections;
 
-import javafx.fxml.FXML;
 
 public class HelloController {
 
@@ -53,30 +50,19 @@ public class HelloController {
     private TableColumn<Object, Double> kdRatio, accuracy;
 
     @FXML
-    private Button arButton, smgButton, lmgButton, shotgunButton, marksmanButton, sniperButton, launcherButton, pistolButton, allWeaponButton;
+    private Button arButton, smgButton, lmgButton, shotgunButton, marksmanButton, sniperButton, pistolButton, launcherButton, allWeaponButton;
 
     private JSONObject object;
 
     private Lifetime lifetime;
 
-//    public HelloController() throws IOException, InterruptedException
-//    {
-//        HttpRequest request = HttpRequest.newBuilder()
-//                .GET()
-//                .header("accept", "application/json")
-//                .header("X-RapidAPI-Host", "call-of-duty-modern-warfare.p.rapidapi.com")
-//                .header("X-RapidAPI-Key", "4125e08ab5msh1e35e54946ee894p1de70djsn0b70aa45221f")
-//                .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/General%20Kenobi%237520759/acti"))
-//                .build();
-//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-//        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-//        evaluateData(responseBody);//Start working on it.
-//    }
-
+    private ArrayList<Object> arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList, allList;
 
     @FXML
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
+        long startTime = System.currentTimeMillis();
+//        submitButton.setDisable(true);
         String username = inputName.getText().strip();//Get username input
         username = username.replace("#", "%23");//Replace the # with %23 because HTTP Request says so
         username = username.replace(" ", "%20");//Request replaces spaces with %20
@@ -89,8 +75,19 @@ public class HelloController {
                 .uri(URI.create("https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/"+username+"/acti"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-        evaluateData(responseBody);//Start working on it.
+        try
+        {
+            String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
+            evaluateData(responseBody);//Start working on it.
+            showAllData();
+            long endTime = System.currentTimeMillis();
+            System.out.println("That took " + (endTime - startTime) + " milliseconds");
+        }
+        catch (JSONException e)
+        {
+            System.out.println("Invalid Activision Username");
+        }
+
     }
 
     /**
@@ -110,6 +107,8 @@ public class HelloController {
     /**
      * Taking in the modified response body, we can now map the data to its corresponding class.
      * Even though there are a lot of classes, we will not be using all of them, but a decent amount still.
+     * Able to assign the lifetime object. Also assigning the weapon classes list to be used when their
+     * respective buttons are clicked on the front end.
      * @param data The modified HTTP response body
      * @throws IOException JSON stuff
      */
@@ -117,6 +116,25 @@ public class HelloController {
     {
         object = new JSONObject(data);//Define the JSONObject global variable
         lifetime = retLifetime();
+        arList = lifetime.getItemData().getWeaponAssaultRifle().getArList();
+        smgList = lifetime.getItemData().getWeaponSmg().getSmgList();
+        lmgList = lifetime.getItemData().getWeaponLmg().getLMGList();
+        shotgunList = lifetime.getItemData().getWeaponShotgun().getShotgunList();
+        marksmanList = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
+        sniperList = lifetime.getItemData().getWeaponSniper().getSniperList();
+        pistolList = lifetime.getItemData().getWeaponPistol().getPistolList();
+        launcherList = lifetime.getItemData().getWeaponLauncher().getLauncherList();
+        allList = new ArrayList<>();
+        Collections.addAll(allList, arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList);
+        ArrayList<Object> oList;
+        ArrayList<Object> temp = new ArrayList<>();
+        for (Object o : allList)
+        {
+            oList = (ArrayList<Object>) o;
+            temp.addAll(oList);
+        }
+        allList = temp;
+        System.out.println("Done");
     }
 
     /**
@@ -130,76 +148,68 @@ public class HelloController {
         return rl.getLifetimeProperties();
     }
 
+    /**
+     * Display weapon class data and change opacity of its button.
+     */
+
     public void showARData()
     {
         headerText.setText("Assault Rifle Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponAssaultRifle().getArList();
-        assignData(list);
-        arButton.setOpacity(.6);
+        assignAndClick(arList, arButton);
     }
 
     public void showSMGData()
     {
         headerText.setText("SMG Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponSmg().getSmgList();
-        assignData(list);
-        smgButton.setOpacity(.6);
+        assignAndClick(smgList, smgButton);
     }
 
     public void showLMGData()
     {
         headerText.setText("LMG Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponLmg().getLMGList();
-        assignData(list);
-        lmgButton.setOpacity(.6);
+        assignAndClick(lmgList, lmgButton);
     }
 
     public void showShotgunData()
     {
         headerText.setText("Shotgun Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponShotgun().getShotgunList();
-        assignData(list);
-        shotgunButton.setOpacity(.6);
+        assignAndClick(shotgunList, shotgunButton);
     }
 
     public void showMarksmanData()
     {
         headerText.setText("Marksman Rifle Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
-        assignData(list);
-        marksmanButton.setOpacity(.6);
+        assignAndClick(marksmanList, marksmanButton);
     }
 
     public void showSniperData()
     {
         headerText.setText("Sniper Rifle Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponSniper().getSniperList();
-        assignData(list);
-        sniperButton.setOpacity(.6);
+        assignAndClick(sniperList, sniperButton);
     }
 
     public void showPistolData()
     {
         headerText.setText("Pistol Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponPistol().getPistolList();
-        assignData(list);
-        pistolButton.setOpacity(.6);
+        assignAndClick(pistolList, pistolButton);
     }
 
     public void showLauncherData()
     {
         headerText.setText("Launcher Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();
-        assignData(list);
-        launcherButton.setOpacity(.6);
+        assignAndClick(launcherList, launcherButton);
     }
 
     public void showAllData()
     {
         headerText.setText("All Weapon Data");
-        ArrayList<Object> list = lifetime.getItemData().getWeaponLauncher().getLauncherList();
-        assignData(list);
-        allWeaponButton.setOpacity(.6);
+        assignAndClick(allList, allWeaponButton);
+    }
+
+    public void assignAndClick(ArrayList<Object> a, Button b)
+    {
+        assignData(a);
+        b.setOpacity(.5);
     }
 
     /**
@@ -235,15 +245,21 @@ public class HelloController {
         shotgunButton.setOpacity(1);
         marksmanButton.setOpacity(1);
         sniperButton.setOpacity(1);
-        launcherButton.setOpacity(1);
         pistolButton.setOpacity(1);
+        launcherButton.setOpacity(1);
+        allWeaponButton.setOpacity(1);
+    }
+
+    /**
+     * If the text in the input field is changed, enable the submit button again.
+     */
+    public void enableSubmitButton()
+    {
+        System.out.println("Change");
+        submitButton.setDisable(false);
     }
 
 }
-//long startTime = System.currentTimeMillis();
-//long endTime = System.currentTimeMillis();
-//System.out.println("That took " + (endTime - startTime) + " milliseconds");
-
 
 //        System.out.println("Click");
 //                FxmlLoader object = new FxmlLoader();
