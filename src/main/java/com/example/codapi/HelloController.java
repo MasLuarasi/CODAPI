@@ -1,5 +1,6 @@
 package com.example.codapi;
 
+import javafx.scene.image.Image;
 import org.json.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import java.net.http.HttpClient;
@@ -15,21 +16,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
-import javax.net.ssl.SSLContext;
 import java.util.ArrayList;
 import java.util.Collections;
 
 
 public class HelloController {
 
+    public SplitPane splitPane;
     @FXML
-    private BorderPane mainPane;
+    private Pane mainPane;
 
     @FXML
-    private Label prompt;
-
-    @FXML
-    private Label headerText;
+    private Label prompt, headerText;
 
     @FXML
     private TextField inputName;
@@ -91,7 +89,6 @@ public class HelloController {
                 System.out.println("Invalid Activision Username");
             }
         }
-
     }
 
     /**
