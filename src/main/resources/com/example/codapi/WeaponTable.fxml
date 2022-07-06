@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codapi.HelloController">
-    <SplitPane fx:id="splitPane" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity"
+    <SplitPane fx:id="weaponTablePane" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity"
                minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0"
                xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
@@ -36,7 +36,7 @@
         </AnchorPane>
         <AnchorPane layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
                     prefHeight="638.0" prefWidth="900.0">
-            <Label fx:id="prompt" layoutX="23.0" layoutY="14.0" text="Activision Username:">
+            <Label layoutX="23.0" layoutY="14.0" text="Activision Username:">
                 <font><Font size="18.0"/></font>
             </Label>
             <TextField fx:id="inputName" layoutX="213.0" layoutY="14.0" prefHeight="31.0" prefWidth="264.0"

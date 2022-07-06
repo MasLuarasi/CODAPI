@@ -1,33 +1,40 @@
 package com.example.codapi;
 
-import javafx.scene.image.Image;
 import org.json.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
+
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.BorderPane;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class HelloController {
 
-    public SplitPane splitPane;
+    @FXML
+    private BorderPane borderPane;
+
     @FXML
     private Pane mainPane;
 
     @FXML
-    private Label prompt, headerText;
+    private SplitPane weaponTablePane;
+
+    @FXML
+    private Label headerText;
 
     @FXML
     private TextField inputName;
@@ -57,9 +64,15 @@ public class HelloController {
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
         long startTime = System.currentTimeMillis();
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("WeaponTable.fxml"));
+//        mainPane = fxmlLoader.load();
+//        borderPane.setCenter(mainPane);
+
         submitButton.setDisable(true);
         enableSubmitButton();
         String username = inputName.getText().strip();//Get username input
+        System.out.println(username);
         username = username.replace("#", "%23");//Replace the # with %23 because HTTP Request says so
         username = username.replace(" ", "%20");//Request replaces spaces with %20
         HttpRequest request = HttpRequest.newBuilder()
