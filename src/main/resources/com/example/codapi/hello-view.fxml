@@ -4,14 +4,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codapi.HelloController">
-    <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-        <Label layoutX="23.0" layoutY="14.0" text="Activision Username:">
-            <font><Font size="18.0"/></font>
-        </Label>
-        <TextField fx:id="inputName" layoutX="213.0" layoutY="14.0" prefHeight="31.0" prefWidth="264.0"
-                   promptText="Your Name#123" text="General Kenobi#7520759"/>
-        <Button fx:id="submitButton" layoutX="492.0" layoutY="14.0" mnemonicParsing="false"
-                onAction="#onSubmitButtonClick" text="Submit"/>
-    </Pane>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codapi.HelloController">
+   <children>
+       <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+          <children>
+              <Label layoutX="23.0" layoutY="45.0" prefHeight="44.0" text="Activision Username:">
+                  <font>
+                      <Font size="20.0" />
+                  </font>
+              </Label>
+              <TextField fx:id="inputName" layoutX="225.0" layoutY="45.0" prefHeight="44.0" prefWidth="300.0" promptText="Your Name#123" text="General Kenobi#7520759">
+                  <font>
+                      <Font size="20.0" />
+                  </font>
+              </TextField>
+              <Button fx:id="submitButton" layoutX="550.0" layoutY="45.0" mnemonicParsing="false" onAction="#onSubmitButtonClick" text="Submit">
+                  <font>
+                      <Font size="20.0" />
+                  </font>
+              </Button>
+          </children>
+       </Pane>
+   </children>
 </BorderPane>
