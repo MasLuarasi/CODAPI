@@ -10,8 +10,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("LifetimeAllStats.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1050, 669);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1050, 750);
         stage.setTitle("Modern Warfare 2019 Multiplayer Data");
         stage.setScene(scene);
         stage.show();

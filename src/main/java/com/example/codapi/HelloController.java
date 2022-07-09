@@ -65,9 +65,9 @@ public class HelloController {
     {
         long startTime = System.currentTimeMillis();
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("WeaponTable.fxml"));
-//        mainPane = fxmlLoader.load();
-//        borderPane.setCenter(mainPane);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("WeaponTable.fxml"));
+        mainPane = fxmlLoader.load();
+        borderPane.setBottom(mainPane);
 
         submitButton.setDisable(true);
         enableSubmitButton();
@@ -84,24 +84,24 @@ public class HelloController {
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-        try
-        {
-            evaluateData(responseBody);
-            showAllData();
-            long endTime = System.currentTimeMillis();
-            System.out.println("That took " + (endTime - startTime) + " milliseconds");
-        }
-        catch (JSONException e)
-        {
-            if (responseBody.contains("not allowed"))
-            {
-                System.out.println("User does not allow their info to be shared with third party apps");
-            }
-            else
-            {
-                System.out.println("Invalid Activision Username");
-            }
-        }
+//        try
+//        {
+//            evaluateData(responseBody);
+//            showAllData();
+//            long endTime = System.currentTimeMillis();
+//            System.out.println("That took " + (endTime - startTime) + " milliseconds");
+//        }
+//        catch (JSONException e)
+//        {
+//            if (responseBody.contains("not allowed"))
+//            {
+//                System.out.println("User does not allow their info to be shared with third party apps");
+//            }
+//            else
+//            {
+//                System.out.println("Invalid Activision Username");
+//            }
+//        }
     }
 
     /**
