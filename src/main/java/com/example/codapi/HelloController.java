@@ -21,7 +21,6 @@ import javafx.scene.layout.BorderPane;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
 
 public class HelloController {
 
@@ -29,13 +28,16 @@ public class HelloController {
     private BorderPane borderPane;
 
     @FXML
-    private Pane weaponPane;
+    private Pane mainPane;
 
     @FXML
-    private TextField inputName;
+    private SplitPane weaponTablePane;
 
     @FXML
     private Label headerText;
+
+    @FXML
+    private TextField inputName;
 
     @FXML
     private TableView<Object> tableView;
@@ -63,8 +65,9 @@ public class HelloController {
     {
         long startTime = System.currentTimeMillis();
 
-        weaponPane = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("WeaponTable.fxml")));
-        borderPane.setBottom(weaponPane);
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("WeaponTable.fxml"));
+//        mainPane = fxmlLoader.load();
+//        borderPane.setCenter(mainPane);
 
         submitButton.setDisable(true);
         enableSubmitButton();
@@ -145,8 +148,6 @@ public class HelloController {
             temp.addAll(oList);
         }
         allList = temp;
-//        UILifetimeStats uiLifetimeStats = new UILifetimeStats(lifetime);
-//        UIWeaponStats uiWeaponStats = new UIWeaponStats(allList);
         System.out.println("Done");
     }
 
@@ -167,57 +168,56 @@ public class HelloController {
 
     public void showARData()
     {
-        System.out.println("Click AR");
         headerText.setText("Assault Rifle Data");
-        assignAndOpacity(arList, arButton);
+        assignAndClick(arList, arButton);
     }
 
     public void showSMGData()
     {
         headerText.setText("SMG Data");
-        assignAndOpacity(smgList, smgButton);
+        assignAndClick(smgList, smgButton);
     }
 
     public void showLMGData()
     {
         headerText.setText("LMG Data");
-        assignAndOpacity(lmgList, lmgButton);
+        assignAndClick(lmgList, lmgButton);
     }
 
     public void showShotgunData()
     {
         headerText.setText("Shotgun Data");
-        assignAndOpacity(shotgunList, shotgunButton);
+        assignAndClick(shotgunList, shotgunButton);
     }
 
     public void showMarksmanData()
     {
         headerText.setText("Marksman Rifle Data");
-        assignAndOpacity(marksmanList, marksmanButton);
+        assignAndClick(marksmanList, marksmanButton);
     }
 
     public void showSniperData()
     {
         headerText.setText("Sniper Rifle Data");
-        assignAndOpacity(sniperList, sniperButton);
+        assignAndClick(sniperList, sniperButton);
     }
 
     public void showPistolData()
     {
         headerText.setText("Pistol Data");
-        assignAndOpacity(pistolList, pistolButton);
+        assignAndClick(pistolList, pistolButton);
     }
 
     public void showLauncherData()
     {
         headerText.setText("Launcher Data");
-        assignAndOpacity(launcherList, launcherButton);
+        assignAndClick(launcherList, launcherButton);
     }
 
     public void showAllData()
     {
         headerText.setText("All Weapon Data");
-        assignAndOpacity(allList, allWeaponButton);
+        assignAndClick(allList, allWeaponButton);
     }
 
     /**
@@ -225,7 +225,7 @@ public class HelloController {
      * @param a Weapon class array list
      * @param b Weapon class button that needs to have its opacity changed
      */
-    public void assignAndOpacity(ArrayList<Object> a, Button b)
+    public void assignAndClick(ArrayList<Object> a, Button b)
     {
         assignData(a);
         b.setOpacity(.5);
@@ -239,8 +239,6 @@ public class HelloController {
     {
         final ObservableList<Object> data = FXCollections.observableArrayList();
         data.addAll(list);//Add the weapon class list containing the object for each weapon to the observable list. Set each column to the variable in the list.
-        System.out.println(data.size());
-        System.out.println(data.get(0).toString());
         weaponName.setCellValueFactory(new PropertyValueFactory<>("name"));
         weaponName.setStyle("-fx-font-weight:bold");
         kills.setCellValueFactory(new PropertyValueFactory<>("kills"));
@@ -279,42 +277,6 @@ public class HelloController {
         inputName.textProperty().addListener((observable, oldValue, newValue) ->
                 submitButton.setDisable(false));
     }
-
-    /*
-    public void initialize()
-    {
-        headerText = new Label();
-        tableView = new TableView<>();
-        weaponName = new TableColumn<>();
-        kills = new TableColumn<Object, Integer>();
-        deaths = new TableColumn<Object, Integer>();
-        shots = new TableColumn<Object, Integer>();
-        hits = new TableColumn<Object, Integer>();
-        headshots = new TableColumn<Object, Integer>();
-        kdRatio = new TableColumn<Object, Double>();
-        accuracy = new TableColumn<Object, Double>();
-        arButton = new Button();
-        smgButton = new Button();
-        lmgButton = new Button();
-        shotgunButton = new Button();
-        marksmanButton = new Button();
-        sniperButton = new Button();
-        pistolButton = new Button();
-        launcherButton = new Button();
-        allWeaponButton = new Button();
-        object = new JSONObject();
-        lifetime = new Lifetime();
-        arList = new ArrayList<Object>();
-        smgList = new ArrayList<Object>();
-        lmgList = new ArrayList<Object>();
-        shotgunList = new ArrayList<Object>();
-        marksmanList = new ArrayList<Object>();
-        sniperList = new ArrayList<Object>();
-        pistolList = new ArrayList<Object>();
-        launcherList = new ArrayList<Object>();
-        allList = new ArrayList<Object>();
-    }
-     */
 
 }
 

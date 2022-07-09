@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="870cfdff-0001-48d2-a28b-44222077eb6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/UILifetimeStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/UIWeaponStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/LifetimeAllStats.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/All.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/All.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/LifetimeAllStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/LifetimeAllStats.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/hello-view.fxml" afterDir="false" />
     </list>
@@ -22,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>

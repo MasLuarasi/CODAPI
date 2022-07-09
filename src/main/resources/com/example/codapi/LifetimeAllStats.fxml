@@ -1,163 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codapi.UILifetimeStats">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-       <Label fx:id="lifetimeLabel" alignment="CENTER" layoutX="385.0" layoutY="23.0" onMouseClicked="#showLifetimeData" prefHeight="61.0" prefWidth="276.0" text="Lifetime Stats Overview">
-           <font>
-             <Font size="25.0" />
-           </font>
-       </Label>
+      <Label fx:id="lifetimeLabel" alignment="CENTER" layoutX="385.0" layoutY="23.0" prefHeight="61.0" prefWidth="276.0" text="Lifetime Stats Overview">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
    
-       <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="-0.0" layoutY="100.0" prefHeight="568.0" prefWidth="1050.0">
-           <columnConstraints>
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-           </columnConstraints>
-           <rowConstraints>
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-           </rowConstraints>
+      <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="-0.0" layoutY="100.0" prefHeight="568.0" prefWidth="1050.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
       <children>
-              <Label fx:id="gridBestKDLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Best K/D In A Match" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridMostDeathsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Most Deaths In A Match" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridWLRatioLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="W/L Ratio" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridLossesLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Losses" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridAccuracyLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Accuracy" GridPane.columnIndex="2" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridGamesPlayedLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Total Games Played" GridPane.columnIndex="1" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridLongestKSLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Longest Kill Streak In A Match" wrapText="true" GridPane.rowIndex="4" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridMostKillsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Most Kills In A Match" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridWinsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Wins" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridKillsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Kills" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridTimeLabel" alignment="CENTER" pickOnBounds="false" prefHeight="50.0" prefWidth="350.0" text="Total Time Played" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridDeathsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Deaths" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridKDLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="K/D Ratio" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridKDVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridDeathsVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridTimeVal" alignment="CENTER" pickOnBounds="false" prefHeight="50.0" prefWidth="350.0">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridKillsVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.rowIndex="1">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridWinsVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.rowIndex="2">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridMostKillsVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.rowIndex="3">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridLongestKSVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" wrapText="true" GridPane.rowIndex="4">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridGamesPlayedVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="1">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridAccuracyVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="2">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridLossesVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridWLRatioVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridMostDeathsVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
-              <Label fx:id="gridBestKDVal" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                  <font>
-                      <Font size="25.0" />
-                  </font>
-              </Label>
+            <Label fx:id="gridBestKDLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Best K/D In A Match" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridMostDeathsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Most Deaths In A Match" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridWLRatio" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="W/L Ratio" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLossesLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Losses" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridAccuracyLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Accuracy" GridPane.columnIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridGamesPlayedLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Total Games Played" GridPane.columnIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLongestKSLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Longest Kill Streak In A Match" wrapText="true" GridPane.rowIndex="4" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridMostKillsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Most Kills In A Match" GridPane.rowIndex="3" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridWinsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Wins" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridKillsLabel121" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Kills" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridTimeLabel" alignment="CENTER" pickOnBounds="false" prefHeight="50.0" prefWidth="350.0" text="Total Time Played" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridDeathsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="Deaths" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridKDLabel" alignment="CENTER" prefHeight="50.0" prefWidth="350.0" text="K/D Ratio" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
       </children>
-       </GridPane>
+      </GridPane>
    </children>
 </Pane>
