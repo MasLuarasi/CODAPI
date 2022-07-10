@@ -36,9 +36,14 @@ public class UIWeaponTable
 
     public UIWeaponTable(){}
 
-    public UIWeaponTable(ArrayList<ArrayList<Object>> a)
+//    public UIWeaponTable(ArrayList<ArrayList<Object>> a)
+//    {
+//        this.weaponClassList = a;
+//    }
+
+    public void setWeaponClassList(ArrayList<ArrayList<Object>> a)
     {
-        this.weaponClassList = a;
+        weaponClassList = a;
     }
 
     public void showARData()
@@ -91,7 +96,7 @@ public class UIWeaponTable
 
     public void showAllData()
     {
-        headerText.setText("SUCK MY BALLS");
+        headerText.setText("All Weapon Data");
         assignAndClick(weaponClassList.get(8), allWeaponButton);
     }
 

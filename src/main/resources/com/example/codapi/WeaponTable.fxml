@@ -29,7 +29,7 @@
               </AnchorPane>
               <AnchorPane layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="900.0">
                  <children>
-                     <Label fx:id="headerText" alignment="CENTER" layoutX="285.0" layoutY="14.0" text="All Weapon Data">
+                     <Label fx:id="headerText" alignment="CENTER" layoutX="338.0" layoutY="14.0" text="All Weapon Data">
                          <font>
                         <Font size="25.0" />
                      </font>

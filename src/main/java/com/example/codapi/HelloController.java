@@ -11,10 +11,7 @@ import java.net.URI;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
@@ -34,21 +31,6 @@ public class HelloController {
     @FXML
     private TextField inputName;
 
-//    @FXML
-//    private Label headerText;
-//
-//    @FXML
-//    private TableView<Object> tableView;
-//
-//    @FXML
-//    private TableColumn<Object, String> weaponName;
-//
-//    @FXML
-//    private TableColumn<Object, Integer> kills, deaths, shots, hits, headshots;
-//
-//    @FXML
-//    private TableColumn<Object, Double> kdRatio, accuracy;
-
     @FXML
     private Button submitButton;
 
@@ -56,17 +38,23 @@ public class HelloController {
 
     private Lifetime lifetime;
 
-    private ArrayList<Object> arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList, allWeaponList;
+    private FXMLLoader fxmlLoader;
 
-    private ArrayList<ArrayList<Object>> weaponClassList;
+    public HelloController()
+    {
+        fxmlLoader = new FXMLLoader();
+    }
 
+    /**
+     * Once the submit button is clicked, we will make a call to get the data for the user that was entered.
+     * If the user is not found, then there will be an "Invalid Activision Username" text displayed.
+     * If the user is found but has their profile set to private, there will be a message indicating that.
+     * Otherwise, we will get an HTTP response and format it, map it to appropriate data and initiate the
+     * frontend aspect of the project using helper functions below.
+     */
     @FXML
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("WeaponTable.fxml"));
-        mainPane = fxmlLoader.load();
-        borderPane.setBottom(mainPane);
-
         submitButton.setDisable(true);
         enableSubmitButton();
         String username = inputName.getText().strip();//Get username input
@@ -119,149 +107,47 @@ public class HelloController {
      * Able to assign the lifetime object. Also assigning the weapon classes list to be used when their
      * respective buttons are clicked on the front end.
      * @param data The modified HTTP response body
-     * @throws IOException JSON stuff
      */
     public void evaluateData(String data) throws IOException
     {
         object = new JSONObject(data);//Define the JSONObject global variable
         lifetime = retLifetime();//Assign the lifetime object
-        arList = lifetime.getItemData().getWeaponAssaultRifle().getArList();//Assign weapon class lists respectively
-        smgList = lifetime.getItemData().getWeaponSmg().getSmgList();
-        lmgList = lifetime.getItemData().getWeaponLmg().getLMGList();
-        shotgunList = lifetime.getItemData().getWeaponShotgun().getShotgunList();
-        marksmanList = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
-        sniperList = lifetime.getItemData().getWeaponSniper().getSniperList();
-        pistolList = lifetime.getItemData().getWeaponPistol().getPistolList();
-        launcherList = lifetime.getItemData().getWeaponLauncher().getLauncherList();
-        weaponClassList = new ArrayList<>();//Array List containing the lists of each weapon class.
-        allWeaponList = new ArrayList<>();//Array List containing each individual weapon object amongst every weapon class.
+        ArrayList<Object> arList = lifetime.getItemData().getWeaponAssaultRifle().getArList();//Assign weapon class lists respectively
+        ArrayList<Object> smgList = lifetime.getItemData().getWeaponSmg().getSmgList();
+        ArrayList<Object> lmgList = lifetime.getItemData().getWeaponLmg().getLMGList();
+        ArrayList<Object> shotgunList = lifetime.getItemData().getWeaponShotgun().getShotgunList();
+        ArrayList<Object> marksmanList = lifetime.getItemData().getWeaponMarksman().getMarksmanList();
+        ArrayList<Object> sniperList = lifetime.getItemData().getWeaponSniper().getSniperList();
+        ArrayList<Object> pistolList = lifetime.getItemData().getWeaponPistol().getPistolList();
+        ArrayList<Object> launcherList = lifetime.getItemData().getWeaponLauncher().getLauncherList();
+        ArrayList<ArrayList<Object>> weaponClassList = new ArrayList<>();//Array List containing the lists of each weapon class.
+        ArrayList<Object> allWeaponList = new ArrayList<>();//Array List containing each individual weapon object amongst every weapon class.
         Collections.addAll(weaponClassList, arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList);//Add all weapon class lists to the complete one
         for (Collection<?> o : weaponClassList)//For each weapon class. arList, smgList etc.
         {
             allWeaponList.addAll(o);
         }
         weaponClassList.add(allWeaponList);
-        UIWeaponTable uiWeaponTable = new UIWeaponTable(weaponClassList);
+
+        //These lines of code are going to be moved around and modified once everything is sorted out.
+        // Upon initial click of submit, the lifetime stats for the user  be displayed, not the weapon data.
+        fxmlLoader.setLocation(HelloApplication.class.getResource("WeaponTable.fxml"));//Load WeaponTable fxml
+        mainPane = fxmlLoader.load();//Set it to the Pane object.
+        borderPane.setBottom(mainPane);//Display the newly assigned pane.
+        UIWeaponTable uiWeaponTable = fxmlLoader.getController();//Assign the fxml controller.
+        uiWeaponTable.setWeaponClassList(weaponClassList);
         uiWeaponTable.showAllData();
     }
 
     /**
      * Creating a lifetime object which would have all the data needed for presenting on the application interface
      * @return Lifetime object
-     * @throws JsonProcessingException JSON stuff
      */
     public Lifetime retLifetime() throws JsonProcessingException
     {
         RetrieveLifetime rl = new RetrieveLifetime(object);
         return rl.getLifetimeProperties();
     }
-
-//    /**
-//     * Display weapon class data
-//     */
-//
-//    public void showARData()
-//    {
-//        headerText.setText("Assault Rifle Data");
-//        assignAndClick(arList, arButton);
-//    }
-//
-//    public void showSMGData()
-//    {
-//        headerText.setText("SMG Data");
-//        assignAndClick(smgList, smgButton);
-//    }
-//
-//    public void showLMGData()
-//    {
-//        headerText.setText("LMG Data");
-//        assignAndClick(lmgList, lmgButton);
-//    }
-//
-//    public void showShotgunData()
-//    {
-//        headerText.setText("Shotgun Data");
-//        assignAndClick(shotgunList, shotgunButton);
-//    }
-//
-//    public void showMarksmanData()
-//    {
-//        headerText.setText("Marksman Rifle Data");
-//        assignAndClick(marksmanList, marksmanButton);
-//    }
-//
-//    public void showSniperData()
-//    {
-//        headerText.setText("Sniper Rifle Data");
-//        assignAndClick(sniperList, sniperButton);
-//    }
-//
-//    public void showPistolData()
-//    {
-//        headerText.setText("Pistol Data");
-//        assignAndClick(pistolList, pistolButton);
-//    }
-//
-//    public void showLauncherData()
-//    {
-//        headerText.setText("Launcher Data");
-//        assignAndClick(launcherList, launcherButton);
-//    }
-//
-//    public void showAllData()
-//    {
-//        headerText.setText("All Weapon Data");
-//        assignAndClick(allList, allWeaponButton);
-//    }
-//
-//    /**
-//     * Call the assign data function with the appropriate array list and change the appropriate button
-//     * @param a Weapon class array list
-//     * @param b Weapon class button that needs to have its opacity changed
-//     */
-//    public void assignAndClick(ArrayList<Object> a, Button b)
-//    {
-//        assignData(a);
-//        b.setOpacity(.5);
-//    }
-//
-//    /**
-//     * Function to display the appropriate data on the tableView part of the application
-//     * @param list Weapon class list
-//     */
-//    public void assignData(ArrayList<Object> list)
-//    {
-//        final ObservableList<Object> data = FXCollections.observableArrayList();
-//        data.addAll(list);//Add the weapon class list containing the object for each weapon to the observable list. Set each column to the variable in the list.
-//        weaponName.setCellValueFactory(new PropertyValueFactory<>("name"));
-//        weaponName.setStyle("-fx-font-weight:bold");
-//        kills.setCellValueFactory(new PropertyValueFactory<>("kills"));
-//        deaths.setCellValueFactory(new PropertyValueFactory<>("deaths"));
-//        kdRatio.setCellValueFactory(new PropertyValueFactory<>("kdRatio"));
-//        shots.setCellValueFactory(new PropertyValueFactory<>("shots"));
-//        hits.setCellValueFactory(new PropertyValueFactory<>("hits"));
-//        accuracy.setCellValueFactory(new PropertyValueFactory<>("accuracy"));
-//        headshots.setCellValueFactory(new PropertyValueFactory<>("headshots"));
-//        tableView.setItems(data);
-//        tableView.setStyle("-fx-font-size:17;");
-//        makeSolidButtons();
-//    }
-//
-//    /**
-//     * Change the opacity of all the weapon class button back to one.
-//     */
-//    public void makeSolidButtons()
-//    {
-//        arButton.setOpacity(1);
-//        smgButton.setOpacity(1);
-//        lmgButton.setOpacity(1);
-//        shotgunButton.setOpacity(1);
-//        marksmanButton.setOpacity(1);
-//        sniperButton.setOpacity(1);
-//        pistolButton.setOpacity(1);
-//        launcherButton.setOpacity(1);
-//        allWeaponButton.setOpacity(1);
-//    }
 
     /**
      * If the text in the input field is changed, enable the submit button again.
