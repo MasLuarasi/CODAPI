@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 public class HelloController {
@@ -132,17 +133,16 @@ public class HelloController {
         sniperList = lifetime.getItemData().getWeaponSniper().getSniperList();
         pistolList = lifetime.getItemData().getWeaponPistol().getPistolList();
         launcherList = lifetime.getItemData().getWeaponLauncher().getLauncherList();
-        weaponClassList = new ArrayList<>();
-        allWeaponList = new ArrayList<>();
+        weaponClassList = new ArrayList<>();//Array List containing the lists of each weapon class.
+        allWeaponList = new ArrayList<>();//Array List containing each individual weapon object amongst every weapon class.
         Collections.addAll(weaponClassList, arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList);//Add all weapon class lists to the complete one
-        ArrayList<Object> temp;
-        for (Object o : weaponClassList)
+        for (Collection<?> o : weaponClassList)//For each weapon class. arList, smgList etc.
         {
-            temp = (ArrayList<Object>) o;
-            allWeaponList.addAll(temp);
+            allWeaponList.addAll(o);
         }
         weaponClassList.add(allWeaponList);
         UIWeaponTable uiWeaponTable = new UIWeaponTable(weaponClassList);
+        uiWeaponTable.showAllData();
     }
 
     /**

@@ -41,48 +41,57 @@ public class UIWeaponTable
         this.weaponClassList = a;
     }
 
-    public void showARData() {
+    public void showARData()
+    {
         headerText.setText("Assault Rifle Data");
         assignAndClick(weaponClassList.get(0), arButton);
     }
 
-    public void showSMGData() {
+    public void showSMGData()
+    {
         headerText.setText("SMG Data");
         assignAndClick(weaponClassList.get(1), smgButton);
     }
 
-    public void showLMGData() {
+    public void showLMGData()
+    {
         headerText.setText("LMG Data");
         assignAndClick(weaponClassList.get(2), lmgButton);
     }
 
-    public void showShotgunData() {
+    public void showShotgunData()
+    {
         headerText.setText("Shotgun Data");
         assignAndClick(weaponClassList.get(3), shotgunButton);
     }
 
-    public void showMarksmanData() {
+    public void showMarksmanData()
+    {
         headerText.setText("Marksman Rifle Data");
         assignAndClick(weaponClassList.get(4), marksmanButton);
     }
 
-    public void showSniperData() {
+    public void showSniperData()
+    {
         headerText.setText("Sniper Rifle Data");
         assignAndClick(weaponClassList.get(5), sniperButton);
     }
 
-    public void showPistolData() {
+    public void showPistolData()
+    {
         headerText.setText("Pistol Data");
         assignAndClick(weaponClassList.get(6), pistolButton);
     }
 
-    public void showLauncherData() {
+    public void showLauncherData()
+    {
         headerText.setText("Launcher Data");
         assignAndClick(weaponClassList.get(7), launcherButton);
     }
 
-    public void showAllData() {
-        headerText.setText("All Weapon Data");
+    public void showAllData()
+    {
+        headerText.setText("SUCK MY BALLS");
         assignAndClick(weaponClassList.get(8), allWeaponButton);
     }
 
@@ -92,7 +101,8 @@ public class UIWeaponTable
      * @param a Weapon class array list
      * @param b Weapon class button that needs to have its opacity changed
      */
-    public void assignAndClick(ArrayList<Object> a, Button b) {
+    public void assignAndClick(ArrayList<Object> a, Button b)
+    {
         assignData(a);
         b.setOpacity(.5);
     }
@@ -102,7 +112,8 @@ public class UIWeaponTable
      *
      * @param list Weapon class list
      */
-    public void assignData(ArrayList<Object> list) {
+    public void assignData(ArrayList<Object> list)
+    {
         final ObservableList<Object> data = FXCollections.observableArrayList();
         data.addAll(list);//Add the weapon class list containing the object for each weapon to the observable list. Set each column to the variable in the list.
         weaponName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -135,14 +146,3 @@ public class UIWeaponTable
     }
 
 }
-//        System.out.println("Click");
-//                FxmlLoader object = new FxmlLoader();
-//                Pane view = object.getPage("test");
-//                mainPane.setCenter(view);
-
-//General Kenobi#7520759
-
-//    long startTime = System.currentTimeMillis();
-//            long endTime = System.currentTimeMillis();
-//            System.out.println("That took " + (endTime - startTime) + " milliseconds");
-
