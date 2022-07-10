@@ -131,11 +131,14 @@ public class HelloController {
 
         //These lines of code are going to be moved around and modified once everything is sorted out.
         // Upon initial click of submit, the lifetime stats for the user  be displayed, not the weapon data.
-        fxmlLoader.setLocation(HelloApplication.class.getResource("WeaponTable.fxml"));//Load WeaponTable fxml
+        fxmlLoader.setLocation(HelloApplication.class.getResource("LifetimeStats.fxml"));//Load WeaponTable fxml
         mainPane = fxmlLoader.load();//Set it to the Pane object.
         borderPane.setBottom(mainPane);//Display the newly assigned pane.
-        UIWeaponTable uiWeaponTable = fxmlLoader.getController();//Assign the fxml controller.
-        uiWeaponTable.setWeaponClassList(weaponClassList);
+        UILifetimeStats uiLifetimeStats = fxmlLoader.getController();
+        uiLifetimeStats.setLifetime(lifetime);
+        uiLifetimeStats.setFields();
+//        UIWeaponTable uiWeaponTable = fxmlLoader.getController();//Assign the fxml controller.
+//        uiWeaponTable.setWeaponClassList(weaponClassList);//Call the setWeaponClassList method in UIWeaponTable so the List can be passed over.
     }
 
     /**

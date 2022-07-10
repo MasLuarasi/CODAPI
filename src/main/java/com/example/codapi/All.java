@@ -1,6 +1,7 @@
 
 package com.example.codapi;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
@@ -199,6 +200,8 @@ public class All {
     private Integer bestDenied;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @JsonIgnore
+    private DecimalFormat numberFormat;
 
     /**
      * No args constructor for use in serialization
@@ -361,7 +364,8 @@ public class All {
 
     @JsonProperty("accuracy")
     public void setAccuracy(Double accuracy) {
-        this.accuracy = accuracy;
+        numberFormat = new DecimalFormat("#.00");
+        this.accuracy = Double.valueOf(numberFormat.format(accuracy));
     }
 
     @JsonProperty("losses")
@@ -501,7 +505,8 @@ public class All {
 
     @JsonProperty("kdRatio")
     public void setKdRatio(Double kdRatio) {
-        this.kdRatio = kdRatio;
+        numberFormat = new DecimalFormat("#.00");
+        this.kdRatio = Double.valueOf(numberFormat.format(kdRatio));
     }
 
     @JsonProperty("bestAssists")
@@ -601,7 +606,8 @@ public class All {
 
     @JsonProperty("wlRatio")
     public void setWlRatio(Double wlRatio) {
-        this.wlRatio = wlRatio;
+        numberFormat = new DecimalFormat("#.00");
+        this.wlRatio = Double.valueOf(numberFormat.format(wlRatio));
     }
 
     @JsonProperty("currentWinStreak")
