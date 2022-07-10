@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/UIWeaponTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/UIWeaponTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/WeaponTable.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

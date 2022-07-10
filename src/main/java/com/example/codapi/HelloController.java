@@ -136,7 +136,6 @@ public class HelloController {
         borderPane.setBottom(mainPane);//Display the newly assigned pane.
         UIWeaponTable uiWeaponTable = fxmlLoader.getController();//Assign the fxml controller.
         uiWeaponTable.setWeaponClassList(weaponClassList);
-        uiWeaponTable.showAllData();
     }
 
     /**
@@ -156,6 +155,12 @@ public class HelloController {
     {
         inputName.textProperty().addListener((observable, oldValue, newValue) ->
                 submitButton.setDisable(false));
+    }
+
+    public void refocus()
+    {
+        inputName.requestFocus();
+        submitButton.requestFocus();
     }
 
 }

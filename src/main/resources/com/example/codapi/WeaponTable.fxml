@@ -11,15 +11,42 @@
           <items>
               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="130.0">
                  <children>
-                     <Button fx:id="allWeaponButton" layoutY="75.0" mnemonicParsing="false" onAction="#showAllData" prefHeight="60.0" prefWidth="125.0" text="All Weapons" />
-                     <Button fx:id="arButton" layoutY="135.0" mnemonicParsing="false" onAction="#showARData" prefHeight="60.0" prefWidth="125.0" text="Assault Rifle" />
-                     <Button fx:id="smgButton" layoutY="195.0" mnemonicParsing="false" onAction="#showSMGData" prefHeight="60.0" prefWidth="125.0" text="SMG" />
-                     <Button fx:id="lmgButton" layoutY="255.0" mnemonicParsing="false" onAction="#showLMGData" prefHeight="60.0" prefWidth="125.0" text="LMG" />
-                     <Button fx:id="shotgunButton" layoutY="315.0" mnemonicParsing="false" onAction="#showShotgunData" prefHeight="60.0" prefWidth="125.0" text="Shotgun" />
-                     <Button fx:id="marksmanButton" layoutY="375.0" mnemonicParsing="false" onAction="#showMarksmanData" prefHeight="60.0" prefWidth="125.0" text="Marksman " />
-                     <Button fx:id="sniperButton" layoutY="435.0" mnemonicParsing="false" onAction="#showSniperData" prefHeight="60.0" prefWidth="125.0" text="Sniper" />
-                     <Button fx:id="launcherButton" layoutY="555.0" mnemonicParsing="false" onAction="#showLauncherData" prefHeight="60.0" prefWidth="125.0" text="Launcher" />
-                     <Button fx:id="pistolButton" layoutY="495.0" mnemonicParsing="false" onAction="#showPistolData" prefHeight="60.0" prefWidth="125.0" text="Pistol" />
+                     <Button fx:id="allWeaponButton" layoutY="75.0" mnemonicParsing="false" onAction="#showAllData" prefHeight="55.0" prefWidth="125.0" text="All Weapons">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="arButton" layoutY="130.0" mnemonicParsing="false" onAction="#showARData" prefHeight="55.0" prefWidth="125.0" text="Assault Rifle">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="smgButton" layoutY="185.0" mnemonicParsing="false" onAction="#showSMGData" prefHeight="55.0" prefWidth="125.0" text="SMG">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="lmgButton" layoutY="240.0" mnemonicParsing="false" onAction="#showLMGData" prefHeight="55.0" prefWidth="125.0" text="LMG">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="shotgunButton" layoutY="295.0" mnemonicParsing="false" onAction="#showShotgunData" prefHeight="55.0" prefWidth="125.0" text="Shotgun">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="marksmanButton" layoutY="350.0" mnemonicParsing="false" onAction="#showMarksmanData" prefHeight="55.0" prefWidth="125.0" text="Marksman ">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="sniperButton" layoutY="405.0" mnemonicParsing="false" onAction="#showSniperData" prefHeight="55.0" prefWidth="125.0" text="Sniper">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="launcherButton" layoutY="515.0" mnemonicParsing="false" onAction="#showLauncherData" prefHeight="55.0" prefWidth="125.0" text="Launcher">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                     <Button fx:id="pistolButton" layoutY="460.0" mnemonicParsing="false" onAction="#showPistolData" prefHeight="55.0" prefWidth="125.0" text="Pistol">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                      <Label alignment="CENTER" layoutX="2.0" prefHeight="75.0" prefWidth="125.0" text="Weapon Class" textAlignment="CENTER" wrapText="true">
                          <font>
                              <Font size="25.0" />
@@ -36,7 +63,7 @@
                      </Label>
                      <TableView fx:id="tableView" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="875.0">
                          <columns>
-                             <TableColumn fx:id="weaponName" prefWidth="130.0" text="Weapon" />
+                             <TableColumn fx:id="weaponName" prefWidth="140.0" text="Weapon" />
                              <TableColumn fx:id="kills" prefWidth="102.0" text="Kills" />
                              <TableColumn fx:id="deaths" prefWidth="102.0" text="Deaths" />
                              <TableColumn fx:id="kdRatio" prefWidth="102.0" text="K/D Ratio" />

@@ -44,6 +44,7 @@ public class UIWeaponTable
     public void setWeaponClassList(ArrayList<ArrayList<Object>> a)
     {
         weaponClassList = a;
+        showAllData();
     }
 
     public void showARData()
