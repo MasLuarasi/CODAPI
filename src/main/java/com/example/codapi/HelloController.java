@@ -63,8 +63,6 @@ public class HelloController {
     @FXML
     protected void onSubmitButtonClick() throws IOException, InterruptedException
     {
-        long startTime = System.currentTimeMillis();
-
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("WeaponTable.fxml"));
         mainPane = fxmlLoader.load();
         borderPane.setBottom(mainPane);
@@ -72,7 +70,6 @@ public class HelloController {
         submitButton.setDisable(true);
         enableSubmitButton();
         String username = inputName.getText().strip();//Get username input
-        System.out.println(username);
         username = username.replace("#", "%23");//Replace the # with %23 because HTTP Request says so
         username = username.replace(" ", "%20");//Request replaces spaces with %20
         HttpRequest request = HttpRequest.newBuilder()
@@ -84,24 +81,22 @@ public class HelloController {
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         String responseBody = removeProperties(response.body());//Assign the HTTP response to a string. Remove Properties' field from it.
-//        try
-//        {
-//            evaluateData(responseBody);
-//            showAllData();
-//            long endTime = System.currentTimeMillis();
-//            System.out.println("That took " + (endTime - startTime) + " milliseconds");
-//        }
-//        catch (JSONException e)
-//        {
-//            if (responseBody.contains("not allowed"))
-//            {
-//                System.out.println("User does not allow their info to be shared with third party apps");
-//            }
-//            else
-//            {
-//                System.out.println("Invalid Activision Username");
-//            }
-//        }
+        try
+        {
+            evaluateData(responseBody);
+            System.out.println("Done");
+        }
+        catch (JSONException e)
+        {
+            if (responseBody.contains("not allowed"))
+            {
+                System.out.println("User does not allow their info to be shared with third party apps");
+            }
+            else
+            {
+                System.out.println("Invalid Activision Username");
+            }
+        }
     }
 
     /**
@@ -148,7 +143,6 @@ public class HelloController {
             temp.addAll(oList);
         }
         allList = temp;
-        System.out.println("Done");
     }
 
     /**
@@ -286,3 +280,8 @@ public class HelloController {
 //                mainPane.setCenter(view);
 
 //General Kenobi#7520759
+
+//    long startTime = System.currentTimeMillis();
+//            long endTime = System.currentTimeMillis();
+//            System.out.println("That took " + (endTime - startTime) + " milliseconds");
+
