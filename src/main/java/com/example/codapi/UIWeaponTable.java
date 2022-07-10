@@ -10,9 +10,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class UIWeaponTable {
+public class UIWeaponTable
+{
 
     @FXML
     private Label headerText;
@@ -32,53 +32,58 @@ public class UIWeaponTable {
     @FXML
     private Button arButton, smgButton, lmgButton, shotgunButton, marksmanButton, sniperButton, pistolButton, launcherButton, allWeaponButton;
 
-    private ArrayList<Object> arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList, allList;
+    private ArrayList<ArrayList<Object>> weaponClassList;
 
     public UIWeaponTable(){}
 
+    public UIWeaponTable(ArrayList<ArrayList<Object>> a)
+    {
+        this.weaponClassList = a;
+    }
+
     public void showARData() {
         headerText.setText("Assault Rifle Data");
-        assignAndClick(arList, arButton);
+        assignAndClick(weaponClassList.get(0), arButton);
     }
 
     public void showSMGData() {
         headerText.setText("SMG Data");
-        assignAndClick(smgList, smgButton);
+        assignAndClick(weaponClassList.get(1), smgButton);
     }
 
     public void showLMGData() {
         headerText.setText("LMG Data");
-        assignAndClick(lmgList, lmgButton);
+        assignAndClick(weaponClassList.get(2), lmgButton);
     }
 
     public void showShotgunData() {
         headerText.setText("Shotgun Data");
-        assignAndClick(shotgunList, shotgunButton);
+        assignAndClick(weaponClassList.get(3), shotgunButton);
     }
 
     public void showMarksmanData() {
         headerText.setText("Marksman Rifle Data");
-        assignAndClick(marksmanList, marksmanButton);
+        assignAndClick(weaponClassList.get(4), marksmanButton);
     }
 
     public void showSniperData() {
         headerText.setText("Sniper Rifle Data");
-        assignAndClick(sniperList, sniperButton);
+        assignAndClick(weaponClassList.get(5), sniperButton);
     }
 
     public void showPistolData() {
         headerText.setText("Pistol Data");
-        assignAndClick(pistolList, pistolButton);
+        assignAndClick(weaponClassList.get(6), pistolButton);
     }
 
     public void showLauncherData() {
         headerText.setText("Launcher Data");
-        assignAndClick(launcherList, launcherButton);
+        assignAndClick(weaponClassList.get(7), launcherButton);
     }
 
     public void showAllData() {
         headerText.setText("All Weapon Data");
-        assignAndClick(allList, allWeaponButton);
+        assignAndClick(weaponClassList.get(8), allWeaponButton);
     }
 
     /**
