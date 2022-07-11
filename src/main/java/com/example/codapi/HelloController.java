@@ -11,9 +11,9 @@ import java.net.URI;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
 import java.util.ArrayList;
@@ -26,24 +26,24 @@ public class HelloController {
     private BorderPane borderPane;
 
     @FXML
-    private Pane mainPane;
-
-    @FXML
     private TextField inputName;
 
     @FXML
-    private Button submitButton;
+    private Button submitButton, lifetimeButton, weaponButton;
+
+    private Pane lifetimePane, weaponPane;
 
     private JSONObject object;
 
     private Lifetime lifetime;
 
-    private FXMLLoader fxmlLoader;
+    private UILifetimeStats uiLifetimeStats;
 
-    public HelloController()
-    {
-        fxmlLoader = new FXMLLoader();
-    }
+    private UIWeaponTable uiWeaponTable;
+
+    private final ArrayList<ArrayList<Object>> weaponClassList;
+
+    public HelloController() {weaponClassList = new ArrayList<>();}
 
     /**
      * Once the submit button is clicked, we will make a call to get the data for the user that was entered.
@@ -58,7 +58,7 @@ public class HelloController {
         submitButton.setDisable(true);
         enableSubmitButton();
         String username = inputName.getText().strip();//Get username input
-        username = username.replace("#", "%23");//Replace the # with %23 because HTTP Request says so
+        username = username.replace("#", "%23");//Replace the # with %23 because HTTP Request format
         username = username.replace(" ", "%20");//Request replaces spaces with %20
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
@@ -72,7 +72,6 @@ public class HelloController {
         try
         {
             evaluateData(responseBody);
-            System.out.println("Done");
         }
         catch (JSONException e)
         {
@@ -120,25 +119,61 @@ public class HelloController {
         ArrayList<Object> sniperList = lifetime.getItemData().getWeaponSniper().getSniperList();
         ArrayList<Object> pistolList = lifetime.getItemData().getWeaponPistol().getPistolList();
         ArrayList<Object> launcherList = lifetime.getItemData().getWeaponLauncher().getLauncherList();
-        ArrayList<ArrayList<Object>> weaponClassList = new ArrayList<>();//Array List containing the lists of each weapon class.
         ArrayList<Object> allWeaponList = new ArrayList<>();//Array List containing each individual weapon object amongst every weapon class.
         Collections.addAll(weaponClassList, arList, smgList, lmgList, shotgunList, marksmanList, sniperList, pistolList, launcherList);//Add all weapon class lists to the complete one
         for (Collection<?> o : weaponClassList)//For each weapon class. arList, smgList etc.
         {
             allWeaponList.addAll(o);
         }
-        weaponClassList.add(allWeaponList);
+        weaponClassList.add(allWeaponList);//Add the Array List containing every weapon object.
+        initializeLifetimePane();
+        initializeWeaponPane();
+        showLifetimePane();
+    }
 
-        //These lines of code are going to be moved around and modified once everything is sorted out.
-        // Upon initial click of submit, the lifetime stats for the user  be displayed, not the weapon data.
-        fxmlLoader.setLocation(HelloApplication.class.getResource("LifetimeStats.fxml"));//Load WeaponTable fxml
-        mainPane = fxmlLoader.load();//Set it to the Pane object.
-        borderPane.setBottom(mainPane);//Display the newly assigned pane.
-        UILifetimeStats uiLifetimeStats = fxmlLoader.getController();
+    /**
+     * Initialize the LifetimeStats Pane once, so it can just be loaded each time the user wants to view it.
+     */
+    public void initializeLifetimePane() throws IOException
+    {
+        FXMLLoader loader1 = new FXMLLoader();
+        loader1.setLocation(HelloApplication.class.getResource("LifetimeStats.fxml"));//Load Lifetime fxml
+        lifetimePane = loader1.load();
+        uiLifetimeStats = loader1.getController();
+    }
+
+    /**
+     * Initialize the WeaponTable Pane once, so it can just be loaded each time the user wants to view it.
+     */
+    public void initializeWeaponPane() throws IOException
+    {
+        FXMLLoader loader2 = new FXMLLoader();
+        loader2.setLocation(HelloApplication.class.getResource("WeaponTable.fxml"));//Load WeaponTable fxml
+        weaponPane = loader2.load();
+        uiWeaponTable = loader2.getController();
+    }
+
+    /**
+     * Method to display the LifetimeStats screen
+     */
+    public void showLifetimePane()
+    {
+//        System.out.println("Click");
+        borderPane.setBottom(lifetimePane);
         uiLifetimeStats.setLifetime(lifetime);
         uiLifetimeStats.setFields();
-//        UIWeaponTable uiWeaponTable = fxmlLoader.getController();//Assign the fxml controller.
-//        uiWeaponTable.setWeaponClassList(weaponClassList);//Call the setWeaponClassList method in UIWeaponTable so the List can be passed over.
+        refocus();
+    }
+
+    /**
+     * Method to display the WeaponTable screen
+     */
+    public void showWeaponPane()
+    {
+        System.out.println("Click");
+        borderPane.setBottom(weaponPane);
+        uiWeaponTable.setWeaponClassList(weaponClassList);
+        refocus();
     }
 
     /**
@@ -160,18 +195,18 @@ public class HelloController {
                 submitButton.setDisable(false));
     }
 
+    /**
+     * After loading a pane, the interactive elements of hello-view need to be refocused.
+     */
     public void refocus()
     {
         inputName.requestFocus();
         submitButton.requestFocus();
+        lifetimeButton.requestFocus();
+        weaponButton.requestFocus();
     }
 
 }
-
-//        System.out.println("Click");
-//                FxmlLoader object = new FxmlLoader();
-//                Pane view = object.getPage("test");
-//                mainPane.setCenter(view);
 
 //General Kenobi#7520759
 

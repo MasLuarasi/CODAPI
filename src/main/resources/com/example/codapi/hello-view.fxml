@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -22,6 +23,16 @@
               <Button fx:id="submitButton" layoutX="550.0" layoutY="20.0" mnemonicParsing="false" onAction="#onSubmitButtonClick" text="Submit">
                <font>
                   <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="lifetimeButton" layoutX="690.0" layoutY="63.0" mnemonicParsing="false" onAction="#showLifetimePane" prefWidth="120.0" text="Lifetime Data">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="weaponButton" alignment="CENTER" layoutX="810.0" layoutY="63.0" mnemonicParsing="false" onAction="#showWeaponPane" prefWidth="120.0" text="Weapon Data" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
                </font>
             </Button>
           </children>
