@@ -19,7 +19,10 @@ public class UILifetimeStats
 
     public void setFields()
     {
-        timePlayedVal.setText(lifetime.getAll().getTimePlayedTotal().toString());
+        double temp = lifetime.getAll().getTimePlayedTotal();
+        int hours = (int) (temp/3600);
+        int minutes = (int) (temp/60%60);
+        timePlayedVal.setText(hours + "hr " + minutes + "min");
         gamesPlayedVal.setText(lifetime.getAll().getGamesPlayed().toString());
         accuracyVal.setText(lifetime.getAll().getAccuracy().toString());
         killsVal.setText(lifetime.getAll().getKills().toString());
@@ -35,3 +38,5 @@ public class UILifetimeStats
     }
 
 }
+//make the object here.
+//set traversable focus in constructor
