@@ -61,7 +61,7 @@
                         <Font size="25.0" />
                      </font>
                      </Label>
-                     <TableView fx:id="tableView" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="875.0">
+                     <TableView fx:id="tableView" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="900.0">
                          <columns>
                              <TableColumn fx:id="weaponName" prefWidth="140.0" text="Weapon" />
                              <TableColumn fx:id="kills" prefWidth="102.0" text="Kills" />

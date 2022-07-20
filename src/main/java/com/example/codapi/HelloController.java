@@ -32,7 +32,7 @@ public class HelloController {
     @FXML
     private Button submitButton, lifetimeButton, weaponButton;
 
-    private Pane lifetimePane, weaponPane;
+    private Pane lifetimePane, weaponPane, modePane;
 
     private JSONObject object;
 
@@ -41,6 +41,8 @@ public class HelloController {
     private UILifetimeStats uiLifetimeStats;
 
     private UIWeaponTable uiWeaponTable;
+
+    private UIModeStats uiModeStats;
 
     private final ArrayList<ArrayList<Object>> weaponClassList;
 
@@ -133,8 +135,10 @@ public class HelloController {
         weaponClassList.add(allWeaponList);//Add the Array List containing every weapon object.
         initializeLifetimePane();
         initializeWeaponPane();
+        initializeModePane();
 //        showWeaponPane();
-        showLifetimePane();
+//        showLifetimePane();
+        showModePane();
     }
 
     /**
@@ -160,6 +164,17 @@ public class HelloController {
     }
 
     /**
+     * Initialize the Mode Pane once, so it can just be loaded each time the user wants to view it.
+     */
+    public void initializeModePane() throws IOException
+    {
+        FXMLLoader loader3 = new FXMLLoader();
+        loader3.setLocation(HelloApplication.class.getResource("ModeStats.fxml"));//Load WeaponTable fxml
+        modePane = loader3.load();
+        uiModeStats = loader3.getController();
+    }
+
+    /**
      * Method to display the LifetimeStats screen
      */
     public void showLifetimePane()
@@ -176,6 +191,16 @@ public class HelloController {
     {
         borderPane.setBottom(weaponPane);
         uiWeaponTable.setWeaponClassList(weaponClassList);
+    }
+
+    /**
+     * Method to display the WeaponTable screen
+     */
+    public void showModePane()
+    {
+        borderPane.setBottom(modePane);
+        uiModeStats.setLifetime(lifetime);
+        uiModeStats.setFields();
     }
 
     /**

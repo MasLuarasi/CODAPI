@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -8,122 +9,181 @@
 
 <Pane layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.codapi.UIModeStats">
     <children>
+      <ScrollPane fx:id="scrollPane" layoutY="50.0" prefHeight="600.0" prefWidth="1050.0">
+        <content>
+          <AnchorPane layoutX="5.0" layoutY="50.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1050.0">
+               <children>
+                    <GridPane fx:id="gridPane" alignment="CENTER" gridLinesVisible="true" prefHeight="1200.0" prefWidth="1030.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <Label prefHeight="50.0" prefWidth="135.0" text="Ground War:" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="102.0" text="Infected:" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="140.0" text="Cyber Attack:" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="149.0" text="Headquarters:" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="116.0" text="Hardpoint:" GridPane.columnIndex="2" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="135.0" text="Domination:" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="309.0" text="Hardcore Team Deathmatch:" wrapText="true" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="102.0" text="Gunfight:" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="194.0" text="Search &amp; Destroy:" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="171.0" text="Kills Confirmed:" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label pickOnBounds="false" prefHeight="50.0" prefWidth="202.0" text="Team Deathmatch:" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                                <GridPane.margin>
+                                    <Insets left="10.0" />
+                                </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="72.0" text="Grind:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="120.0" text="Gun Game:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="253.0" text="Hardcore Headquarters:" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="248.0" text="Hardcore Cyber Attack:" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="293.0" text="Hardcore Search &amp; Destroy:" wrapText="true" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="244.0" text="Hardcore Domination:" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                            <Label prefHeight="50.0" prefWidth="260.0" text="Hardcore Kill Confirmed:" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                <font>
+                                    <Font name="System Bold" size="22.0" />
+                                </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                            </Label>
+                        </children>
+                    </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
         <Label alignment="CENTER" layoutX="387.0" layoutY="1.0" prefHeight="50.0" prefWidth="276.0" text="Mode Stats Overview">
             <font>
                 <Font size="25.0" />
             </font>
         </Label>
-
-        <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="-0.0" layoutY="50.0" prefHeight="600.0" prefWidth="1050.0">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="135.0" text="Ground War:" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="102.0" text="Infected:" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="140.0" text="Cyber Attack:" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="149.0" text="Headquarters:" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="116.0" text="Hardpoint:" GridPane.columnIndex="2" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="135.0" text="Domination:" GridPane.columnIndex="1" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="296.0" text="Hardcore Team Deathmatch:" wrapText="true" GridPane.rowIndex="4" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="102.0" text="Gunfight:" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="181.0" text="Search &amp; Destroy:" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="159.0" text="Kills Confirmed:" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" pickOnBounds="false" prefHeight="50.0" prefWidth="188.0" text="Team Deathmatch:" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-               <GridPane.margin>
-                  <Insets right="150.0" />
-               </GridPane.margin>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="72.0" text="Grind:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="120.0" text="Gun Game:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="238.0" text="Hardcore Headquarters:" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="237.0" text="Hardcore Cyber Attack:" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="TOP">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="276.0" text="Hardcore Search &amp; Destroy:" wrapText="true" GridPane.rowIndex="5" GridPane.valignment="TOP">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="227.0" text="Hardcore Domination:" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="249.0" text="Hardcore Kill Confirmed:" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            </children>
-        </GridPane>
         <Line endX="1050.0" />
+      <Line endX="1050.0" layoutY="50.0" />
     </children>
 </Pane>
