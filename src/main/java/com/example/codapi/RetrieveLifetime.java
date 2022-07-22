@@ -22,11 +22,18 @@ public class RetrieveLifetime
     {
         Lifetime lTemp = new Lifetime();
         JSONObject object1 = object.getJSONObject("lifetime");
+
         All all = getAllProperties(object1);
         lTemp.setAll(all);
+
         RetrieveItemData rid = new RetrieveItemData();
         ItemData itemData = rid.getItemDataProperties(object1);
         lTemp.setItemData(itemData);
+
+        RetrieveMode rmode = new RetrieveMode();
+        Mode mode = rmode.getModeProperties(object1);
+        lTemp.setMode(mode);
+
         return lTemp;
     }
 
