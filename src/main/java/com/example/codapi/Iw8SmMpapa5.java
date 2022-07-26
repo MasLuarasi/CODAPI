@@ -42,6 +42,7 @@ public class Iw8SmMpapa5 {
     @JsonIgnore
     private DecimalFormat numberFormat;
 
+
     public Iw8SmMpapa5() {}
 
     public Iw8SmMpapa5(Integer hits, Integer kills, Double kdRatio, Integer headshots, Double accuracy, Integer shots, Integer deaths)

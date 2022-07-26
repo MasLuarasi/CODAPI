@@ -174,7 +174,7 @@
                             </Label>
                             <Label fx:id="tdmKills" text="Kills:">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -182,7 +182,7 @@
                             </Label>
                             <Label fx:id="tdmDeaths" text="Deaths:">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -190,7 +190,7 @@
                             </Label>
                             <Label fx:id="tdmKD" text="K/D:">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -198,7 +198,7 @@
                             </Label>
                             <Label fx:id="tdmScore" text="Score:">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="170.0" />
@@ -206,7 +206,7 @@
                             </Label>
                             <Label fx:id="tdmTime" text="Time:">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="170.0" />
@@ -214,7 +214,7 @@
                             </Label>
                             <Label fx:id="tdmAssists" text="Assists:">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="170.0" />
@@ -222,7 +222,7 @@
                             </Label>
                             <Label fx:id="domKills" text="Kills:" GridPane.columnIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -230,7 +230,7 @@
                             </Label>
                             <Label fx:id="domDeaths" text="Deaths:" GridPane.columnIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -238,7 +238,7 @@
                             </Label>
                             <Label fx:id="domKD" text="K/D:" GridPane.columnIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -246,7 +246,7 @@
                             </Label>
                             <Label fx:id="domScore" text="Score:" GridPane.columnIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="170.0" />
@@ -254,7 +254,7 @@
                             </Label>
                             <Label fx:id="domTime" text="Time:" GridPane.columnIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="170.0" />
@@ -262,7 +262,7 @@
                             </Label>
                             <Label fx:id="domCaptures" text="Captures:" GridPane.columnIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="170.0" />
@@ -270,7 +270,7 @@
                             </Label>
                             <Label fx:id="hpKills" text="Kills:" GridPane.columnIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -278,7 +278,7 @@
                             </Label>
                             <Label fx:id="hpDeaths" text="Deaths:" GridPane.columnIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -286,7 +286,7 @@
                             </Label>
                             <Label fx:id="hpKD" text="K/D:" GridPane.columnIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -294,7 +294,7 @@
                             </Label>
                             <Label fx:id="hpScore" text="Score:" GridPane.columnIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="170.0" />
@@ -302,7 +302,7 @@
                             </Label>
                             <Label fx:id="hpTime" text="Time:" GridPane.columnIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="170.0" />
@@ -310,7 +310,7 @@
                             </Label>
                             <Label fx:id="hpOTime" text="Obj. Time:" GridPane.columnIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="170.0" />
@@ -318,7 +318,7 @@
                             </Label>
                             <Label fx:id="confKills" text="Kills:" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -326,7 +326,7 @@
                             </Label>
                             <Label fx:id="confDeaths" text="Deaths:" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -334,7 +334,7 @@
                             </Label>
                             <Label fx:id="confKD" text="K/D:" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -342,7 +342,7 @@
                             </Label>
                             <Label fx:id="confScore" text="Score:" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="170.0" />
@@ -350,7 +350,7 @@
                             </Label>
                             <Label fx:id="confTime" text="Time:" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="170.0" />
@@ -358,7 +358,7 @@
                             </Label>
                             <Label fx:id="confConfirms" text="Confirms:" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="170.0" />
@@ -366,7 +366,7 @@
                             </Label>
                             <Label fx:id="grindKills" text="Kills:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -374,7 +374,7 @@
                             </Label>
                             <Label fx:id="grindDeaths" text="Deaths:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -382,7 +382,7 @@
                             </Label>
                             <Label fx:id="grindKD" text="K/D:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -390,7 +390,7 @@
                             </Label>
                             <Label fx:id="grindScore" text="Score:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="180.0" />
@@ -398,7 +398,7 @@
                             </Label>
                             <Label fx:id="grindTime" text="Time:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="180.0" />
@@ -406,7 +406,7 @@
                             </Label>
                             <Label fx:id="grindConfirms" text="Confirms:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="180.0" />
@@ -414,7 +414,7 @@
                             </Label>
                             <Label fx:id="gunKills" text="Kills:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -422,7 +422,7 @@
                             </Label>
                             <Label fx:id="gunDeaths" text="Deaths:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -430,7 +430,7 @@
                             </Label>
                             <Label fx:id="gunKD" text="K/D:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -438,7 +438,7 @@
                             </Label>
                             <Label fx:id="gunScore" text="Score:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="180.0" />
@@ -446,7 +446,7 @@
                             </Label>
                             <Label fx:id="gunTime" text="Time:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="180.0" />
@@ -454,7 +454,7 @@
                             </Label>
                             <Label fx:id="gunSetbacks" text="Setbacks:" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="180.0" />
@@ -462,7 +462,7 @@
                             </Label>
                             <Label fx:id="sdKills" text="Kills:" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -470,7 +470,7 @@
                             </Label>
                             <Label fx:id="sdDeaths" text="Deaths:" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -478,7 +478,7 @@
                             </Label>
                             <Label fx:id="sdKD" text="K/D:" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -486,7 +486,7 @@
                             </Label>
                             <Label fx:id="sdScore" text="Score:" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="180.0" />
@@ -494,7 +494,7 @@
                             </Label>
                             <Label fx:id="sdTime" text="Time:" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="180.0" />
@@ -502,7 +502,7 @@
                             </Label>
                             <Label fx:id="sdDefuses" text="Defuses:" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="180.0" />
@@ -510,7 +510,7 @@
                             </Label>
                             <Label fx:id="hqKills" text="Kills:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -518,7 +518,7 @@
                             </Label>
                             <Label fx:id="hqDeaths" text="Deaths:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -526,7 +526,7 @@
                             </Label>
                             <Label fx:id="hqKD" text="K/D:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -534,7 +534,7 @@
                             </Label>
                             <Label fx:id="hqScore" text="Score:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="180.0" />
@@ -542,7 +542,7 @@
                             </Label>
                             <Label fx:id="hqTime" text="Time:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="180.0" />
@@ -550,7 +550,7 @@
                             </Label>
                             <Label fx:id="hqCaptures" text="Captures:" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="180.0" />
@@ -558,7 +558,7 @@
                             </Label>
                             <Label fx:id="cyberKills" text="Kills:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="5.0" />
@@ -566,7 +566,7 @@
                             </Label>
                             <Label fx:id="cyberDeaths" text="Deaths:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="5.0" />
@@ -574,7 +574,7 @@
                             </Label>
                             <Label fx:id="cyberKD" text="K/D:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="5.0" />
@@ -582,7 +582,7 @@
                             </Label>
                             <Label fx:id="cyberScore" text="Score:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="80.0" left="180.0" />
@@ -590,7 +590,7 @@
                             </Label>
                             <Label fx:id="cyberTime" text="Time:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-30.0" left="180.0" />
@@ -598,7 +598,7 @@
                             </Label>
                             <Label fx:id="cyberPlants" text="Plants:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                 <font>
-                                    <Font size="21.0" />
+                                    <Font size="20.0" />
                                 </font>
                                 <GridPane.margin>
                                     <Insets bottom="-140.0" left="180.0" />
