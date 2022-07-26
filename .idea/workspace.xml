@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="870cfdff-0001-48d2-a28b-44222077eb6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Conf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Conf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Cyber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Cyber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Dom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Dom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Grnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Grnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Hq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Hq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmMpapa5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Iw8SmMpapa5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Koth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Koth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/Sd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/Sd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/RetrieveMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/UIModeStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/UIModeStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codapi/War.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codapi/War.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/codapi/ModeStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/codapi/ModeStats.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

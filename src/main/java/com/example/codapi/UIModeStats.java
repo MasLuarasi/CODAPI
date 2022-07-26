@@ -13,7 +13,8 @@ public class UIModeStats {
     private GridPane gridPane;
 
     @FXML
-    private Label tdmKills, tdmDeaths, tdmKD, tdmScore, tdmTime, tdmAssists,
+    private Label
+            tdmKills, tdmDeaths, tdmKD, tdmScore, tdmTime, tdmAssists,
             domKills, domDeaths, domKD, domScore, domTime, domCaptures,
             hpKills, hpDeaths, hpKD, hpScore, hpTime, hpOTime,
             confKills, confDeaths, confKD, confScore, confTime, confConfirms,
@@ -21,7 +22,16 @@ public class UIModeStats {
             gunKills, gunDeaths, gunKD, gunScore, gunTime, gunSetbacks,
             sdKills, sdDeaths, sdKD, sdScore, sdTime, sdDefuses,
             hqKills, hqDeaths, hqKD, hqScore, hqTime, hqCaptures,
-            cyberKills, cyberDeaths, cyberKD, cyberScore, cyberTime, cyberPlants;
+            cyberKills, cyberDeaths, cyberKD, cyberScore, cyberTime, cyberPlants,
+            fightKills, fightDeaths, fightKD, fightScore, fightTime, fightDamage,
+            infectedKills, infectedDeaths, infectedKD, infectedScore, infectedTime, infectedInfected,
+            gwKills, gwDeaths, gwKD, gwScore, gwTime, gwCaptures,
+            HCtdmKills, HCtdmDeaths, HCtdmKD, HCtdmScore, HCtdmTime, HCtdmAssists,
+            HCdomKills, HCdomDeaths, HCdomKD, HCdomScore, HCdomTime, HCdomCaptures,
+            HCconfKills, HCconfDeaths, HCconfKD, HCconfScore, HCconfTime, HCconfConfirms,
+            HCsdKills, HCsdDeaths, HCsdKD, HCsdScore, HCsdTime, HCsdDefuses,
+            HChqKills, HChqDeaths, HChqKD, HChqScore, HChqTime, HChqCaptures,
+            HCcyberKills, HCcyberDeaths, HCcyberKD, HCcyberScore, HCcyberTime, HCcyberPlants;
 
     private Mode mode;
 

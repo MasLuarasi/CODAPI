@@ -81,29 +81,4 @@ public class RetrieveMode
         return mapper.readValue(object1.toString(), Cyber.class);
     }
 
-    /*
-    public Iw8ArFalima getFALProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("iw8_ar_falima");
-        return mapper.readValue(object1.toString(), Iw8ArFalima.class);
-    }
-
-    public Iw8ArAnovember94 getAN94Properties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("iw8_ar_anovember94");
-        return mapper.readValue(object1.toString(), Iw8ArAnovember94.class);
-    }
-
-    public Iw8ArKilo433 getKiloProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("iw8_ar_kilo433");
-        return mapper.readValue(object1.toString(), Iw8ArKilo433.class);
-    }
-
-    public Iw8ArScharlie getScarProperties(JSONObject root) throws JsonProcessingException
-    {
-        JSONObject object1 = root.getJSONObject("iw8_ar_scharlie");
-        return mapper.readValue(object1.toString(), Iw8ArScharlie.class);
-    }
-     */
 }
