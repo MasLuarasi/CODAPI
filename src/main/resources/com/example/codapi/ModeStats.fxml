@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -1032,7 +1033,7 @@
                   <Font size="20.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="180.0" right="-30.0" />
+                  <Insets bottom="-30.0" left="180.0" right="-0.0" />
                </GridPane.margin>
             </Label>
             <Label fx:id="HCcyberPlants" text="Plants:" GridPane.columnIndex="2" GridPane.rowIndex="5">

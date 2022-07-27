@@ -1,6 +1,7 @@
 
 package com.example.codapi;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Generated;
@@ -42,7 +43,7 @@ public class Arena {
     @JsonProperty("deaths")
     private Integer deaths;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private DecimalFormat numberFormat;
 
     /**
      * No args constructor for use in serialization
@@ -120,8 +121,10 @@ public class Arena {
     }
 
     @JsonProperty("kdRatio")
-    public void setKdRatio(Double kdRatio) {
-        this.kdRatio = kdRatio;
+    public void setKdRatio(Double kdRatio)
+    {
+        numberFormat = new DecimalFormat("#.00");
+        this.kdRatio = Double.valueOf(numberFormat.format(kdRatio));
     }
 
     @JsonProperty("assists")
@@ -152,16 +155,6 @@ public class Arena {
     @JsonProperty("deaths")
     public void setDeaths(Integer deaths) {
         this.deaths = deaths;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
     @Override
@@ -199,11 +192,6 @@ public class Arena {
         sb.append("deaths");
         sb.append('=');
         sb.append(((this.deaths == null)?"<null>":this.deaths));
-        sb.append(',');
-        sb.append("additionalProperties");
-        sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
-        sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
         } else {

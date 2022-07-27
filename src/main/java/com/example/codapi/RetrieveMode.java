@@ -23,6 +23,15 @@ public class RetrieveMode
         modeTemp.setSd(getSDProperties(object1));
         modeTemp.setHq(getHQProperties(object1));
         modeTemp.setCyber(getCyberProperties(object1));
+        modeTemp.setArena(getFightProperties(object1));
+        modeTemp.setInfect(getInfectedProperties(object1));
+        modeTemp.setArm(getGWProperties(object1));
+        modeTemp.setHcWar(getHCwarProperties(object1));
+        modeTemp.setHcDom(getHCdomProperties(object1));
+        modeTemp.setHcConf(getHCconfProperties(object1));
+        modeTemp.setHcSd(getHCsdProperties(object1));
+        modeTemp.setHcHq(getHChqProperties(object1));
+        modeTemp.setHcCyber(getHCcyberProperties(object1));
 
         return modeTemp;
     }
@@ -79,6 +88,60 @@ public class RetrieveMode
     {
         JSONObject object1 = root.getJSONObject("cyber");
         return mapper.readValue(object1.toString(), Cyber.class);
+    }
+
+    public Arena getFightProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("arena");
+        return mapper.readValue(object1.toString(), Arena.class);
+    }
+
+    public Infect getInfectedProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("infect");
+        return mapper.readValue(object1.toString(), Infect.class);
+    }
+
+    public Arm getGWProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("arm");
+        return mapper.readValue(object1.toString(), Arm.class);
+    }
+
+    public HcWar getHCwarProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("hc_war");
+        return mapper.readValue(object1.toString(), HcWar.class);
+    }
+
+    public HcDom getHCdomProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("hc_dom");
+        return mapper.readValue(object1.toString(), HcDom.class);
+    }
+
+    public HcConf getHCconfProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("hc_conf");
+        return mapper.readValue(object1.toString(), HcConf.class);
+    }
+
+    public HcSd getHCsdProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("hc_sd");
+        return mapper.readValue(object1.toString(), HcSd.class);
+    }
+
+    public HcHq getHChqProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("hc_hq");
+        return mapper.readValue(object1.toString(), HcHq.class);
+    }
+
+    public HcCyber getHCcyberProperties(JSONObject root) throws JsonProcessingException
+    {
+        JSONObject object1 = root.getJSONObject("hc_cyber");
+        return mapper.readValue(object1.toString(), HcCyber.class);
     }
 
 }
